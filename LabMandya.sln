@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabMandya", "WeightBridgeMandya\LabMandya.csproj", "{F5FC78AA-9BD3-486A-A852-AEAA5B1D90C6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF39FE80-CA82-49A3-ACE5-A146A17EB99A} = {DF39FE80-CA82-49A3-ACE5-A146A17EB99A}
+		{D4CF73D3-12B9-4334-912A-EC526FA07E07} = {D4CF73D3-12B9-4334-912A-EC526FA07E07}
+		{DA6825E7-C46A-437C-BC30-C660896427A6} = {DA6825E7-C46A-437C-BC30-C660896427A6}
+		{B07593F3-6611-40F6-B197-0B0C831F4DB5} = {B07593F3-6611-40F6-B197-0B0C831F4DB5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mandya.BL", "Mandya.BL\Mandya.BL.csproj", "{D4CF73D3-12B9-4334-912A-EC526FA07E07}"
+	ProjectSection(ProjectDependencies) = postProject
+		{DF39FE80-CA82-49A3-ACE5-A146A17EB99A} = {DF39FE80-CA82-49A3-ACE5-A146A17EB99A}
+		{DA6825E7-C46A-437C-BC30-C660896427A6} = {DA6825E7-C46A-437C-BC30-C660896427A6}
+		{B07593F3-6611-40F6-B197-0B0C831F4DB5} = {B07593F3-6611-40F6-B197-0B0C831F4DB5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mandya.BO", "Mandya.BO\Mandya.BO.csproj", "{DA6825E7-C46A-437C-BC30-C660896427A6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mandya.Common", "Mandya.Common\Mandya.Common.csproj", "{B07593F3-6611-40F6-B197-0B0C831F4DB5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mandya.DataAccess", "Mandya.DataAccess\Mandya.DataAccess.csproj", "{DF39FE80-CA82-49A3-ACE5-A146A17EB99A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B07593F3-6611-40F6-B197-0B0C831F4DB5} = {B07593F3-6611-40F6-B197-0B0C831F4DB5}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5FC78AA-9BD3-486A-A852-AEAA5B1D90C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5FC78AA-9BD3-486A-A852-AEAA5B1D90C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5FC78AA-9BD3-486A-A852-AEAA5B1D90C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5FC78AA-9BD3-486A-A852-AEAA5B1D90C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4CF73D3-12B9-4334-912A-EC526FA07E07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4CF73D3-12B9-4334-912A-EC526FA07E07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4CF73D3-12B9-4334-912A-EC526FA07E07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4CF73D3-12B9-4334-912A-EC526FA07E07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA6825E7-C46A-437C-BC30-C660896427A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA6825E7-C46A-437C-BC30-C660896427A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA6825E7-C46A-437C-BC30-C660896427A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA6825E7-C46A-437C-BC30-C660896427A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B07593F3-6611-40F6-B197-0B0C831F4DB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B07593F3-6611-40F6-B197-0B0C831F4DB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B07593F3-6611-40F6-B197-0B0C831F4DB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B07593F3-6611-40F6-B197-0B0C831F4DB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF39FE80-CA82-49A3-ACE5-A146A17EB99A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF39FE80-CA82-49A3-ACE5-A146A17EB99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF39FE80-CA82-49A3-ACE5-A146A17EB99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF39FE80-CA82-49A3-ACE5-A146A17EB99A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4EF11DEA-2A1E-4115-A2CC-0FA8C62FA7D8}
+	EndGlobalSection
+EndGlobal
