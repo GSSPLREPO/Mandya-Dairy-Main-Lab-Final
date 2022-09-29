@@ -78,8 +78,8 @@ namespace WeightBridgeMandya
                             if(Program.intRoleId==1 || Program.intRoleId == 3)
                             {
                                 this.Hide();
-                                EditDeleteData frmEditDeleteData = new EditDeleteData();
-                                frmEditDeleteData.Show();
+                                Form1 frmMainForm = new Form1();
+                                frmMainForm.Show();
                             }
                             else
                             {

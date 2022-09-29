@@ -97,22 +97,22 @@ namespace WeightBridgeMandya.clientui
                             cmbTankNo.Enabled = false;
                             dtDate.Text = objResult.ResultDt.Rows[0]["Date"].ToString();
                             dtTime.Text = objResult.ResultDt.Rows[0]["Time"].ToString();
-                            cmbTankNo.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TANKNO].ToString();
+                            //cmbTankNo.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TANKNO].ToString();
                             txtBatchNo.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BATCHNO].ToString();
                             cmbProduct.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PRODUCTID]);
-                            cmbOT.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_OT].ToString();
+                           // cmbOT.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_OT].ToString();
                             cmbTemp.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TEMP].ToString();
                             txtFat.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_FAT].ToString();
                             txtSnf.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SNF].ToString();
                             txtAcidity.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ACIDITY].ToString();
-                            cmbCob.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_COB].ToString();
+                            //cmbCob.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_COB].ToString();
                             cmbAlcohol.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ALCOHOL].ToString();
-                            cmbNeutrilizer.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_NEUTRILIZER].ToString();
-                            cmbUrea.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_UREA].ToString();
-                            cmbSalt.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SALT].ToString();
-                            cmbStarch.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_STARCH].ToString();
-                            cmbFPD.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_FPD].ToString();
-                            cmbStatus.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_STATUS].ToString();
+                            ////cmbNeutrilizer.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_NEUTRILIZER].ToString();
+                            //cmbUrea.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_UREA].ToString();
+                            //cmbSalt.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SALT].ToString();
+                            //cmbStarch.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_STARCH].ToString();
+                            //cmbFPD.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_FPD].ToString();
+                            //cmbStatus.SelectedValue = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_STATUS].ToString();
                         }
                     }
                 }
@@ -298,22 +298,22 @@ namespace WeightBridgeMandya.clientui
                     ApplicationResult objResult = new ApplicationResult();
 
                     objMainLabAnalysisBO.DateTime = Convert.ToDateTime(dtDate.Text + " " + dtTime.Text);
-                    objMainLabAnalysisBO.TankNo = Convert.ToInt32(cmbTankNo.SelectedValue);
+                   // objMainLabAnalysisBO.TankNo = Convert.ToInt32(cmbTankNo.SelectedValue);
                     objMainLabAnalysisBO.BatchNo = txtBatchNo.Text.Trim();
                     objMainLabAnalysisBO.ProductID = Convert.ToInt32(cmbProduct.SelectedValue);
-                    objMainLabAnalysisBO.OT = Convert.ToInt32(cmbOT.SelectedValue);
+                    //objMainLabAnalysisBO.OT = Convert.ToInt32(cmbOT.SelectedValue);
                     objMainLabAnalysisBO.Temp = Convert.ToInt32(cmbTemp.SelectedValue);
                     objMainLabAnalysisBO.FAT = float.Parse(txtFat.Text.Trim());
                     objMainLabAnalysisBO.SNF = float.Parse(txtSnf.Text.Trim());
                     objMainLabAnalysisBO.Acidity = float.Parse(txtAcidity.Text.Trim());
-                    objMainLabAnalysisBO.COB = Convert.ToInt32(cmbCob.SelectedValue);
+                    //objMainLabAnalysisBO.COB = Convert.ToInt32(cmbCob.SelectedValue);
                     objMainLabAnalysisBO.Alcohol = Convert.ToInt32(cmbAlcohol.SelectedValue);
-                    objMainLabAnalysisBO.Neutrilizer = Convert.ToInt32(cmbNeutrilizer.SelectedValue);
-                    objMainLabAnalysisBO.Urea = Convert.ToInt32(cmbUrea.SelectedValue);
-                    objMainLabAnalysisBO.Salt = Convert.ToInt32(cmbSalt.SelectedValue);
-                    objMainLabAnalysisBO.Starch = Convert.ToInt32(cmbStarch.SelectedValue);
-                    objMainLabAnalysisBO.Fpd = Convert.ToInt32(cmbFPD.SelectedValue);
-                    objMainLabAnalysisBO.Status = Convert.ToInt32(cmbStatus.SelectedValue);
+                   // objMainLabAnalysisBO.Neutrilizer = Convert.ToInt32(cmbNeutrilizer.SelectedValue);
+                    //objMainLabAnalysisBO.Urea = Convert.ToInt32(cmbUrea.SelectedValue);
+                    //objMainLabAnalysisBO.Salt = Convert.ToInt32(cmbSalt.SelectedValue);
+                    //objMainLabAnalysisBO.Starch = Convert.ToInt32(cmbStarch.SelectedValue);
+                    //objMainLabAnalysisBO.Fpd = Convert.ToInt32(cmbFPD.SelectedValue);
+                    //objMainLabAnalysisBO.Status = Convert.ToInt32(cmbStatus.SelectedValue);
                     objMainLabAnalysisBO.CreatedByID = Program.intUserId;
                     objMainLabAnalysisBO.CreatedByDate = DateTime.UtcNow.AddHours(5.5);
 
@@ -336,7 +336,7 @@ namespace WeightBridgeMandya.clientui
                     }
                     else
                     {
-                        objMainLabAnalysisBO.MainLabAnalysisID = intid;
+                        objMainLabAnalysisBO.MainLabID = intid;
                         objMainLabAnalysisBO.LastModifiedByDate = DateTime.UtcNow.AddHours(5.5);
                         objMainLabAnalysisBO.LastModifiedByID = Program.intUserId;
                         objResult = objMainLabAnalysisBL.MainLabAnalysis_Update(objMainLabAnalysisBO);

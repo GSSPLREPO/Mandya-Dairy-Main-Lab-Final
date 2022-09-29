@@ -117,12 +117,6 @@
     <Compile Include="clientui\LabReport.Designer.cs">
       <DependentUpon>LabReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="clientui\MainLabProduct.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="clientui\MainLabProduct.Designer.cs">
-      <DependentUpon>MainLabProduct.cs</DependentUpon>
-    </Compile>
     <Compile Include="clientui\MainLab.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,9 +162,6 @@
     <EmbeddedResource Include="clientui\MainLab.resx">
       <DependentUpon>MainLab.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="clientui\MainLabProduct.resx">
-      <DependentUpon>MainLabProduct.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="clientui\OldData.resx">
       <DependentUpon>OldData.cs</DependentUpon>
     </EmbeddedResource>
@@ -208,7 +199,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="mandya.ico" />
     <Content Include="MetroFramework.txt" />
     <Content Include="MilkLab.ico" />
     <Content Include="Resources\Add.png" />

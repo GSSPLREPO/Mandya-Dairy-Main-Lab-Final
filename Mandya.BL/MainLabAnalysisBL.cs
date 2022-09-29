@@ -31,81 +31,81 @@ namespace Mandya.BL
             {
                 pSqlParameter = new SqlParameter[19];
 
-                pSqlParameter[0] = new SqlParameter("@DateTime", SqlDbType.DateTime);
-                pSqlParameter[0].Direction = ParameterDirection.Input;
-                pSqlParameter[0].Value = objMainLabAnalysisBO.DateTime;
+                //pSqlParameter[0] = new SqlParameter("@DateTime", SqlDbType.DateTime);
+                //pSqlParameter[0].Direction = ParameterDirection.Input;
+                //pSqlParameter[0].Value = objMainLabAnalysisBO.DateTime;
 
-                pSqlParameter[1] = new SqlParameter("@TankNo", SqlDbType.Int);
-                pSqlParameter[1].Direction = ParameterDirection.Input;
-                pSqlParameter[1].Value = objMainLabAnalysisBO.TankNo;
+                //pSqlParameter[1] = new SqlParameter("@TankNo", SqlDbType.Int);
+                //pSqlParameter[1].Direction = ParameterDirection.Input;
+                //pSqlParameter[1].Value = objMainLabAnalysisBO.TankNo;
 
-                pSqlParameter[2] = new SqlParameter("@BatchNo", SqlDbType.VarChar);
-                pSqlParameter[2].Direction = ParameterDirection.Input;
-                pSqlParameter[2].Value = objMainLabAnalysisBO.BatchNo;
+                //pSqlParameter[2] = new SqlParameter("@BatchNo", SqlDbType.VarChar);
+                //pSqlParameter[2].Direction = ParameterDirection.Input;
+                //pSqlParameter[2].Value = objMainLabAnalysisBO.BatchNo;
 
-                pSqlParameter[3] = new SqlParameter("@ProductID", SqlDbType.Int);
-                pSqlParameter[3].Direction = ParameterDirection.Input;
-                pSqlParameter[3].Value = objMainLabAnalysisBO.ProductID;
+                //pSqlParameter[3] = new SqlParameter("@ProductID", SqlDbType.Int);
+                //pSqlParameter[3].Direction = ParameterDirection.Input;
+                //pSqlParameter[3].Value = objMainLabAnalysisBO.ProductID;
 
-                pSqlParameter[4] = new SqlParameter("@OT", SqlDbType.Int);
-                pSqlParameter[4].Direction = ParameterDirection.Input;
-                pSqlParameter[4].Value = objMainLabAnalysisBO.OT;
+                //pSqlParameter[4] = new SqlParameter("@OT", SqlDbType.Int);
+                //pSqlParameter[4].Direction = ParameterDirection.Input;
+                //pSqlParameter[4].Value = objMainLabAnalysisBO.OT;
 
-                pSqlParameter[5] = new SqlParameter("@Temp", SqlDbType.Int);
-                pSqlParameter[5].Direction = ParameterDirection.Input;
-                pSqlParameter[5].Value = objMainLabAnalysisBO.Temp;
+                //pSqlParameter[5] = new SqlParameter("@Temp", SqlDbType.Int);
+                //pSqlParameter[5].Direction = ParameterDirection.Input;
+                //pSqlParameter[5].Value = objMainLabAnalysisBO.Temp;
 
-                pSqlParameter[6] = new SqlParameter("@FAT", SqlDbType.Float);
-                pSqlParameter[6].Direction = ParameterDirection.Input;
-                pSqlParameter[6].Value = objMainLabAnalysisBO.FAT;
+                //pSqlParameter[6] = new SqlParameter("@FAT", SqlDbType.Float);
+                //pSqlParameter[6].Direction = ParameterDirection.Input;
+                //pSqlParameter[6].Value = objMainLabAnalysisBO.FAT;
 
-                pSqlParameter[7] = new SqlParameter("@SNF", SqlDbType.Float);
-                pSqlParameter[7].Direction = ParameterDirection.Input;
-                pSqlParameter[7].Value = objMainLabAnalysisBO.SNF;
+                //pSqlParameter[7] = new SqlParameter("@SNF", SqlDbType.Float);
+                //pSqlParameter[7].Direction = ParameterDirection.Input;
+                //pSqlParameter[7].Value = objMainLabAnalysisBO.SNF;
 
-                pSqlParameter[8] = new SqlParameter("@Acidity", SqlDbType.Float);
-                pSqlParameter[8].Direction = ParameterDirection.Input;
-                pSqlParameter[8].Value = objMainLabAnalysisBO.Acidity;
+                //pSqlParameter[8] = new SqlParameter("@Acidity", SqlDbType.Float);
+                //pSqlParameter[8].Direction = ParameterDirection.Input;
+                //pSqlParameter[8].Value = objMainLabAnalysisBO.Acidity;
 
-                pSqlParameter[9] = new SqlParameter("@COB", SqlDbType.Int);
-                pSqlParameter[9].Direction = ParameterDirection.Input;
-                pSqlParameter[9].Value = objMainLabAnalysisBO.COB;
+                //pSqlParameter[9] = new SqlParameter("@COB", SqlDbType.Int);
+                //pSqlParameter[9].Direction = ParameterDirection.Input;
+                //pSqlParameter[9].Value = objMainLabAnalysisBO.COB;
 
-                pSqlParameter[10] = new SqlParameter("@Alcohol", SqlDbType.Int);
-                pSqlParameter[10].Direction = ParameterDirection.Input;
-                pSqlParameter[10].Value = objMainLabAnalysisBO.Alcohol;
+                //pSqlParameter[10] = new SqlParameter("@Alcohol", SqlDbType.Int);
+                //pSqlParameter[10].Direction = ParameterDirection.Input;
+                //pSqlParameter[10].Value = objMainLabAnalysisBO.Alcohol;
 
-                pSqlParameter[11] = new SqlParameter("@Neutrilizer", SqlDbType.Int);
-                pSqlParameter[11].Direction = ParameterDirection.Input;
-                pSqlParameter[11].Value = objMainLabAnalysisBO.Neutrilizer;
+                //pSqlParameter[11] = new SqlParameter("@Neutrilizer", SqlDbType.Int);
+                //pSqlParameter[11].Direction = ParameterDirection.Input;
+                //pSqlParameter[11].Value = objMainLabAnalysisBO.Neutrilizer;
 
-                pSqlParameter[12] = new SqlParameter("@Urea", SqlDbType.Int);
-                pSqlParameter[12].Direction = ParameterDirection.Input;
-                pSqlParameter[12].Value = objMainLabAnalysisBO.Urea;
+                //pSqlParameter[12] = new SqlParameter("@Urea", SqlDbType.Int);
+                //pSqlParameter[12].Direction = ParameterDirection.Input;
+                //pSqlParameter[12].Value = objMainLabAnalysisBO.Urea;
 
-                pSqlParameter[13] = new SqlParameter("@Salt", SqlDbType.Int);
-                pSqlParameter[13].Direction = ParameterDirection.Input;
-                pSqlParameter[13].Value = objMainLabAnalysisBO.Salt;
+                //pSqlParameter[13] = new SqlParameter("@Salt", SqlDbType.Int);
+                //pSqlParameter[13].Direction = ParameterDirection.Input;
+                //pSqlParameter[13].Value = objMainLabAnalysisBO.Salt;
 
-                pSqlParameter[14] = new SqlParameter("@Starch", SqlDbType.Int);
-                pSqlParameter[14].Direction = ParameterDirection.Input;
-                pSqlParameter[14].Value = objMainLabAnalysisBO.Starch;
+                //pSqlParameter[14] = new SqlParameter("@Starch", SqlDbType.Int);
+                //pSqlParameter[14].Direction = ParameterDirection.Input;
+                //pSqlParameter[14].Value = objMainLabAnalysisBO.Starch;
 
-                pSqlParameter[15] = new SqlParameter("@FPD", SqlDbType.Int);
-                pSqlParameter[15].Direction = ParameterDirection.Input;
-                pSqlParameter[15].Value = objMainLabAnalysisBO.Fpd;
+                //pSqlParameter[15] = new SqlParameter("@FPD", SqlDbType.Int);
+                //pSqlParameter[15].Direction = ParameterDirection.Input;
+                //pSqlParameter[15].Value = objMainLabAnalysisBO.Fpd;
 
-                pSqlParameter[16] = new SqlParameter("@Status", SqlDbType.Int);
-                pSqlParameter[16].Direction = ParameterDirection.Input;
-                pSqlParameter[16].Value = objMainLabAnalysisBO.Status;
+                //pSqlParameter[16] = new SqlParameter("@Status", SqlDbType.Int);
+                //pSqlParameter[16].Direction = ParameterDirection.Input;
+                //pSqlParameter[16].Value = objMainLabAnalysisBO.Status;
 
-                pSqlParameter[17] = new SqlParameter("@CreatedByID", SqlDbType.Int);
-                pSqlParameter[17].Direction = ParameterDirection.Input;
-                pSqlParameter[17].Value = objMainLabAnalysisBO.CreatedByID;
+                //pSqlParameter[17] = new SqlParameter("@CreatedByID", SqlDbType.Int);
+                //pSqlParameter[17].Direction = ParameterDirection.Input;
+                //pSqlParameter[17].Value = objMainLabAnalysisBO.CreatedByID;
 
-                pSqlParameter[18] = new SqlParameter("@CreatedByDate", SqlDbType.DateTime);
-                pSqlParameter[18].Direction = ParameterDirection.Input;
-                pSqlParameter[18].Value = objMainLabAnalysisBO.CreatedByDate;
+                //pSqlParameter[18] = new SqlParameter("@CreatedByDate", SqlDbType.DateTime);
+                //pSqlParameter[18].Direction = ParameterDirection.Input;
+                //pSqlParameter[18].Value = objMainLabAnalysisBO.CreatedByDate;
 
                 sSql = "usp_tbl_MainLabAnalysis_Insert";
 
@@ -281,85 +281,85 @@ namespace Mandya.BL
             {
                 pSqlParameter = new SqlParameter[20];
 
-                pSqlParameter[0] = new SqlParameter("@DateTime", SqlDbType.DateTime);
-                pSqlParameter[0].Direction = ParameterDirection.Input;
-                pSqlParameter[0].Value = objMainLabAnalysisBO.DateTime;
+                //pSqlParameter[0] = new SqlParameter("@DateTime", SqlDbType.DateTime);
+                //pSqlParameter[0].Direction = ParameterDirection.Input;
+                //pSqlParameter[0].Value = objMainLabAnalysisBO.DateTime;
 
-                pSqlParameter[1] = new SqlParameter("@TankNo", SqlDbType.Int);
-                pSqlParameter[1].Direction = ParameterDirection.Input;
-                pSqlParameter[1].Value = objMainLabAnalysisBO.TankNo;
+                //pSqlParameter[1] = new SqlParameter("@TankNo", SqlDbType.Int);
+                //pSqlParameter[1].Direction = ParameterDirection.Input;
+                //pSqlParameter[1].Value = objMainLabAnalysisBO.TankNo;
 
-                pSqlParameter[2] = new SqlParameter("@BatchNo", SqlDbType.VarChar);
-                pSqlParameter[2].Direction = ParameterDirection.Input;
-                pSqlParameter[2].Value = objMainLabAnalysisBO.BatchNo;
+                //pSqlParameter[2] = new SqlParameter("@BatchNo", SqlDbType.VarChar);
+                //pSqlParameter[2].Direction = ParameterDirection.Input;
+                //pSqlParameter[2].Value = objMainLabAnalysisBO.BatchNo;
 
-                pSqlParameter[3] = new SqlParameter("@ProductID", SqlDbType.Int);
-                pSqlParameter[3].Direction = ParameterDirection.Input;
-                pSqlParameter[3].Value = objMainLabAnalysisBO.ProductID;
+                //pSqlParameter[3] = new SqlParameter("@ProductID", SqlDbType.Int);
+                //pSqlParameter[3].Direction = ParameterDirection.Input;
+                //pSqlParameter[3].Value = objMainLabAnalysisBO.ProductID;
 
-                pSqlParameter[4] = new SqlParameter("@OT", SqlDbType.Int);
-                pSqlParameter[4].Direction = ParameterDirection.Input;
-                pSqlParameter[4].Value = objMainLabAnalysisBO.OT;
+                //pSqlParameter[4] = new SqlParameter("@OT", SqlDbType.Int);
+                //pSqlParameter[4].Direction = ParameterDirection.Input;
+                //pSqlParameter[4].Value = objMainLabAnalysisBO.OT;
 
-                pSqlParameter[5] = new SqlParameter("@Temp", SqlDbType.Int);
-                pSqlParameter[5].Direction = ParameterDirection.Input;
-                pSqlParameter[5].Value = objMainLabAnalysisBO.Temp;
+                //pSqlParameter[5] = new SqlParameter("@Temp", SqlDbType.Int);
+                //pSqlParameter[5].Direction = ParameterDirection.Input;
+                //pSqlParameter[5].Value = objMainLabAnalysisBO.Temp;
 
-                pSqlParameter[6] = new SqlParameter("@FAT", SqlDbType.Float);
-                pSqlParameter[6].Direction = ParameterDirection.Input;
-                pSqlParameter[6].Value = objMainLabAnalysisBO.FAT;
+                //pSqlParameter[6] = new SqlParameter("@FAT", SqlDbType.Float);
+                //pSqlParameter[6].Direction = ParameterDirection.Input;
+                //pSqlParameter[6].Value = objMainLabAnalysisBO.FAT;
 
-                pSqlParameter[7] = new SqlParameter("@SNF", SqlDbType.Float);
-                pSqlParameter[7].Direction = ParameterDirection.Input;
-                pSqlParameter[7].Value = objMainLabAnalysisBO.SNF;
+                //pSqlParameter[7] = new SqlParameter("@SNF", SqlDbType.Float);
+                //pSqlParameter[7].Direction = ParameterDirection.Input;
+                //pSqlParameter[7].Value = objMainLabAnalysisBO.SNF;
 
-                pSqlParameter[8] = new SqlParameter("@Acidity", SqlDbType.Float);
-                pSqlParameter[8].Direction = ParameterDirection.Input;
-                pSqlParameter[8].Value = objMainLabAnalysisBO.Acidity;
+                //pSqlParameter[8] = new SqlParameter("@Acidity", SqlDbType.Float);
+                //pSqlParameter[8].Direction = ParameterDirection.Input;
+                //pSqlParameter[8].Value = objMainLabAnalysisBO.Acidity;
 
-                pSqlParameter[9] = new SqlParameter("@COB", SqlDbType.Int);
-                pSqlParameter[9].Direction = ParameterDirection.Input;
-                pSqlParameter[9].Value = objMainLabAnalysisBO.COB;
+                //pSqlParameter[9] = new SqlParameter("@COB", SqlDbType.Int);
+                //pSqlParameter[9].Direction = ParameterDirection.Input;
+                //pSqlParameter[9].Value = objMainLabAnalysisBO.COB;
 
-                pSqlParameter[10] = new SqlParameter("@Alcohol", SqlDbType.Int);
-                pSqlParameter[10].Direction = ParameterDirection.Input;
-                pSqlParameter[10].Value = objMainLabAnalysisBO.Alcohol;
+                //pSqlParameter[10] = new SqlParameter("@Alcohol", SqlDbType.Int);
+                //pSqlParameter[10].Direction = ParameterDirection.Input;
+                //pSqlParameter[10].Value = objMainLabAnalysisBO.Alcohol;
 
-                pSqlParameter[11] = new SqlParameter("@Neutrilizer", SqlDbType.Int);
-                pSqlParameter[11].Direction = ParameterDirection.Input;
-                pSqlParameter[11].Value = objMainLabAnalysisBO.Neutrilizer;
+                //pSqlParameter[11] = new SqlParameter("@Neutrilizer", SqlDbType.Int);
+                //pSqlParameter[11].Direction = ParameterDirection.Input;
+                //pSqlParameter[11].Value = objMainLabAnalysisBO.Neutrilizer;
 
-                pSqlParameter[12] = new SqlParameter("@Urea", SqlDbType.Int);
-                pSqlParameter[12].Direction = ParameterDirection.Input;
-                pSqlParameter[12].Value = objMainLabAnalysisBO.Urea;
+                //pSqlParameter[12] = new SqlParameter("@Urea", SqlDbType.Int);
+                //pSqlParameter[12].Direction = ParameterDirection.Input;
+                //pSqlParameter[12].Value = objMainLabAnalysisBO.Urea;
 
-                pSqlParameter[13] = new SqlParameter("@Salt", SqlDbType.Int);
-                pSqlParameter[13].Direction = ParameterDirection.Input;
-                pSqlParameter[13].Value = objMainLabAnalysisBO.Salt;
+                //pSqlParameter[13] = new SqlParameter("@Salt", SqlDbType.Int);
+                //pSqlParameter[13].Direction = ParameterDirection.Input;
+                //pSqlParameter[13].Value = objMainLabAnalysisBO.Salt;
 
-                pSqlParameter[14] = new SqlParameter("@Starch", SqlDbType.Int);
-                pSqlParameter[14].Direction = ParameterDirection.Input;
-                pSqlParameter[14].Value = objMainLabAnalysisBO.Starch;
+                //pSqlParameter[14] = new SqlParameter("@Starch", SqlDbType.Int);
+                //pSqlParameter[14].Direction = ParameterDirection.Input;
+                //pSqlParameter[14].Value = objMainLabAnalysisBO.Starch;
 
-                pSqlParameter[15] = new SqlParameter("@FPD", SqlDbType.Int);
-                pSqlParameter[15].Direction = ParameterDirection.Input;
-                pSqlParameter[15].Value = objMainLabAnalysisBO.Fpd;
+                //pSqlParameter[15] = new SqlParameter("@FPD", SqlDbType.Int);
+                //pSqlParameter[15].Direction = ParameterDirection.Input;
+                //pSqlParameter[15].Value = objMainLabAnalysisBO.Fpd;
 
-                pSqlParameter[16] = new SqlParameter("@Status", SqlDbType.Int);
-                pSqlParameter[16].Direction = ParameterDirection.Input;
-                pSqlParameter[16].Value = objMainLabAnalysisBO.Status;
+                //pSqlParameter[16] = new SqlParameter("@Status", SqlDbType.Int);
+                //pSqlParameter[16].Direction = ParameterDirection.Input;
+                //pSqlParameter[16].Value = objMainLabAnalysisBO.Status;
 
-                pSqlParameter[17] = new SqlParameter("@LastModifiedByID", SqlDbType.Int);
-                pSqlParameter[17].Direction = ParameterDirection.Input;
-                pSqlParameter[17].Value = objMainLabAnalysisBO.LastModifiedByID;
+                //pSqlParameter[17] = new SqlParameter("@LastModifiedByID", SqlDbType.Int);
+                //pSqlParameter[17].Direction = ParameterDirection.Input;
+                //pSqlParameter[17].Value = objMainLabAnalysisBO.LastModifiedByID;
 
-                pSqlParameter[18] = new SqlParameter("@LastModifiedByDate", SqlDbType.DateTime);
-                pSqlParameter[18].Direction = ParameterDirection.Input;
-                pSqlParameter[18].Value = objMainLabAnalysisBO.LastModifiedByDate;
+                //pSqlParameter[18] = new SqlParameter("@LastModifiedByDate", SqlDbType.DateTime);
+                //pSqlParameter[18].Direction = ParameterDirection.Input;
+                //pSqlParameter[18].Value = objMainLabAnalysisBO.LastModifiedByDate;
 
-                pSqlParameter[19] = new SqlParameter("@MainLabAnalysisID", SqlDbType.Int);
-                pSqlParameter[19].Direction = ParameterDirection.Input;
-                pSqlParameter[19].Value = objMainLabAnalysisBO.MainLabAnalysisID;
+                //pSqlParameter[19] = new SqlParameter("@MainLabAnalysisID", SqlDbType.Int);
+                //pSqlParameter[19].Direction = ParameterDirection.Input;
+                //pSqlParameter[19].Value = objMainLabAnalysisBO.MainLabAnalysisID;
 
 
                 sSql = "usp_tbl_MainLabAnalysis_Update";

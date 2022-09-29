@@ -12,6 +12,8 @@ using Mandya.BL;
 using Mandya.BO;
 using Mandya.Common;
 using MetroFramework;
+using WeightBridgeMandya.clientui;
+
 
 namespace WeightBridgeMandya
 {
@@ -27,14 +29,17 @@ namespace WeightBridgeMandya
 
         }
 
-        private void metroPanel2_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void metroTile1_Click(object sender, EventArgs e)
+        {
+            LabProduct frmLabProduct = new LabProduct();
+            frmLabProduct.ShowDialog();
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void metroTile2_Click(object sender, EventArgs e)
         {
-            
+            LabProduct frmLabProduct = new LabProduct();
+            frmLabProduct.ShowDialog();
         }
     }
 }

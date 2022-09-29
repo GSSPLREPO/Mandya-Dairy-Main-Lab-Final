@@ -68,13 +68,13 @@ namespace WeightBridgeMandya.clientui
             // 
             // btnAddNew
             // 
-            this.btnAddNew.Location = new System.Drawing.Point(973, 20);
-            this.btnAddNew.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAddNew.Location = new System.Drawing.Point(1029, 16);
             this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(117, 42);
+            this.btnAddNew.Size = new System.Drawing.Size(88, 34);
             this.btnAddNew.TabIndex = 1;
             this.btnAddNew.Text = "Add New";
             this.btnAddNew.UseSelectable = true;
+            this.btnAddNew.Visible = false;
             this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
             // 
             // txtSearch
@@ -83,10 +83,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // 
             this.txtSearch.CustomButton.Image = null;
-            this.txtSearch.CustomButton.Location = new System.Drawing.Point(187, 2);
-            this.txtSearch.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.CustomButton.Location = new System.Drawing.Point(104, 1);
             this.txtSearch.CustomButton.Name = "";
-            this.txtSearch.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.txtSearch.CustomButton.Size = new System.Drawing.Size(20, 22);
             this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSearch.CustomButton.TabIndex = 1;
             this.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -94,8 +93,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSearch.CustomButton.Visible = false;
             this.txtSearch.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(501, 22);
-            this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSearch.Location = new System.Drawing.Point(278, 21);
             this.txtSearch.MaxLength = 10;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -104,7 +102,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSearch.SelectionLength = 0;
             this.txtSearch.SelectionStart = 0;
             this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(221, 36);
+            this.txtSearch.Size = new System.Drawing.Size(166, 29);
             this.txtSearch.TabIndex = 3;
             this.txtSearch.UseSelectable = true;
             this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -116,10 +114,9 @@ namespace WeightBridgeMandya.clientui
             // 
             this.metroLabel1.AutoSize = true;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(391, 28);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(195, 26);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(69, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
             this.metroLabel1.TabIndex = 4;
             this.metroLabel1.Text = "Tank No :";
             // 
@@ -167,8 +164,7 @@ namespace WeightBridgeMandya.clientui
             this.gvMainLab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvMainLab.EnableHeadersVisualStyles = false;
             this.gvMainLab.GridColor = System.Drawing.SystemColors.AppWorkspace;
-            this.gvMainLab.Location = new System.Drawing.Point(27, 74);
-            this.gvMainLab.Margin = new System.Windows.Forms.Padding(4);
+            this.gvMainLab.Location = new System.Drawing.Point(20, 60);
             this.gvMainLab.Name = "gvMainLab";
             this.gvMainLab.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -188,7 +184,7 @@ namespace WeightBridgeMandya.clientui
             this.gvMainLab.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.gvMainLab.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gvMainLab.ShowCellErrors = false;
-            this.gvMainLab.Size = new System.Drawing.Size(1794, 622);
+            this.gvMainLab.Size = new System.Drawing.Size(1346, 506);
             this.gvMainLab.TabIndex = 156;
             this.gvMainLab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvMainLab_CellContentClick);
             // 
@@ -378,10 +374,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // btnOldData
             // 
-            this.btnOldData.Location = new System.Drawing.Point(1115, 20);
-            this.btnOldData.Margin = new System.Windows.Forms.Padding(4);
+            this.btnOldData.Location = new System.Drawing.Point(764, 16);
             this.btnOldData.Name = "btnOldData";
-            this.btnOldData.Size = new System.Drawing.Size(140, 42);
+            this.btnOldData.Size = new System.Drawing.Size(105, 34);
             this.btnOldData.TabIndex = 157;
             this.btnOldData.Text = "Old Data";
             this.btnOldData.UseSelectable = true;
@@ -409,10 +404,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // btnLogout
             // 
-            this.btnLogout.Location = new System.Drawing.Point(1497, 20);
-            this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLogout.Location = new System.Drawing.Point(1123, 16);
             this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(120, 42);
+            this.btnLogout.Size = new System.Drawing.Size(90, 34);
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Logout";
             this.btnLogout.UseSelectable = true;
@@ -420,10 +414,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // AddNewProduct
             // 
-            this.AddNewProduct.Location = new System.Drawing.Point(814, 20);
-            this.AddNewProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.AddNewProduct.Location = new System.Drawing.Point(635, 16);
             this.AddNewProduct.Name = "AddNewProduct";
-            this.AddNewProduct.Size = new System.Drawing.Size(117, 42);
+            this.AddNewProduct.Size = new System.Drawing.Size(114, 34);
             this.AddNewProduct.TabIndex = 158;
             this.AddNewProduct.Text = " Add New Product";
             this.AddNewProduct.UseSelectable = true;
@@ -431,20 +424,19 @@ namespace WeightBridgeMandya.clientui
             // 
             // btnLabReport
             // 
-            this.btnLabReport.Location = new System.Drawing.Point(1277, 20);
-            this.btnLabReport.Margin = new System.Windows.Forms.Padding(4);
+            this.btnLabReport.Location = new System.Drawing.Point(506, 16);
             this.btnLabReport.Name = "btnLabReport";
-            this.btnLabReport.Size = new System.Drawing.Size(117, 42);
+            this.btnLabReport.Size = new System.Drawing.Size(110, 34);
             this.btnLabReport.TabIndex = 159;
-            this.btnLabReport.Text = "Lab Report";
+            this.btnLabReport.Text = "Test New Product";
             this.btnLabReport.UseSelectable = true;
             this.btnLabReport.Click += new System.EventHandler(this.btnLabReport_Click);
             // 
             // EditDeleteData
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1848, 721);
+            this.ClientSize = new System.Drawing.Size(1386, 586);
             this.Controls.Add(this.btnLabReport);
             this.Controls.Add(this.AddNewProduct);
             this.Controls.Add(this.btnOldData);
@@ -454,9 +446,7 @@ namespace WeightBridgeMandya.clientui
             this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.btnAddNew);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "EditDeleteData";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "Today Data";
