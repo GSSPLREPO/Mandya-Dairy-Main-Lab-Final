@@ -30,13 +30,14 @@ namespace WeightBridgeMandya.clientui
         private void InitializeComponent()
         {
             this.gpButton = new System.Windows.Forms.GroupBox();
+            this.btnCancle = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new MetroFramework.Controls.MetroButton();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClose = new MetroFramework.Controls.MetroButton();
             this.gpProductTextbox = new System.Windows.Forms.GroupBox();
             this.btnAdd = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.updateBtn = new System.Windows.Forms.Button();
             this.cmbProduct = new MetroFramework.Controls.MetroComboBox();
             this.txtProduct = new MetroFramework.Controls.MetroTextBox();
             this.lblProductName = new MetroFramework.Controls.MetroLabel();
@@ -80,14 +81,27 @@ namespace WeightBridgeMandya.clientui
             // 
             // gpButton
             // 
+            this.gpButton.Controls.Add(this.btnCancle);
             this.gpButton.Controls.Add(this.btnSave);
             this.gpButton.Controls.Add(this.btnClear);
-            this.gpButton.Controls.Add(this.updateBtn);
+            this.gpButton.Controls.Add(this.btnUpdate);
             this.gpButton.Location = new System.Drawing.Point(75, 337);
             this.gpButton.Name = "gpButton";
             this.gpButton.Size = new System.Drawing.Size(966, 65);
             this.gpButton.TabIndex = 35;
             this.gpButton.TabStop = false;
+            // 
+            // btnCancle
+            // 
+            this.btnCancle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancle.Location = new System.Drawing.Point(462, 18);
+            this.btnCancle.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancle.Name = "btnCancle";
+            this.btnCancle.Size = new System.Drawing.Size(86, 29);
+            this.btnCancle.TabIndex = 39;
+            this.btnCancle.Text = "Cancle";
+            this.btnCancle.UseVisualStyleBackColor = true;
+            this.btnCancle.Click += new System.EventHandler(this.btnCancle_Click);
             // 
             // btnSave
             // 
@@ -103,13 +117,25 @@ namespace WeightBridgeMandya.clientui
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(496, 18);
+            this.btnClear.Location = new System.Drawing.Point(562, 19);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(87, 29);
             this.btnClear.TabIndex = 22;
             this.btnClear.Text = "Clear";
             this.btnClear.UseSelectable = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(361, 18);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(86, 29);
+            this.btnUpdate.TabIndex = 36;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnClose
             // 
@@ -138,7 +164,7 @@ namespace WeightBridgeMandya.clientui
             // btnAdd
             // 
             this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnAdd.Location = new System.Drawing.Point(377, 28);
+            this.btnAdd.Location = new System.Drawing.Point(376, 28);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 29);
             this.btnAdd.TabIndex = 148;
@@ -158,28 +184,15 @@ namespace WeightBridgeMandya.clientui
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // updateBtn
-            // 
-            this.updateBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.updateBtn.Location = new System.Drawing.Point(361, 18);
-            this.updateBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.updateBtn.Name = "updateBtn";
-            this.updateBtn.Size = new System.Drawing.Size(86, 29);
-            this.updateBtn.TabIndex = 36;
-            this.updateBtn.Text = "Update";
-            this.updateBtn.UseVisualStyleBackColor = true;
-            this.updateBtn.Click += new System.EventHandler(this.updateBtn_Click);
-            // 
             // cmbProduct
             // 
             this.cmbProduct.FormattingEnabled = true;
             this.cmbProduct.ItemHeight = 23;
             this.cmbProduct.Items.AddRange(new object[] {
             "--Select--"});
-            this.cmbProduct.Location = new System.Drawing.Point(117, 28);
+            this.cmbProduct.Location = new System.Drawing.Point(118, 28);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(234, 29);
-            this.cmbProduct.Sorted = true;
             this.cmbProduct.TabIndex = 34;
             this.cmbProduct.UseSelectable = true;
             this.cmbProduct.Visible = false;
@@ -654,7 +667,7 @@ namespace WeightBridgeMandya.clientui
         private MetroFramework.Controls.MetroComboBox cmbProduct;
         private MetroFramework.Controls.MetroTextBox txtProduct;
         private MetroFramework.Controls.MetroLabel lblProductName;
-        private System.Windows.Forms.Button updateBtn;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.GroupBox gpProductCheckbox;
@@ -691,5 +704,6 @@ namespace WeightBridgeMandya.clientui
         private System.Windows.Forms.CheckBox chkTotalAsh;
         private System.Windows.Forms.CheckBox chkTotalSolids;
         private MetroFramework.Controls.MetroButton btnAdd;
+        private System.Windows.Forms.Button btnCancle;
     }
 }

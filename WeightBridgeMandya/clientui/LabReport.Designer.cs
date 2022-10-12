@@ -335,7 +335,7 @@ namespace WeightBridgeMandya.clientui
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(1150, 20);
+            this.btnClose.Location = new System.Drawing.Point(1135, 20);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(87, 30);
             this.btnClose.TabIndex = 32;
@@ -1630,6 +1630,7 @@ namespace WeightBridgeMandya.clientui
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "LabReport";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "Main Lab";

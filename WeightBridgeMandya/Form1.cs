@@ -32,14 +32,21 @@ namespace WeightBridgeMandya
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            LabProduct frmLabProduct = new LabProduct();
-            frmLabProduct.ShowDialog();
+            LabReport frmLabReport = new LabReport();
+            frmLabReport.Show();
+            this.Hide();
         }
 
         private void metroTile2_Click(object sender, EventArgs e)
         {
             LabProduct frmLabProduct = new LabProduct();
-            frmLabProduct.ShowDialog();
+            frmLabProduct.Show();
+            this.Hide();
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

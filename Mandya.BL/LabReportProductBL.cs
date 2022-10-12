@@ -200,7 +200,7 @@ namespace Mandya.BL
         {
             try
             {
-                pSqlParameter = new SqlParameter[36];
+                pSqlParameter = new SqlParameter[35];
 
                 pSqlParameter[0] = new SqlParameter("@ProductName", SqlDbType.VarChar);
                 pSqlParameter[0].Direction = ParameterDirection.Input;
@@ -342,10 +342,6 @@ namespace Mandya.BL
                 pSqlParameter[34].Direction = ParameterDirection.Input;
                 pSqlParameter[34].Value = objMainLabProductBO.ID;
 
-                pSqlParameter[35] = new SqlParameter("@DateTime", SqlDbType.DateTime);
-                pSqlParameter[35].Direction = ParameterDirection.Input;
-                pSqlParameter[35].Value = objMainLabProductBO.DateTime;
-
                 sSql = "usp_tbl_LabReportProduct_update";
 
                 int iResult = Database.ExecuteNonQuery(CommandType.StoredProcedure, sSql, pSqlParameter);
@@ -392,11 +388,11 @@ namespace Mandya.BL
                 pSqlParameter[0].Direction = ParameterDirection.Input;
                 pSqlParameter[0].Value = objMainLabProductBO.ID;
 
-                pSqlParameter[1] = new SqlParameter("@UserID", SqlDbType.Int);
+                pSqlParameter[1] = new SqlParameter("@LastModifiedByID", SqlDbType.Int);
                 pSqlParameter[1].Direction = ParameterDirection.Input;
                 pSqlParameter[1].Value = objMainLabProductBO.LastModifiedByID;
 
-                pSqlParameter[2] = new SqlParameter("@DateTime", SqlDbType.DateTime);
+                pSqlParameter[2] = new SqlParameter("@LastModifiedByDate", SqlDbType.DateTime);
                 pSqlParameter[2].Direction = ParameterDirection.Input;
                 pSqlParameter[2].Value = objMainLabProductBO.LastModifiedByDate;
 
@@ -463,6 +459,39 @@ namespace Mandya.BL
                 pSqlParameter[0].Value = intID;
 
                 strStoredProcName = "usp_tbl_LabReportProduct_Select_ByID";
+
+                dtFault = Database.ExecuteDataTable(CommandType.StoredProcedure, strStoredProcName, pSqlParameter);
+
+                ApplicationResult objResults = new ApplicationResult(dtFault);
+                objResults.Status = ApplicationResult.CommonStatusType.Success;
+                return objResults;
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Validate Product Name 
+        /// <summary>
+        /// Validate Product Name
+        /// Created By : Chirag
+        /// Modified By :
+        /// </summary>
+        public ApplicationResult Validate_ProductName(string productName)
+        {
+            try
+            {
+                DataTable dtFault = new DataTable();
+                pSqlParameter = new SqlParameter[1];
+
+                pSqlParameter[0] = new SqlParameter("@ProductName", SqlDbType.VarChar);
+                pSqlParameter[0].Direction = ParameterDirection.Input;
+                pSqlParameter[0].Value = productName;
+
+                strStoredProcName = "usp_tbl_Validate_ProductName";
 
                 dtFault = Database.ExecuteDataTable(CommandType.StoredProcedure, strStoredProcName, pSqlParameter);
 

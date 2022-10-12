@@ -54,7 +54,7 @@ namespace WeightBridgeMandya
             this.metroTile2.Name = "metroTile2";
             this.metroTile2.Size = new System.Drawing.Size(195, 112);
             this.metroTile2.TabIndex = 1;
-            this.metroTile2.Text = "New Product";
+            this.metroTile2.Text = "Add New Product";
             this.metroTile2.TileImageAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroTile2.TileTextFontSize = MetroFramework.MetroTileTextSize.Tall;
             this.metroTile2.TileTextFontWeight = MetroFramework.MetroTileTextWeight.Regular;
@@ -72,6 +72,7 @@ namespace WeightBridgeMandya
             this.Name = "Form1";
             this.Text = "Master";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 

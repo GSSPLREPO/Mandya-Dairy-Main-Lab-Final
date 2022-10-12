@@ -28,8 +28,8 @@ namespace WeightBridgeMandya.clientui
 
         private void LabReport_Load(object sender, EventArgs e)
         {
-            BindDropDownProduct();
-            BindData();
+           // BindDropDownProduct();
+            //BindData();
         }
         #endregion
 

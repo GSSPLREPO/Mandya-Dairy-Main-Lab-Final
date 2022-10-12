@@ -201,10 +201,10 @@ namespace WeightBridgeMandya.clientui
         #region AddProduct
         private void btnAddNewProduct(object sender, EventArgs e)
         {
-            LabProduct frmLabProduct = new LabProduct();
-            frmLabProduct.ShowDialog();
-            this.Activate();
-            bindMainLabAnalysis();
+            //LabProduct frmLabProduct = new LabProduct();
+            //frmLabProduct.ShowDialog();
+            //this.Activate();
+            //bindMainLabAnalysis();
         }
         #endregion
 
