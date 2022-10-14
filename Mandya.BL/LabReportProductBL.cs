@@ -419,13 +419,35 @@ namespace Mandya.BL
         }
         #endregion
 
-        #region DropDown data Bind
+        #region Bind Product Name Dropdown
 
         public ApplicationResult MainLabProduct_Select_Product()
         {
             try
             {
                 sSql = "usp_tbl_LabReportProduct_DropDownSelect";
+                DataTable dtFault = new DataTable();
+                dtFault = Database.ExecuteDataTable(CommandType.StoredProcedure, sSql, null);
+
+                ApplicationResult objResults = new ApplicationResult(dtFault);
+                objResults.Status = ApplicationResult.CommonStatusType.Success;
+                return objResults;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Bind Tank No Dropdown
+
+        public ApplicationResult TankDropdown()
+        {
+            try
+            {
+                sSql = "usp_tbl_TankDropdownSelect";
                 DataTable dtFault = new DataTable();
                 dtFault = Database.ExecuteDataTable(CommandType.StoredProcedure, sSql, null);
 

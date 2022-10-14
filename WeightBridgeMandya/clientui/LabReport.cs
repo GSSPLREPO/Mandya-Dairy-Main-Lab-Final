@@ -13,11 +13,14 @@ using Mandya.Common;
 using MetroFramework;
 using MetroFramework.Forms;
 using S7.Net;
+using log4net;
 
 namespace WeightBridgeMandya.clientui
 {
     public partial class LabReport : MetroForm
     {
+        public string mode=string.Empty;
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public LabReport()
         {
             InitializeComponent();
@@ -28,27 +31,81 @@ namespace WeightBridgeMandya.clientui
 
         private void LabReport_Load(object sender, EventArgs e)
         {
-           // BindDropDownProduct();
-            //BindData();
+            BindDropDownProduct();
+            bindTankDropdown();
+            mode = "Save";
         }
         #endregion
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            //int validate = 1;
-            //if (validateFields(validate))
-            //{
-            //    MetroMessageBox.Show(this, "Success", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //}
-            //else {
-            //    MetroMessageBox.Show(this, "Error", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+            try
+            {
+                MainLabAnalysisBL objMainLabAnalysisBL = new MainLabAnalysisBL();
+                MainLabAnalysisBO objMainLabAnalysisBO = new MainLabAnalysisBO();
+                ApplicationResult objResult = new ApplicationResult();
 
+                bool entryType = false;
+
+                if (rdoAuto.Checked == true)
+                {
+                    entryType = true;
+                }
+                else
+                {
+                    entryType = false;
+                }
+
+                if (mode == "Save")
+                {
+                    objMainLabAnalysisBO.DateTime = Convert.ToDateTime(dtDate.Text+" "+dtTime.Text);
+                    objMainLabAnalysisBO.TankID = Convert.ToInt32(cmbTankNo.SelectedValue);
+                    objMainLabAnalysisBO.BatchNo = txtBatchNo.Text.Trim();
+                    objMainLabAnalysisBO.ProductID = Convert.ToInt32(cmbProduct.SelectedValue);
+                    objMainLabAnalysisBO.IsAuto = entryType;
+                    objMainLabAnalysisBO.Temp = float.Parse(txtTemp.Text.Trim());
+                    objMainLabAnalysisBO.Acidity = float.Parse(txtAcidity.Text.Trim());
+                    objMainLabAnalysisBO.FAT = float.Parse(txtFat.Text.Trim());
+                    objMainLabAnalysisBO.SNF = float.Parse(txtSnf.Text.Trim());
+                    objMainLabAnalysisBO.Mbrt = float.Parse(txtMbrt.Text.Trim());
+                    objMainLabAnalysisBO.PhospharaseTest = Convert.ToInt32(cmbPhospharaseTest.SelectedValue);
+                    objMainLabAnalysisBO.Alcohol = float.Parse(txtAlcohol.Text.Trim());
+                    objMainLabAnalysisBO.Adultration = Convert.ToInt32(cmbAdultration.SelectedValue);
+                    objMainLabAnalysisBO.AerobicPlate = float.Parse(txtAerobicPlate.Text.Trim());
+                    objMainLabAnalysisBO.Coliform = float.Parse(txtColiform.Text.Trim());
+                    objMainLabAnalysisBO.SomaticCell = float.Parse(txtSomaticCell.Text.Trim());
+                    objMainLabAnalysisBO.CremingIndex = float.Parse(txtTemp.Text.Trim());
+                    objMainLabAnalysisBO.TotalSolid = float.Parse(txtTotalSolid.Text.Trim());
+                    objMainLabAnalysisBO.Ph = float.Parse(txtPh.Text.Trim());
+                    objMainLabAnalysisBO.Appearance = Convert.ToInt32(cmbAppearance.SelectedValue);
+                    objMainLabAnalysisBO.BodyAndTexture = Convert.ToInt32(cmbBodyAndTexture.SelectedValue);
+                    objMainLabAnalysisBO.Flavour = Convert.ToInt32(cmbFlavour.SelectedValue);
+                    objMainLabAnalysisBO.Moisture = float.Parse(txtMoisture.Text.Trim());
+                    objMainLabAnalysisBO.FFAOA = float.Parse(txtFFAOA.Text.Trim());
+                    objMainLabAnalysisBO.BRReading = float.Parse(txtBRReading.Text.Trim());
+                    objMainLabAnalysisBO.RMValue = float.Parse(txtRMValue.Text.Trim());
+                    objMainLabAnalysisBO.PValue = float.Parse(txtPValue.Text.Trim());
+                    objMainLabAnalysisBO.BauduinTest = Convert.ToInt32(cmbBauduinTest.SelectedValue);
+                    objMainLabAnalysisBO.EColi = float.Parse(txtEColi.Text.Trim());
+
+
+                    objResult = objMainLabAnalysisBL.MainLabAnalysis_Insert(objMainLabAnalysisBO);
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                log.Error("Save Button Click : " + ex.ToString());
+            }
+           
         }
 
         #region Close Button Click Event
         private void btnClose_Click(object sender, EventArgs e)
         {
+            Form1 frmMainForm = new Form1();
+            frmMainForm.Show();
             this.Close();
         }
         #endregion
@@ -1043,7 +1100,6 @@ namespace WeightBridgeMandya.clientui
 
         private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             BindDataToBox(Convert.ToInt32(cmbProduct.SelectedValue));
         }
 
@@ -1171,23 +1227,66 @@ namespace WeightBridgeMandya.clientui
         }
         #endregion
 
-        #region on Bind Product
+        #region Bind Product Name Dropdown
 
         private void BindDropDownProduct()
         {
-            MainLabProductBO objMainLabProductBO = new MainLabProductBO();
-            LabReportProductBL objLabReportProductBL = new LabReportProductBL();
-            ApplicationResult objResult = new ApplicationResult();
+            try
+            {
+                MainLabProductBO objMainLabProductBO = new MainLabProductBO();
+                LabReportProductBL objLabReportProductBL = new LabReportProductBL();
+                ApplicationResult objResult = new ApplicationResult();
 
-            objResult = objLabReportProductBL.MainLabProduct_Select_Product();
+                objResult = objLabReportProductBL.MainLabProduct_Select_Product();
 
+                if (objResult.ResultDt.Rows.Count > 0)
+                {
+                    cmbProduct.DataSource = objResult.ResultDt;
+                    cmbProduct.ValueMember = objResult.ResultDt.Columns["ID"].ToString();
+                    cmbProduct.DisplayMember = objResult.ResultDt.Columns["ProductName"].ToString();
+                }
+                else
+                {
+                    cmbProduct.Items.Insert(0, "--Select--");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("BindProduct Dropdown :" + ex.ToString());
+            }
             
-            cmbProduct.DataSource = objResult.ResultDt;
-          
-            cmbProduct.ValueMember = objResult.ResultDt.Columns["ProductID"].ToString();
-            cmbProduct.DisplayMember = objResult.ResultDt.Columns["ProductName"].ToString();
-
         }
+
+        #endregion
+
+        #region Bind Tank No Dropdown
+        private void bindTankDropdown()
+        {
+            try
+            {
+                MainLabProductBO objMainLabProductBO = new MainLabProductBO();
+                LabReportProductBL objLabReportProductBL = new LabReportProductBL();
+                ApplicationResult objResult = new ApplicationResult();
+
+                objResult = objLabReportProductBL.TankDropdown();
+
+                if (objResult.ResultDt.Rows.Count > 0)
+                {
+                    cmbTankNo.DataSource = objResult.ResultDt;
+                    cmbTankNo.ValueMember = objResult.ResultDt.Columns["TankID"].ToString();
+                    cmbTankNo.DisplayMember = objResult.ResultDt.Columns["TankName"].ToString();
+                }
+                else
+                {
+                    cmbTankNo.Items.Insert(0, "--Select--");
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error("bindTank Dropdown :" + ex.ToString());
+            }
+        }
+        #endregion
 
         #region BindRow
         private void BindData()
@@ -1211,7 +1310,7 @@ namespace WeightBridgeMandya.clientui
         }
         #endregion
 
-        #endregion
+        
 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
@@ -1245,6 +1344,11 @@ namespace WeightBridgeMandya.clientui
         private void groupBox2_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            bindTankDropdown();
         }
     }
 }
