@@ -87,9 +87,26 @@ namespace WeightBridgeMandya.clientui
                     objMainLabAnalysisBO.PValue = float.Parse(txtPValue.Text.Trim());
                     objMainLabAnalysisBO.BauduinTest = Convert.ToInt32(cmbBauduinTest.SelectedValue);
                     objMainLabAnalysisBO.EColi = float.Parse(txtEColi.Text.Trim());
-
+                    objMainLabAnalysisBO.SucrosePercent = float.Parse(txtSucrosePercent.Text.Trim());
+                    objMainLabAnalysisBO.InsolubilityIndex = float.Parse(txtInsolubilityIndex.Text.Trim());
+                    objMainLabAnalysisBO.Protein = float.Parse(txtProtein.Text.Trim());
+                    objMainLabAnalysisBO.TotalAsh = float.Parse(txtTotalAsh.Text.Trim());
+                    objMainLabAnalysisBO.ScorchedParticle = float.Parse(txtScorchedParticle.Text.Trim());
+                    objMainLabAnalysisBO.BulkDensity = float.Parse(txtBulkDensity.Text.Trim());
+                    objMainLabAnalysisBO.Wettability = float.Parse(txtWettability.Text.Trim());
+                    objMainLabAnalysisBO.CreatedByID = Convert.ToInt32(Program.intUserId.ToString());
+                    objMainLabAnalysisBO.CreatedByDate = Convert.ToDateTime(DateTime.Now.ToString());
 
                     objResult = objMainLabAnalysisBL.MainLabAnalysis_Insert(objMainLabAnalysisBO);
+                    if (objResult != null)
+                    {
+                        if (objResult.Status == ApplicationResult.CommonStatusType.Success)
+                        {
+                            MetroMessageBox.Show(this, "Record Saved Successfully.", "Lab",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                    }
 
                 }
 
@@ -1114,110 +1131,42 @@ namespace WeightBridgeMandya.clientui
             objResult = objLabReportProductBL.MainLabProduct_SelectProduct(productID);
             try
             {
-                if (objResult.ResultDt != null)
+                if (objResult.ResultDt.Rows.Count>0)
                 {
-                    //txtTEMP.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TEMP]);
-                    //EnabledChanged(txtTEMP);
+                    txtTemp.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TEMP]);
+                    txtAcidity.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ACIDITY]);
+                    txtFat.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FAT]);
+                    txtSnf.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SNF]);
+                    txtMbrt.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_MBRT]);
+                    cmbAdultration.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ADULTRATION]);
+                    txtAerobicPlate.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_AEROBICPLATE]);
+                    cmbPhospharaseTest.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PHOSPHARASETEST]);
+                    txtAlcohol.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ALCOHOL]);
+                    txtColiform.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_COLIFORM]);
+                    txtSomaticCell.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SOMATICCELL]);
+                    txtCremingIndex.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_CREMINGINDEX]);
+                    txtTotalSolid.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TOTALSOLID]);
+                    cmbAppearance.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_APPEARANCE]);
+                    txtPh.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PH]);
+                    cmbFlavour.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FLAVOUR]);
+                    txtMoisture.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_MOISTURE]);
+                    txtFFAOA.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FFAOA]);
+                    cmbBodyAndTexture.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BODYANDTEXTURE]);
+                    txtScorchedParticle.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SCORCHEDPARTICLE]);
+                    txtRMValue.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_RMVALUE]);
+                    txtPValue.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PVALUE]);
+                    cmbBauduinTest.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BAUDUINTEST]);
+                    txtSucrosePercent.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SUCROSEPERCENT]);
+                    txtProtein.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PROTEIN]);
+                    txtInsolubilityIndex.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_INSOLUBILITYINDEX]);
+                    txtTotalAsh.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TOTALASH]);
+                    txtWettability.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_WETTABILITY]);
+                    txtEColi.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ECOLI]);
+                    txtBRReading.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BRREADING]);
+                    txtBulkDensity.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BULKDENSITY]);
                    
-                    //txtAcidity.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ACIDITY]);
-                    //EnabledChanged(txtAcidity);
-                    //txtFat.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FAT]);
-                    //EnabledChanged(txtFat);
-                    //txtSNF.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SNF]);
-                    //EnabledChanged(txtSNF);
-                    //txtMBRT.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_MBRT]);
-                    //EnabledChanged(txtMBRT);
-                    //cPhosphateTest.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PHOSPHARASETEST]);
-                    //EnabledChangedDd(cPhosphateTest);
-                    //txtAlcohol.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ALCOHOL]);
-                    //EnabledChanged(txtAlcohol);
-                    //Adultration.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ADULTRATION]);
-                    //EnabledChangedDd(Adultration);
-                    //txtAreobicPlateCountML.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_AEROBICPLATE]);
-                    //EnabledChanged(txtAreobicPlateCountML);
-                    //txtColiformML.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_COLIFORM]);
-                    //EnabledChanged(txtColiformML);
-                    //txtYeastMoulds.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_YESTANDMOULDS]);
-                    //EnabledChanged(txtYeastMoulds);
-                    //txtSomaticCellCount.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SOMATICCELL]);
-                    //EnabledChanged(txtSomaticCellCount);
-                    //txtTotalSolids.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TOTALSOLIDS]);
-                    //EnabledChanged(txtTotalSolids);
-                    //txtApperance.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_APPERARANCE]);
-                    //EnabledChanged(txtApperance);
-                    //txtFatbyMass.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FATBYMASS]);
-                    //EnabledChanged(txtFatbyMass);
-                    //txtMoistureBymass.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_MOISTUREBYMASS]);
-                    //EnabledChanged(txtMoistureBymass);
-                    //txtCurbBymass.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_CURNBYMASS]);
-                    //EnabledChanged(txtCurbBymass);
-                    //txtAciditybyMass.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ACIDITYBYMASS]);
-                    //EnabledChanged(txtAciditybyMass);
-                    //txtAerobicPlateCountg.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_AEROBICPLATEBYG]);
-                    //EnabledChanged(txtAerobicPlateCountg);
-                    //txtColiformCountg.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_COLIFORM]);
-                    //EnabledChanged(txtColiformCountg);
-                    //txtYeastMouldsG.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_YEASTMOULDSPERG]);
-                    //EnabledChanged(txtYeastMouldsG);
-                    //cEcoli.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ECOLIG]);
-                    //EnabledChangedDd(cEcoli);
-                    //txtQuality.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_QUANTITY]);
-                    //EnabledChanged(txtQuality);
-                    //txtBodyTexture.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BODYANDTEXTURE]);
-                    //EnabledChanged(txtBodyTexture);
-                    //txtFlavour.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FLAVOUR]);
-                    //EnabledChanged(txtFlavour);
-                    //txtMoisture.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_MOISTURE]);
-                    //EnabledChanged(txtMoisture);
-                    //txtFFAOA.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FFAOA]);
-                    //EnabledChanged(txtFFAOA);
-                    //txtBRReading.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BRREADING]);
-                    //EnabledChanged(txtBRReading);
-                    //txtRMvalue.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_RMVALUE]);
-                    //EnabledChanged(txtRMvalue);
-                    //txtPValue.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PVALUE]);
-                    //EnabledChanged(txtPValue);
-                    //cBaudiniTest.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BAUDOUINTEST]);
-                    //EnabledChangedDd(cBaudiniTest);
-                    //txtFatonDryMaterBasics.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FATONDRYMATTERBASSIS]);
-                    //EnabledChanged(txtFatonDryMaterBasics);
-                    //txtFatbyWeight.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FATBYWEIGHT]);
-                    //EnabledChanged(txtFatbyWeight);
-                    //txtSucroseByWeight.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SUCROSEBYWEIGHT]);
-                    //EnabledChanged(txtSucroseByWeight);
-                    //txtInsolubilityIndexProtein.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_INSOLUBILITYINDEXPROTEIN]);
-                    //EnabledChanged(txtInsolubilityIndexProtein);
-                    //txtTotalAshDryBasis.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TOTALASHDRYBASISBYMASS]);
-                    //EnabledChanged(txtTotalAshDryBasis);
-                    //txtAcidityNaOH.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ACIDITYOGNAOH]);
-                    //EnabledChanged(txtAcidityNaOH);
-                    //txtBulkDensity.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BULKDENSITY]);
-                    //EnabledChanged(txtBulkDensity);
-                    //Adultration.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PRESERVATIVE]);
-                    //EnabledChangedDd(Adultration);
-                    //txtpH.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PH]);
-                    //EnabledChanged(txtpH);
-                    //txtCreamingIndex.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_CREAMINGINDEX]);
-                    //EnabledChanged(txtCreamingIndex);
-                    //txtAerobicSporeCountML.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_AEROBICSPOREML]);
-                    //EnabledChanged(txtAerobicSporeCountML);
-                    //txtScoechedParticles.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SCORCHEDPARTICLE]);
-                    //EnabledChanged(txtScoechedParticles);
                 }
-                int n = objResult.ResultDt.Columns.Count;
-                TextBox[] textBox = new TextBox[n];
-                Label[] label = new Label[n];
-
-                for(int i = 0; i < n; i++)
-                {
-
-                    var n1 = i;
-                    textBox[i] = new TextBox();
-                    textBox[i].Name = objResult.ResultDt.Columns[i].ToString();
-
-                }
-
-
+               
             }
             catch (Exception ex)
             {
