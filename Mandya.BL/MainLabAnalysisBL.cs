@@ -184,7 +184,7 @@ namespace Mandya.BL
                 pSqlParameter[37].Value = objMainLabAnalysisBO.CreatedByDate;
 
 
-                sSql = "usp_tbl_MainLabAnalysis_Insert";
+                sSql = "usp_tbl_MainLabAnalysis_Insert_New";
 
                 int iResult = Database.ExecuteNonQuery(CommandType.StoredProcedure, sSql, pSqlParameter);
 

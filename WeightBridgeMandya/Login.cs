@@ -96,7 +96,7 @@ namespace WeightBridgeMandya
             }
             catch (Exception ex)
             {
-                MetroMessageBox.Show(this,"Oops! There is some technical issue. Please Contact to your administrator." + ex,"Lab",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MetroMessageBox.Show(this,"Oops! There is some technical issue. Please Contact to your administrator.");
                 log.Error("error", ex);
             }
         }

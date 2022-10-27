@@ -21,22 +21,74 @@ namespace WeightBridgeMandya.clientui
     {
         public string mode=string.Empty;
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         public LabReport()
         {
             InitializeComponent();
-            
         }
 
         #region Form Load Event
 
         private void LabReport_Load(object sender, EventArgs e)
         {
+           
             BindDropDownProduct();
             bindTankDropdown();
+            BindCommonDropdown();
+            setDefaultValue();
             mode = "Save";
+            rdoAuto.Checked = true;
         }
         #endregion
 
+        #region Set Default Value in Controls
+        private void setDefaultValue()
+        {
+            dtDate.Text = DateTime.Now.ToString("dd-MM-yyyy");
+            dtTime.Text = DateTime.Now.ToString("HH:mm:ss");
+            bindTankDropdown();
+            cmbProduct.SelectedIndex = 0;
+            txtBatchNo.Text = "";
+            rdoAuto.Checked = true;
+            txtTemp.Text = "0";
+            txtAcidity.Text = "0";
+            txtFat.Text = "0";
+            txtSnf.Text = "0";
+            txtMbrt.Text = "0";
+            cmbAdultration.SelectedIndex = 0;
+            txtAerobicPlate.Text = "0";
+            cmbPhospharaseTest.SelectedIndex = 0;
+            txtAlcohol.Text = "0";
+            txtColiform.Text = "0";
+            txtSomaticCell.Text = "0";
+            txtCremingIndex.Text = "0";
+            txtTotalSolid.Text = "0";
+            txtBulkDensity.Text = "0";
+            txtPh.Text = "0";
+            txtBRReading.Text = "0";
+            txtMoisture.Text = "0";
+            txtFFAOA.Text = "0";
+            txtProtein.Text = "0";
+            txtScorchedParticle.Text = "0";
+            txtRMValue.Text = "0";
+            txtPValue.Text = "0";
+            cmbBauduinTest.SelectedIndex = 0;
+            txtSucrosePercent.Text = "0";
+            txtEColi.Text = "0";
+            txtInsolubilityIndex.Text = "0";
+            txtInsolubilityIndex.Text = "0";
+            txtTotalAsh.Text = "0";
+            txtWettability.Text = "0";
+            cmbAppearance.SelectedIndex = 0;
+            cmbBodyAndTexture.SelectedIndex = 0;
+            cmbFlavour.SelectedIndex = 0;
+            txtRemarks.Text = "";
+
+        }
+
+        #endregion
+
+        #region Save Button Click Event
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -106,8 +158,13 @@ namespace WeightBridgeMandya.clientui
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         }
+                        else
+                        {
+                            MetroMessageBox.Show(this, "Error Data Not Saved.", "Lab",
+                               MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
-
+                    
                 }
 
             }
@@ -117,6 +174,7 @@ namespace WeightBridgeMandya.clientui
             }
            
         }
+        #endregion
 
         #region Close Button Click Event
         private void btnClose_Click(object sender, EventArgs e)
@@ -1115,12 +1173,13 @@ namespace WeightBridgeMandya.clientui
         }*/
         #endregion
 
+        #region Product ComboBox Selected Index Change Event 
         private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
             BindDataToBox(Convert.ToInt32(cmbProduct.SelectedValue));
         }
 
-        #region Updating Check Box
+        
         private void BindDataToBox(int productID)
         {
 
@@ -1134,43 +1193,73 @@ namespace WeightBridgeMandya.clientui
                 if (objResult.ResultDt.Rows.Count>0)
                 {
                     txtTemp.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TEMP]);
+                    EnabledChanged(txtTemp);
                     txtAcidity.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ACIDITY]);
+                    EnabledChanged(txtAcidity);
                     txtFat.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FAT]);
+                    EnabledChanged(txtFat);
                     txtSnf.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SNF]);
+                    EnabledChanged(txtSnf);
                     txtMbrt.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_MBRT]);
+                    EnabledChanged(txtMbrt);
                     cmbAdultration.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ADULTRATION]);
+                    EnabledChangedDd(cmbAdultration);
                     txtAerobicPlate.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_AEROBICPLATE]);
+                    EnabledChanged(txtAerobicPlate);
                     cmbPhospharaseTest.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PHOSPHARASETEST]);
+                    EnabledChangedDd(cmbPhospharaseTest);
                     txtAlcohol.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ALCOHOL]);
+                    EnabledChanged(txtAlcohol);
                     txtColiform.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_COLIFORM]);
+                    EnabledChanged(txtColiform);
                     txtSomaticCell.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SOMATICCELL]);
+                    EnabledChanged(txtSomaticCell);
                     txtCremingIndex.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_CREMINGINDEX]);
+                    EnabledChanged(txtCremingIndex);
                     txtTotalSolid.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TOTALSOLID]);
+                    EnabledChanged(txtTotalSolid);
                     cmbAppearance.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_APPEARANCE]);
+                    EnabledChangedDd(cmbAppearance);
                     txtPh.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PH]);
+                    EnabledChanged(txtPh);
                     cmbFlavour.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FLAVOUR]);
+                    EnabledChangedDd(cmbFlavour);
                     txtMoisture.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_MOISTURE]);
+                    EnabledChanged(txtMoisture);
                     txtFFAOA.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FFAOA]);
+                    EnabledChanged(txtFFAOA);
                     cmbBodyAndTexture.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BODYANDTEXTURE]);
+                    EnabledChangedDd(cmbBodyAndTexture);
                     txtScorchedParticle.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SCORCHEDPARTICLE]);
+                    EnabledChanged(txtScorchedParticle);
                     txtRMValue.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_RMVALUE]);
+                    EnabledChanged(txtRMValue);
                     txtPValue.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PVALUE]);
+                    EnabledChanged(txtPValue);
                     cmbBauduinTest.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BAUDUINTEST]);
+                    EnabledChangedDd(cmbBauduinTest);
                     txtSucrosePercent.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SUCROSEPERCENT]);
+                    EnabledChanged(txtSucrosePercent);
                     txtProtein.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_PROTEIN]);
+                    EnabledChanged(txtProtein);
                     txtInsolubilityIndex.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_INSOLUBILITYINDEX]);
+                    EnabledChanged(txtInsolubilityIndex);
                     txtTotalAsh.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TOTALASH]);
+                    EnabledChanged(txtTotalAsh);
                     txtWettability.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_WETTABILITY]);
+                    EnabledChanged(txtWettability);
                     txtEColi.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ECOLI]);
+                    EnabledChanged(txtEColi);
                     txtBRReading.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BRREADING]);
+                    EnabledChanged(txtBRReading);
                     txtBulkDensity.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_BULKDENSITY]);
-                   
+                    EnabledChanged(txtBulkDensity);
                 }
                
             }
             catch (Exception ex)
             {
-                throw ex;
+                log.Error("Product Dropdown Selected Index Change Event :" + ex.ToString());
             }
 
         }
@@ -1237,67 +1326,171 @@ namespace WeightBridgeMandya.clientui
         }
         #endregion
 
-        #region BindRow
-        private void BindData()
+        #region Bind Common Data Dropdown
+        private void BindCommonDropdown()
         {
+            try
+            {
+                MainLabProductBO objMainLabProductBO = new MainLabProductBO();
+                LabReportProductBL objLabReportProductBL = new LabReportProductBL();
+                ApplicationResult objResult1 = new ApplicationResult();
+                ApplicationResult objResult2 = new ApplicationResult();
+                ApplicationResult objResult3 = new ApplicationResult();
+                ApplicationResult objResult4 = new ApplicationResult();
 
-            //cPhosphateTest.Items.Insert(0, "+VE");
-            //cPhosphateTest.Items.Insert(1, "-VE");
 
-            //cPreservative.Items.Insert(0, "+VE");
-            //cPreservative.Items.Insert(1, "-VE");
+                /*  objResult1 for Common Data Dropdown Bind */
+                objResult1 = objLabReportProductBL.bindCommonValueDropdown();
+                if (objResult1.ResultDt.Rows.Count > 0)
+                {
+                    cmbPhospharaseTest.DataSource = objResult1.ResultDt;
+                    cmbPhospharaseTest.ValueMember = objResult1.ResultDt.Columns["ID"].ToString();
+                    cmbPhospharaseTest.DisplayMember = objResult1.ResultDt.Columns["Name"].ToString();
+                    cmbPhospharaseTest.SelectedIndex = 0;
 
-            //Adultration.Items.Insert(0, "+VE");
-            //Adultration.Items.Insert(1, "-VE");
+                    cmbAdultration.DataSource = objResult1.ResultDt;
+                    cmbAdultration.ValueMember = objResult1.ResultDt.Columns["ID"].ToString();
+                    cmbAdultration.DisplayMember = objResult1.ResultDt.Columns["Name"].ToString();
+                    cmbAdultration.SelectedIndex = 0;
 
-            //cEcoli.Items.Insert(0, "+VE");
-            //cEcoli.Items.Insert(1, "-VE");
+                    cmbBauduinTest.DataSource = objResult1.ResultDt;
+                    cmbBauduinTest.ValueMember = objResult1.ResultDt.Columns["ID"].ToString();
+                    cmbBauduinTest.DisplayMember = objResult1.ResultDt.Columns["Name"].ToString();
+                    cmbBauduinTest.SelectedIndex = 0;
+                }
+                else
+                {
+                    cmbPhospharaseTest.Items.Insert(0, "--Select--");
+                    cmbPhospharaseTest.SelectedIndex = 0;
 
-            //cBaudiniTest.Items.Insert(0, "+VE");
-            //cBaudiniTest.Items.Insert(1, "-VE");
+                    cmbAdultration.Items.Insert(0, "--Select--");
+                    cmbAdultration.SelectedIndex = 0;
+
+                    cmbBauduinTest.Items.Insert(0, "--Select--");
+                    cmbBauduinTest.SelectedIndex = 0;
+                }
+
+                /* objResult2 for BodyAndTexture Dropdown Bind */
+                objResult2 = objLabReportProductBL.bindBodyAndTextureDropdown();
+
+                if (objResult2.ResultDt.Rows.Count > 0)
+                {
+                    cmbBodyAndTexture.DataSource = objResult2.ResultDt;
+                    cmbBodyAndTexture.ValueMember = objResult2.ResultDt.Columns["ID"].ToString();
+                    cmbBodyAndTexture.DisplayMember = objResult2.ResultDt.Columns["Name"].ToString();
+                    cmbBodyAndTexture.SelectedIndex = 0;
+                }
+                else
+                {
+                    cmbBodyAndTexture.Items.Insert(0, "--Select--");
+                    cmbBodyAndTexture.SelectedIndex = 0;
+                }
+
+                /* objResult3 for Appearance Dropdown Bind */
+                objResult3 = objLabReportProductBL.bindAppearanceDropdown();
+
+                if (objResult3.ResultDt.Rows.Count > 0)
+                {
+                    cmbAppearance.DataSource = objResult3.ResultDt;
+                    cmbAppearance.ValueMember = objResult3.ResultDt.Columns["ID"].ToString();
+                    cmbAppearance.DisplayMember = objResult3.ResultDt.Columns["Name"].ToString();
+                    cmbAppearance.SelectedIndex = 0;
+                }
+                else
+                {
+                    cmbAppearance.Items.Insert(0, "--Select--");
+                    cmbAppearance.SelectedIndex = 0;
+                }
+
+                /* objResult4 for Flavour Dropdown Bind */
+                objResult4 = objLabReportProductBL.bindFlavourDropdown();
+
+                if (objResult4.ResultDt.Rows.Count > 0)
+                {
+                    cmbFlavour.DataSource = objResult4.ResultDt;
+                    cmbFlavour.ValueMember = objResult4.ResultDt.Columns["ID"].ToString();
+                    cmbFlavour.DisplayMember = objResult4.ResultDt.Columns["Name"].ToString();
+                    cmbFlavour.SelectedIndex = 0;
+                }
+                else
+                {
+                    cmbFlavour.Items.Insert(0, "--Select--");
+                    cmbFlavour.SelectedIndex = 0;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                log.Error("Bind Common Dropdown"+ex.ToString());
+            }
 
         }
         #endregion
 
-        
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        #region Enabled True or False Control Base on Product Selection
+        private new void  EnabledChanged(MetroFramework.Controls.MetroTextBox textBox)
         {
-
-        }
-
-        private new void EnabledChanged(MetroFramework.Controls.MetroTextBox box)
-        {
-            if (box.Enabled == false)
+            if (textBox.Enabled == true)
             {
-                box.BackColor = Color.LightGray;
+                textBox.BackColor = Color.White;
+                
             }
             else
             {
-                box.BackColor = Color.White; //same here with the color
+                textBox.BackColor = Color.LightGray; //same here with the color
+              
             }
         }
 
-        private void EnabledChangedDd(MetroFramework.Controls.MetroComboBox box)
+        private void EnabledChangedDd(MetroFramework.Controls.MetroComboBox comboBox)
         {
-            if (box.Enabled == false)
+            if (comboBox.Enabled == true)
             {
-                box.BackColor = Color.LightGray;
+                comboBox.BackColor = Color.White;
+                
             }
             else
             {
-                box.BackColor = Color.White; //same here with the color
+                comboBox.BackColor = Color.LightGray; //same here with the color
+               
             }
         }
+        #endregion
 
-        private void groupBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+        #region Refresh Tank With Latest Value on Refresh Button click Event
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             bindTankDropdown();
         }
+        #endregion
+
+        #region Radio Button Auto, Manual Checked Change Event
+        private void rdoAuto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoAuto.Checked == true)
+            {
+                txtFat.Enabled = false;
+                txtSnf.Enabled = false;
+                btnCapture.Enabled = true;
+            }
+        }
+
+        private void rdoManual_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoManual.Checked == true)
+            {
+                txtFat.Enabled = true;
+                txtSnf.Enabled = true;
+                btnCapture.Enabled = false;
+            }
+        }
+        #endregion
+
+        #region Capture Button click Event
+        private void btnCapture_Click(object sender, EventArgs e)
+        {
+
+        }
+        #endregion
     }
 }

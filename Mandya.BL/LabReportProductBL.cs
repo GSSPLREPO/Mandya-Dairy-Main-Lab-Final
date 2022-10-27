@@ -441,6 +441,28 @@ namespace Mandya.BL
 
         #endregion
 
+        #region Bind Common Value Dropdown
+
+        public ApplicationResult bindCommonValueDropdown()
+        {
+            try
+            {
+                sSql = "usp_tbl_bindCommonValueDropdown";
+                DataTable dtFault = new DataTable();
+                dtFault = Database.ExecuteDataTable(CommandType.StoredProcedure, sSql, null);
+
+                ApplicationResult objResults = new ApplicationResult(dtFault);
+                objResults.Status = ApplicationResult.CommonStatusType.Success;
+                return objResults;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
         #region Bind Tank No Dropdown
 
         public ApplicationResult TankDropdown()
@@ -528,7 +550,72 @@ namespace Mandya.BL
             }
         }
         #endregion
-    }
 
+        #region Bind BodyAndTexture Dropdown
+
+        public ApplicationResult bindBodyAndTextureDropdown()
+        {
+            try
+            {
+                sSql = "usp_tbl_bindBodyAndTextureDropdown";
+                DataTable dtFault = new DataTable();
+                dtFault = Database.ExecuteDataTable(CommandType.StoredProcedure, sSql, null);
+
+                ApplicationResult objResults = new ApplicationResult(dtFault);
+                objResults.Status = ApplicationResult.CommonStatusType.Success;
+                return objResults;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Bind Appearance Dropdown
+
+        public ApplicationResult bindAppearanceDropdown()
+        {
+            try
+            {
+                sSql = "usp_tbl_bindAppearanceDropdown";
+                DataTable dtResult = new DataTable();
+                dtResult = Database.ExecuteDataTable(CommandType.StoredProcedure, sSql, null);
+
+                ApplicationResult objResults = new ApplicationResult(dtResult);
+                objResults.Status = ApplicationResult.CommonStatusType.Success;
+                return objResults;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region Bind Flavour Dropdown
+
+        public ApplicationResult bindFlavourDropdown()
+        {
+            try
+            {
+                sSql = "usp_tbl_bindFlavourDropdown";
+                DataTable dtResult = new DataTable();
+                dtResult = Database.ExecuteDataTable(CommandType.StoredProcedure, sSql, null);
+
+                ApplicationResult objResults = new ApplicationResult(dtResult);
+                objResults.Status = ApplicationResult.CommonStatusType.Success;
+                return objResults;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+    }
 
 }

@@ -52,6 +52,7 @@ namespace WeightBridgeMandya.clientui
             this.btnRefresh = new MetroFramework.Controls.MetroButton();
             this.btnClose = new MetroFramework.Controls.MetroButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbBauduinTest = new MetroFramework.Controls.MetroComboBox();
             this.txtRemarks = new MetroFramework.Controls.MetroTextBox();
             this.lblRemarks = new MetroFramework.Controls.MetroLabel();
             this.txtWettability = new MetroFramework.Controls.MetroTextBox();
@@ -115,7 +116,7 @@ namespace WeightBridgeMandya.clientui
             this.txtTemp = new MetroFramework.Controls.MetroTextBox();
             this.cmbPhospharaseTest = new MetroFramework.Controls.MetroComboBox();
             this.lblTemp = new MetroFramework.Controls.MetroLabel();
-            this.cmbBauduinTest = new MetroFramework.Controls.MetroComboBox();
+            this.btnCapture = new MetroFramework.Controls.MetroButton();
             this.pnlEntryType.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -150,6 +151,7 @@ namespace WeightBridgeMandya.clientui
             this.rdoManual.TabIndex = 55;
             this.rdoManual.Text = "Manual";
             this.rdoManual.UseSelectable = true;
+            this.rdoManual.CheckedChanged += new System.EventHandler(this.rdoManual_CheckedChanged);
             // 
             // rdoAuto
             // 
@@ -160,14 +162,15 @@ namespace WeightBridgeMandya.clientui
             this.rdoAuto.TabIndex = 54;
             this.rdoAuto.Text = "Auto";
             this.rdoAuto.UseSelectable = true;
+            this.rdoAuto.CheckedChanged += new System.EventHandler(this.rdoAuto_CheckedChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnClear);
             this.groupBox3.Controls.Add(this.btnSave);
-            this.groupBox3.Location = new System.Drawing.Point(19, 413);
+            this.groupBox3.Location = new System.Drawing.Point(19, 486);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1224, 64);
+            this.groupBox3.Size = new System.Drawing.Size(1224, 61);
             this.groupBox3.TabIndex = 35;
             this.groupBox3.TabStop = false;
             // 
@@ -329,10 +332,9 @@ namespace WeightBridgeMandya.clientui
             this.groupBox1.Controls.Add(this.txtBatchNo);
             this.groupBox1.Location = new System.Drawing.Point(19, 56);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1224, 102);
+            this.groupBox1.Size = new System.Drawing.Size(1224, 101);
             this.groupBox1.TabIndex = 33;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // btnRefresh
             // 
@@ -357,6 +359,7 @@ namespace WeightBridgeMandya.clientui
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnCapture);
             this.groupBox2.Controls.Add(this.cmbBauduinTest);
             this.groupBox2.Controls.Add(this.txtRemarks);
             this.groupBox2.Controls.Add(this.lblRemarks);
@@ -421,13 +424,22 @@ namespace WeightBridgeMandya.clientui
             this.groupBox2.Controls.Add(this.txtTemp);
             this.groupBox2.Controls.Add(this.cmbPhospharaseTest);
             this.groupBox2.Controls.Add(this.lblTemp);
-            this.groupBox2.Location = new System.Drawing.Point(19, 164);
+            this.groupBox2.Location = new System.Drawing.Point(19, 158);
             this.groupBox2.MinimumSize = new System.Drawing.Size(100, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1224, 243);
+            this.groupBox2.Size = new System.Drawing.Size(1224, 325);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // cmbBauduinTest
+            // 
+            this.cmbBauduinTest.FormattingEnabled = true;
+            this.cmbBauduinTest.ItemHeight = 23;
+            this.cmbBauduinTest.Location = new System.Drawing.Point(899, 163);
+            this.cmbBauduinTest.Name = "cmbBauduinTest";
+            this.cmbBauduinTest.Size = new System.Drawing.Size(100, 29);
+            this.cmbBauduinTest.TabIndex = 26;
+            this.cmbBauduinTest.UseSelectable = true;
             // 
             // txtRemarks
             // 
@@ -445,9 +457,10 @@ namespace WeightBridgeMandya.clientui
             this.txtRemarks.CustomButton.Visible = false;
             this.txtRemarks.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtRemarks.Lines = new string[0];
-            this.txtRemarks.Location = new System.Drawing.Point(332, 195);
+            this.txtRemarks.Location = new System.Drawing.Point(102, 268);
             this.txtRemarks.MaxLength = 500;
             this.txtRemarks.MinimumSize = new System.Drawing.Size(100, 0);
+            this.txtRemarks.Multiline = true;
             this.txtRemarks.Name = "txtRemarks";
             this.txtRemarks.PasswordChar = '\0';
             this.txtRemarks.ScrollBars = System.Windows.Forms.ScrollBars.None;
@@ -455,7 +468,7 @@ namespace WeightBridgeMandya.clientui
             this.txtRemarks.SelectionLength = 0;
             this.txtRemarks.SelectionStart = 0;
             this.txtRemarks.ShortcutsEnabled = true;
-            this.txtRemarks.Size = new System.Drawing.Size(884, 29);
+            this.txtRemarks.Size = new System.Drawing.Size(699, 51);
             this.txtRemarks.TabIndex = 35;
             this.txtRemarks.UseSelectable = true;
             this.txtRemarks.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -464,7 +477,7 @@ namespace WeightBridgeMandya.clientui
             // lblRemarks
             // 
             this.lblRemarks.AutoSize = true;
-            this.lblRemarks.Location = new System.Drawing.Point(261, 198);
+            this.lblRemarks.Location = new System.Drawing.Point(31, 271);
             this.lblRemarks.Name = "lblRemarks";
             this.lblRemarks.Size = new System.Drawing.Size(66, 19);
             this.lblRemarks.TabIndex = 113;
@@ -486,7 +499,7 @@ namespace WeightBridgeMandya.clientui
             this.txtWettability.CustomButton.Visible = false;
             this.txtWettability.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtWettability.Lines = new string[0];
-            this.txtWettability.Location = new System.Drawing.Point(701, 156);
+            this.txtWettability.Location = new System.Drawing.Point(701, 198);
             this.txtWettability.MaxLength = 5;
             this.txtWettability.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtWettability.Name = "txtWettability";
@@ -505,7 +518,7 @@ namespace WeightBridgeMandya.clientui
             // lblWettability
             // 
             this.lblWettability.AutoSize = true;
-            this.lblWettability.Location = new System.Drawing.Point(619, 160);
+            this.lblWettability.Location = new System.Drawing.Point(619, 202);
             this.lblWettability.Name = "lblWettability";
             this.lblWettability.Size = new System.Drawing.Size(77, 19);
             this.lblWettability.TabIndex = 111;
@@ -527,7 +540,7 @@ namespace WeightBridgeMandya.clientui
             this.txtBulkDensity.CustomButton.Visible = false;
             this.txtBulkDensity.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtBulkDensity.Lines = new string[0];
-            this.txtBulkDensity.Location = new System.Drawing.Point(102, 191);
+            this.txtBulkDensity.Location = new System.Drawing.Point(332, 128);
             this.txtBulkDensity.MaxLength = 5;
             this.txtBulkDensity.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtBulkDensity.Name = "txtBulkDensity";
@@ -546,7 +559,7 @@ namespace WeightBridgeMandya.clientui
             // lblBulkDensity
             // 
             this.lblBulkDensity.AutoSize = true;
-            this.lblBulkDensity.Location = new System.Drawing.Point(14, 195);
+            this.lblBulkDensity.Location = new System.Drawing.Point(244, 132);
             this.lblBulkDensity.Name = "lblBulkDensity";
             this.lblBulkDensity.Size = new System.Drawing.Size(85, 19);
             this.lblBulkDensity.TabIndex = 109;
@@ -568,7 +581,7 @@ namespace WeightBridgeMandya.clientui
             this.txtScorchedParticle.CustomButton.Visible = false;
             this.txtScorchedParticle.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtScorchedParticle.Lines = new string[0];
-            this.txtScorchedParticle.Location = new System.Drawing.Point(332, 121);
+            this.txtScorchedParticle.Location = new System.Drawing.Point(332, 163);
             this.txtScorchedParticle.MaxLength = 5;
             this.txtScorchedParticle.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtScorchedParticle.Name = "txtScorchedParticle";
@@ -587,7 +600,7 @@ namespace WeightBridgeMandya.clientui
             // lblScorchedParticle
             // 
             this.lblScorchedParticle.AutoSize = true;
-            this.lblScorchedParticle.Location = new System.Drawing.Point(211, 126);
+            this.lblScorchedParticle.Location = new System.Drawing.Point(211, 168);
             this.lblScorchedParticle.Name = "lblScorchedParticle";
             this.lblScorchedParticle.Size = new System.Drawing.Size(117, 19);
             this.lblScorchedParticle.TabIndex = 107;
@@ -609,7 +622,7 @@ namespace WeightBridgeMandya.clientui
             this.txtTotalAsh.CustomButton.Visible = false;
             this.txtTotalAsh.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtTotalAsh.Lines = new string[0];
-            this.txtTotalAsh.Location = new System.Drawing.Point(516, 156);
+            this.txtTotalAsh.Location = new System.Drawing.Point(516, 198);
             this.txtTotalAsh.MaxLength = 5;
             this.txtTotalAsh.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtTotalAsh.Name = "txtTotalAsh";
@@ -628,7 +641,7 @@ namespace WeightBridgeMandya.clientui
             // lblTotalAsh
             // 
             this.lblTotalAsh.AutoSize = true;
-            this.lblTotalAsh.Location = new System.Drawing.Point(445, 161);
+            this.lblTotalAsh.Location = new System.Drawing.Point(445, 203);
             this.lblTotalAsh.Name = "lblTotalAsh";
             this.lblTotalAsh.Size = new System.Drawing.Size(68, 19);
             this.lblTotalAsh.TabIndex = 105;
@@ -650,7 +663,7 @@ namespace WeightBridgeMandya.clientui
             this.txtProtein.CustomButton.Visible = false;
             this.txtProtein.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtProtein.Lines = new string[0];
-            this.txtProtein.Location = new System.Drawing.Point(102, 156);
+            this.txtProtein.Location = new System.Drawing.Point(102, 163);
             this.txtProtein.MaxLength = 5;
             this.txtProtein.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtProtein.Name = "txtProtein";
@@ -669,7 +682,7 @@ namespace WeightBridgeMandya.clientui
             // lblProtein
             // 
             this.lblProtein.AutoSize = true;
-            this.lblProtein.Location = new System.Drawing.Point(41, 160);
+            this.lblProtein.Location = new System.Drawing.Point(41, 167);
             this.lblProtein.Name = "lblProtein";
             this.lblProtein.Size = new System.Drawing.Size(58, 19);
             this.lblProtein.TabIndex = 103;
@@ -691,7 +704,7 @@ namespace WeightBridgeMandya.clientui
             this.txtInsolubilityIndex.CustomButton.Visible = false;
             this.txtInsolubilityIndex.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtInsolubilityIndex.Lines = new string[0];
-            this.txtInsolubilityIndex.Location = new System.Drawing.Point(332, 156);
+            this.txtInsolubilityIndex.Location = new System.Drawing.Point(332, 198);
             this.txtInsolubilityIndex.MaxLength = 5;
             this.txtInsolubilityIndex.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtInsolubilityIndex.Name = "txtInsolubilityIndex";
@@ -710,7 +723,7 @@ namespace WeightBridgeMandya.clientui
             // lblInsolubilityIndex
             // 
             this.lblInsolubilityIndex.AutoSize = true;
-            this.lblInsolubilityIndex.Location = new System.Drawing.Point(218, 161);
+            this.lblInsolubilityIndex.Location = new System.Drawing.Point(218, 203);
             this.lblInsolubilityIndex.Name = "lblInsolubilityIndex";
             this.lblInsolubilityIndex.Size = new System.Drawing.Size(111, 19);
             this.lblInsolubilityIndex.TabIndex = 101;
@@ -732,7 +745,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSucrosePercent.CustomButton.Visible = false;
             this.txtSucrosePercent.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtSucrosePercent.Lines = new string[0];
-            this.txtSucrosePercent.Location = new System.Drawing.Point(1116, 121);
+            this.txtSucrosePercent.Location = new System.Drawing.Point(1116, 163);
             this.txtSucrosePercent.MaxLength = 5;
             this.txtSucrosePercent.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtSucrosePercent.Name = "txtSucrosePercent";
@@ -751,7 +764,7 @@ namespace WeightBridgeMandya.clientui
             // lblSucrosePercent
             // 
             this.lblSucrosePercent.AutoSize = true;
-            this.lblSucrosePercent.Location = new System.Drawing.Point(1006, 125);
+            this.lblSucrosePercent.Location = new System.Drawing.Point(1006, 167);
             this.lblSucrosePercent.Name = "lblSucrosePercent";
             this.lblSucrosePercent.Size = new System.Drawing.Size(108, 19);
             this.lblSucrosePercent.TabIndex = 99;
@@ -773,7 +786,7 @@ namespace WeightBridgeMandya.clientui
             this.txtEColi.CustomButton.Visible = false;
             this.txtEColi.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtEColi.Lines = new string[0];
-            this.txtEColi.Location = new System.Drawing.Point(899, 156);
+            this.txtEColi.Location = new System.Drawing.Point(102, 198);
             this.txtEColi.MaxLength = 5;
             this.txtEColi.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtEColi.Name = "txtEColi";
@@ -792,7 +805,7 @@ namespace WeightBridgeMandya.clientui
             // lblEColi
             // 
             this.lblEColi.AutoSize = true;
-            this.lblEColi.Location = new System.Drawing.Point(843, 161);
+            this.lblEColi.Location = new System.Drawing.Point(46, 203);
             this.lblEColi.Name = "lblEColi";
             this.lblEColi.Size = new System.Drawing.Size(52, 19);
             this.lblEColi.TabIndex = 97;
@@ -801,7 +814,7 @@ namespace WeightBridgeMandya.clientui
             // lblBauduinTest
             // 
             this.lblBauduinTest.AutoSize = true;
-            this.lblBauduinTest.Location = new System.Drawing.Point(807, 125);
+            this.lblBauduinTest.Location = new System.Drawing.Point(807, 167);
             this.lblBauduinTest.Name = "lblBauduinTest";
             this.lblBauduinTest.Size = new System.Drawing.Size(88, 19);
             this.lblBauduinTest.TabIndex = 95;
@@ -823,7 +836,7 @@ namespace WeightBridgeMandya.clientui
             this.txtPValue.CustomButton.Visible = false;
             this.txtPValue.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtPValue.Lines = new string[0];
-            this.txtPValue.Location = new System.Drawing.Point(700, 121);
+            this.txtPValue.Location = new System.Drawing.Point(700, 163);
             this.txtPValue.MaxLength = 5;
             this.txtPValue.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtPValue.Name = "txtPValue";
@@ -842,7 +855,7 @@ namespace WeightBridgeMandya.clientui
             // lblPValue
             // 
             this.lblPValue.AutoSize = true;
-            this.lblPValue.Location = new System.Drawing.Point(640, 125);
+            this.lblPValue.Location = new System.Drawing.Point(640, 167);
             this.lblPValue.Name = "lblPValue";
             this.lblPValue.Size = new System.Drawing.Size(54, 19);
             this.lblPValue.TabIndex = 93;
@@ -864,7 +877,7 @@ namespace WeightBridgeMandya.clientui
             this.txtRMValue.CustomButton.Visible = false;
             this.txtRMValue.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtRMValue.Lines = new string[0];
-            this.txtRMValue.Location = new System.Drawing.Point(516, 121);
+            this.txtRMValue.Location = new System.Drawing.Point(516, 163);
             this.txtRMValue.MaxLength = 5;
             this.txtRMValue.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtRMValue.Name = "txtRMValue";
@@ -883,7 +896,7 @@ namespace WeightBridgeMandya.clientui
             // lblRMValue
             // 
             this.lblRMValue.AutoSize = true;
-            this.lblRMValue.Location = new System.Drawing.Point(444, 125);
+            this.lblRMValue.Location = new System.Drawing.Point(444, 167);
             this.lblRMValue.Name = "lblRMValue";
             this.lblRMValue.Size = new System.Drawing.Size(66, 19);
             this.lblRMValue.TabIndex = 91;
@@ -905,7 +918,7 @@ namespace WeightBridgeMandya.clientui
             this.txtBRReading.CustomButton.Visible = false;
             this.txtBRReading.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtBRReading.Lines = new string[0];
-            this.txtBRReading.Location = new System.Drawing.Point(1116, 156);
+            this.txtBRReading.Location = new System.Drawing.Point(701, 128);
             this.txtBRReading.MaxLength = 5;
             this.txtBRReading.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtBRReading.Name = "txtBRReading";
@@ -924,7 +937,7 @@ namespace WeightBridgeMandya.clientui
             // lblBRReading
             // 
             this.lblBRReading.AutoSize = true;
-            this.lblBRReading.Location = new System.Drawing.Point(1030, 159);
+            this.lblBRReading.Location = new System.Drawing.Point(615, 131);
             this.lblBRReading.Name = "lblBRReading";
             this.lblBRReading.Size = new System.Drawing.Size(80, 19);
             this.lblBRReading.TabIndex = 89;
@@ -946,7 +959,7 @@ namespace WeightBridgeMandya.clientui
             this.txtFFAOA.CustomButton.Visible = false;
             this.txtFFAOA.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtFFAOA.Lines = new string[0];
-            this.txtFFAOA.Location = new System.Drawing.Point(1116, 86);
+            this.txtFFAOA.Location = new System.Drawing.Point(1116, 128);
             this.txtFFAOA.MaxLength = 5;
             this.txtFFAOA.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtFFAOA.Name = "txtFFAOA";
@@ -965,7 +978,7 @@ namespace WeightBridgeMandya.clientui
             // lblFFAOA
             // 
             this.lblFFAOA.AutoSize = true;
-            this.lblFFAOA.Location = new System.Drawing.Point(1055, 91);
+            this.lblFFAOA.Location = new System.Drawing.Point(1055, 133);
             this.lblFFAOA.Name = "lblFFAOA";
             this.lblFFAOA.Size = new System.Drawing.Size(58, 19);
             this.lblFFAOA.TabIndex = 87;
@@ -987,7 +1000,7 @@ namespace WeightBridgeMandya.clientui
             this.txtMoisture.CustomButton.Visible = false;
             this.txtMoisture.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtMoisture.Lines = new string[0];
-            this.txtMoisture.Location = new System.Drawing.Point(899, 86);
+            this.txtMoisture.Location = new System.Drawing.Point(899, 128);
             this.txtMoisture.MaxLength = 5;
             this.txtMoisture.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtMoisture.Name = "txtMoisture";
@@ -1006,7 +1019,7 @@ namespace WeightBridgeMandya.clientui
             // lblMoisture
             // 
             this.lblMoisture.AutoSize = true;
-            this.lblMoisture.Location = new System.Drawing.Point(829, 92);
+            this.lblMoisture.Location = new System.Drawing.Point(829, 134);
             this.lblMoisture.Name = "lblMoisture";
             this.lblMoisture.Size = new System.Drawing.Size(67, 19);
             this.lblMoisture.TabIndex = 85;
@@ -1016,16 +1029,16 @@ namespace WeightBridgeMandya.clientui
             // 
             this.cmbFlavour.FormattingEnabled = true;
             this.cmbFlavour.ItemHeight = 23;
-            this.cmbFlavour.Location = new System.Drawing.Point(700, 86);
+            this.cmbFlavour.Location = new System.Drawing.Point(516, 233);
             this.cmbFlavour.Name = "cmbFlavour";
-            this.cmbFlavour.Size = new System.Drawing.Size(100, 29);
+            this.cmbFlavour.Size = new System.Drawing.Size(285, 29);
             this.cmbFlavour.TabIndex = 19;
             this.cmbFlavour.UseSelectable = true;
             // 
             // lblFlavour
             // 
             this.lblFlavour.AutoSize = true;
-            this.lblFlavour.Location = new System.Drawing.Point(636, 90);
+            this.lblFlavour.Location = new System.Drawing.Point(452, 237);
             this.lblFlavour.Name = "lblFlavour";
             this.lblFlavour.Size = new System.Drawing.Size(59, 19);
             this.lblFlavour.TabIndex = 83;
@@ -1035,16 +1048,16 @@ namespace WeightBridgeMandya.clientui
             // 
             this.cmbBodyAndTexture.FormattingEnabled = true;
             this.cmbBodyAndTexture.ItemHeight = 23;
-            this.cmbBodyAndTexture.Location = new System.Drawing.Point(102, 121);
+            this.cmbBodyAndTexture.Location = new System.Drawing.Point(102, 233);
             this.cmbBodyAndTexture.Name = "cmbBodyAndTexture";
-            this.cmbBodyAndTexture.Size = new System.Drawing.Size(100, 29);
+            this.cmbBodyAndTexture.Size = new System.Drawing.Size(330, 29);
             this.cmbBodyAndTexture.TabIndex = 82;
             this.cmbBodyAndTexture.UseSelectable = true;
             // 
             // lblBodyAndTexture
             // 
             this.lblBodyAndTexture.AutoSize = true;
-            this.lblBodyAndTexture.Location = new System.Drawing.Point(3, 126);
+            this.lblBodyAndTexture.Location = new System.Drawing.Point(3, 238);
             this.lblBodyAndTexture.Name = "lblBodyAndTexture";
             this.lblBodyAndTexture.Size = new System.Drawing.Size(95, 19);
             this.lblBodyAndTexture.TabIndex = 81;
@@ -1054,16 +1067,16 @@ namespace WeightBridgeMandya.clientui
             // 
             this.cmbAppearance.FormattingEnabled = true;
             this.cmbAppearance.ItemHeight = 23;
-            this.cmbAppearance.Location = new System.Drawing.Point(332, 86);
+            this.cmbAppearance.Location = new System.Drawing.Point(899, 198);
             this.cmbAppearance.Name = "cmbAppearance";
-            this.cmbAppearance.Size = new System.Drawing.Size(100, 29);
+            this.cmbAppearance.Size = new System.Drawing.Size(317, 29);
             this.cmbAppearance.TabIndex = 17;
             this.cmbAppearance.UseSelectable = true;
             // 
             // lblAppearance
             // 
             this.lblAppearance.AutoSize = true;
-            this.lblAppearance.Location = new System.Drawing.Point(239, 91);
+            this.lblAppearance.Location = new System.Drawing.Point(807, 204);
             this.lblAppearance.Name = "lblAppearance";
             this.lblAppearance.Size = new System.Drawing.Size(87, 19);
             this.lblAppearance.TabIndex = 78;
@@ -1085,7 +1098,7 @@ namespace WeightBridgeMandya.clientui
             this.txtPh.CustomButton.Visible = false;
             this.txtPh.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtPh.Lines = new string[0];
-            this.txtPh.Location = new System.Drawing.Point(516, 86);
+            this.txtPh.Location = new System.Drawing.Point(516, 128);
             this.txtPh.MaxLength = 5;
             this.txtPh.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtPh.Name = "txtPh";
@@ -1104,7 +1117,7 @@ namespace WeightBridgeMandya.clientui
             // lblPh
             // 
             this.lblPh.AutoSize = true;
-            this.lblPh.Location = new System.Drawing.Point(479, 88);
+            this.lblPh.Location = new System.Drawing.Point(479, 130);
             this.lblPh.Name = "lblPh";
             this.lblPh.Size = new System.Drawing.Size(31, 19);
             this.lblPh.TabIndex = 76;
@@ -1126,7 +1139,7 @@ namespace WeightBridgeMandya.clientui
             this.txtTotalSolid.CustomButton.Visible = false;
             this.txtTotalSolid.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtTotalSolid.Lines = new string[0];
-            this.txtTotalSolid.Location = new System.Drawing.Point(102, 86);
+            this.txtTotalSolid.Location = new System.Drawing.Point(102, 128);
             this.txtTotalSolid.MaxLength = 5;
             this.txtTotalSolid.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtTotalSolid.Name = "txtTotalSolid";
@@ -1145,7 +1158,7 @@ namespace WeightBridgeMandya.clientui
             // lblTotalSolid
             // 
             this.lblTotalSolid.AutoSize = true;
-            this.lblTotalSolid.Location = new System.Drawing.Point(20, 90);
+            this.lblTotalSolid.Location = new System.Drawing.Point(20, 132);
             this.lblTotalSolid.Name = "lblTotalSolid";
             this.lblTotalSolid.Size = new System.Drawing.Size(76, 19);
             this.lblTotalSolid.TabIndex = 74;
@@ -1167,7 +1180,7 @@ namespace WeightBridgeMandya.clientui
             this.txtCremingIndex.CustomButton.Visible = false;
             this.txtCremingIndex.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtCremingIndex.Lines = new string[0];
-            this.txtCremingIndex.Location = new System.Drawing.Point(1116, 51);
+            this.txtCremingIndex.Location = new System.Drawing.Point(1116, 93);
             this.txtCremingIndex.MaxLength = 5;
             this.txtCremingIndex.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtCremingIndex.Name = "txtCremingIndex";
@@ -1186,7 +1199,7 @@ namespace WeightBridgeMandya.clientui
             // lblCremingIndex
             // 
             this.lblCremingIndex.AutoSize = true;
-            this.lblCremingIndex.Location = new System.Drawing.Point(1007, 54);
+            this.lblCremingIndex.Location = new System.Drawing.Point(1007, 96);
             this.lblCremingIndex.Name = "lblCremingIndex";
             this.lblCremingIndex.Size = new System.Drawing.Size(102, 19);
             this.lblCremingIndex.TabIndex = 72;
@@ -1208,7 +1221,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSomaticCell.CustomButton.Visible = false;
             this.txtSomaticCell.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtSomaticCell.Lines = new string[0];
-            this.txtSomaticCell.Location = new System.Drawing.Point(899, 51);
+            this.txtSomaticCell.Location = new System.Drawing.Point(899, 93);
             this.txtSomaticCell.MaxLength = 5;
             this.txtSomaticCell.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtSomaticCell.Name = "txtSomaticCell";
@@ -1227,7 +1240,7 @@ namespace WeightBridgeMandya.clientui
             // lblSomaticCell
             // 
             this.lblSomaticCell.AutoSize = true;
-            this.lblSomaticCell.Location = new System.Drawing.Point(805, 55);
+            this.lblSomaticCell.Location = new System.Drawing.Point(805, 97);
             this.lblSomaticCell.Name = "lblSomaticCell";
             this.lblSomaticCell.Size = new System.Drawing.Size(89, 19);
             this.lblSomaticCell.TabIndex = 70;
@@ -1249,7 +1262,7 @@ namespace WeightBridgeMandya.clientui
             this.txtColiform.CustomButton.Visible = false;
             this.txtColiform.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtColiform.Lines = new string[0];
-            this.txtColiform.Location = new System.Drawing.Point(700, 51);
+            this.txtColiform.Location = new System.Drawing.Point(700, 93);
             this.txtColiform.MaxLength = 5;
             this.txtColiform.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtColiform.Name = "txtColiform";
@@ -1268,7 +1281,7 @@ namespace WeightBridgeMandya.clientui
             // lblColiform
             // 
             this.lblColiform.AutoSize = true;
-            this.lblColiform.Location = new System.Drawing.Point(629, 55);
+            this.lblColiform.Location = new System.Drawing.Point(629, 97);
             this.lblColiform.Name = "lblColiform";
             this.lblColiform.Size = new System.Drawing.Size(68, 19);
             this.lblColiform.TabIndex = 68;
@@ -1278,7 +1291,7 @@ namespace WeightBridgeMandya.clientui
             // 
             this.cmbAdultration.FormattingEnabled = true;
             this.cmbAdultration.ItemHeight = 23;
-            this.cmbAdultration.Location = new System.Drawing.Point(1116, 16);
+            this.cmbAdultration.Location = new System.Drawing.Point(1116, 58);
             this.cmbAdultration.Name = "cmbAdultration";
             this.cmbAdultration.Size = new System.Drawing.Size(100, 29);
             this.cmbAdultration.TabIndex = 9;
@@ -1300,7 +1313,7 @@ namespace WeightBridgeMandya.clientui
             this.txtAerobicPlate.CustomButton.Visible = false;
             this.txtAerobicPlate.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtAerobicPlate.Lines = new string[0];
-            this.txtAerobicPlate.Location = new System.Drawing.Point(102, 51);
+            this.txtAerobicPlate.Location = new System.Drawing.Point(102, 93);
             this.txtAerobicPlate.MaxLength = 5;
             this.txtAerobicPlate.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtAerobicPlate.Name = "txtAerobicPlate";
@@ -1319,7 +1332,7 @@ namespace WeightBridgeMandya.clientui
             // lblAerobicPlate
             // 
             this.lblAerobicPlate.AutoSize = true;
-            this.lblAerobicPlate.Location = new System.Drawing.Point(6, 54);
+            this.lblAerobicPlate.Location = new System.Drawing.Point(6, 96);
             this.lblAerobicPlate.Name = "lblAerobicPlate";
             this.lblAerobicPlate.Size = new System.Drawing.Size(91, 19);
             this.lblAerobicPlate.TabIndex = 65;
@@ -1328,7 +1341,7 @@ namespace WeightBridgeMandya.clientui
             // lblAdultration
             // 
             this.lblAdultration.AutoSize = true;
-            this.lblAdultration.Location = new System.Drawing.Point(1029, 21);
+            this.lblAdultration.Location = new System.Drawing.Point(1029, 63);
             this.lblAdultration.Name = "lblAdultration";
             this.lblAdultration.Size = new System.Drawing.Size(81, 19);
             this.lblAdultration.TabIndex = 63;
@@ -1350,7 +1363,7 @@ namespace WeightBridgeMandya.clientui
             this.txtAlcohol.CustomButton.Visible = false;
             this.txtAlcohol.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtAlcohol.Lines = new string[0];
-            this.txtAlcohol.Location = new System.Drawing.Point(516, 51);
+            this.txtAlcohol.Location = new System.Drawing.Point(516, 93);
             this.txtAlcohol.MaxLength = 5;
             this.txtAlcohol.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtAlcohol.Name = "txtAlcohol";
@@ -1369,7 +1382,7 @@ namespace WeightBridgeMandya.clientui
             // lblAlcohol
             // 
             this.lblAlcohol.AutoSize = true;
-            this.lblAlcohol.Location = new System.Drawing.Point(454, 56);
+            this.lblAlcohol.Location = new System.Drawing.Point(454, 98);
             this.lblAlcohol.Name = "lblAlcohol";
             this.lblAlcohol.Size = new System.Drawing.Size(60, 19);
             this.lblAlcohol.TabIndex = 61;
@@ -1378,7 +1391,7 @@ namespace WeightBridgeMandya.clientui
             // lblPhospharaseTest
             // 
             this.lblPhospharaseTest.AutoSize = true;
-            this.lblPhospharaseTest.Location = new System.Drawing.Point(214, 55);
+            this.lblPhospharaseTest.Location = new System.Drawing.Point(214, 97);
             this.lblPhospharaseTest.Name = "lblPhospharaseTest";
             this.lblPhospharaseTest.Size = new System.Drawing.Size(115, 19);
             this.lblPhospharaseTest.TabIndex = 60;
@@ -1400,7 +1413,7 @@ namespace WeightBridgeMandya.clientui
             this.txtMbrt.CustomButton.Visible = false;
             this.txtMbrt.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtMbrt.Lines = new string[0];
-            this.txtMbrt.Location = new System.Drawing.Point(899, 16);
+            this.txtMbrt.Location = new System.Drawing.Point(899, 58);
             this.txtMbrt.MaxLength = 5;
             this.txtMbrt.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtMbrt.Name = "txtMbrt";
@@ -1419,7 +1432,7 @@ namespace WeightBridgeMandya.clientui
             // lblMbrt
             // 
             this.lblMbrt.AutoSize = true;
-            this.lblMbrt.Location = new System.Drawing.Point(848, 21);
+            this.lblMbrt.Location = new System.Drawing.Point(848, 63);
             this.lblMbrt.Name = "lblMbrt";
             this.lblMbrt.Size = new System.Drawing.Size(46, 19);
             this.lblMbrt.TabIndex = 58;
@@ -1441,7 +1454,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSnf.CustomButton.Visible = false;
             this.txtSnf.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtSnf.Lines = new string[0];
-            this.txtSnf.Location = new System.Drawing.Point(700, 16);
+            this.txtSnf.Location = new System.Drawing.Point(700, 58);
             this.txtSnf.MaxLength = 5;
             this.txtSnf.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtSnf.Name = "txtSnf";
@@ -1460,7 +1473,7 @@ namespace WeightBridgeMandya.clientui
             // lblSnf
             // 
             this.lblSnf.AutoSize = true;
-            this.lblSnf.Location = new System.Drawing.Point(663, 21);
+            this.lblSnf.Location = new System.Drawing.Point(663, 63);
             this.lblSnf.Name = "lblSnf";
             this.lblSnf.Size = new System.Drawing.Size(34, 19);
             this.lblSnf.TabIndex = 56;
@@ -1482,7 +1495,7 @@ namespace WeightBridgeMandya.clientui
             this.txtAcidity.CustomButton.Visible = false;
             this.txtAcidity.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtAcidity.Lines = new string[0];
-            this.txtAcidity.Location = new System.Drawing.Point(332, 16);
+            this.txtAcidity.Location = new System.Drawing.Point(332, 58);
             this.txtAcidity.MaxLength = 5;
             this.txtAcidity.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtAcidity.Name = "txtAcidity";
@@ -1501,7 +1514,7 @@ namespace WeightBridgeMandya.clientui
             // lblAcidity
             // 
             this.lblAcidity.AutoSize = true;
-            this.lblAcidity.Location = new System.Drawing.Point(274, 20);
+            this.lblAcidity.Location = new System.Drawing.Point(274, 62);
             this.lblAcidity.Name = "lblAcidity";
             this.lblAcidity.Size = new System.Drawing.Size(55, 19);
             this.lblAcidity.TabIndex = 54;
@@ -1523,7 +1536,7 @@ namespace WeightBridgeMandya.clientui
             this.txtFat.CustomButton.Visible = false;
             this.txtFat.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtFat.Lines = new string[0];
-            this.txtFat.Location = new System.Drawing.Point(516, 16);
+            this.txtFat.Location = new System.Drawing.Point(516, 58);
             this.txtFat.MaxLength = 5;
             this.txtFat.MinimumSize = new System.Drawing.Size(100, 0);
             this.txtFat.Name = "txtFat";
@@ -1542,7 +1555,7 @@ namespace WeightBridgeMandya.clientui
             // lblFat
             // 
             this.lblFat.AutoSize = true;
-            this.lblFat.Location = new System.Drawing.Point(479, 21);
+            this.lblFat.Location = new System.Drawing.Point(479, 63);
             this.lblFat.Name = "lblFat";
             this.lblFat.Size = new System.Drawing.Size(33, 19);
             this.lblFat.TabIndex = 52;
@@ -1550,6 +1563,7 @@ namespace WeightBridgeMandya.clientui
             // 
             // txtTemp
             // 
+            this.txtTemp.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -1564,7 +1578,7 @@ namespace WeightBridgeMandya.clientui
             this.txtTemp.CustomButton.Visible = false;
             this.txtTemp.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtTemp.Lines = new string[0];
-            this.txtTemp.Location = new System.Drawing.Point(102, 16);
+            this.txtTemp.Location = new System.Drawing.Point(102, 58);
             this.txtTemp.MaxLength = 5;
             this.txtTemp.Name = "txtTemp";
             this.txtTemp.PasswordChar = '\0';
@@ -1583,7 +1597,7 @@ namespace WeightBridgeMandya.clientui
             // 
             this.cmbPhospharaseTest.FormattingEnabled = true;
             this.cmbPhospharaseTest.ItemHeight = 23;
-            this.cmbPhospharaseTest.Location = new System.Drawing.Point(332, 51);
+            this.cmbPhospharaseTest.Location = new System.Drawing.Point(332, 93);
             this.cmbPhospharaseTest.Name = "cmbPhospharaseTest";
             this.cmbPhospharaseTest.Size = new System.Drawing.Size(100, 29);
             this.cmbPhospharaseTest.TabIndex = 11;
@@ -1592,21 +1606,22 @@ namespace WeightBridgeMandya.clientui
             // lblTemp
             // 
             this.lblTemp.AutoSize = true;
-            this.lblTemp.Location = new System.Drawing.Point(48, 21);
+            this.lblTemp.Location = new System.Drawing.Point(48, 63);
             this.lblTemp.Name = "lblTemp";
             this.lblTemp.Size = new System.Drawing.Size(48, 19);
             this.lblTemp.TabIndex = 0;
             this.lblTemp.Text = "Temp :";
             // 
-            // cmbBauduinTest
+            // btnCapture
             // 
-            this.cmbBauduinTest.FormattingEnabled = true;
-            this.cmbBauduinTest.ItemHeight = 23;
-            this.cmbBauduinTest.Location = new System.Drawing.Point(899, 121);
-            this.cmbBauduinTest.Name = "cmbBauduinTest";
-            this.cmbBauduinTest.Size = new System.Drawing.Size(100, 29);
-            this.cmbBauduinTest.TabIndex = 26;
-            this.cmbBauduinTest.UseSelectable = true;
+            this.btnCapture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCapture.Location = new System.Drawing.Point(612, 17);
+            this.btnCapture.Name = "btnCapture";
+            this.btnCapture.Size = new System.Drawing.Size(92, 30);
+            this.btnCapture.TabIndex = 114;
+            this.btnCapture.Text = "Capture";
+            this.btnCapture.UseSelectable = true;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
             // 
             // LabReport
             // 
@@ -1616,7 +1631,7 @@ namespace WeightBridgeMandya.clientui
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1261, 493);
+            this.ClientSize = new System.Drawing.Size(1261, 566);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox3);
@@ -1725,5 +1740,6 @@ namespace WeightBridgeMandya.clientui
         private MetroFramework.Controls.MetroLabel lblRemarks;
         private MetroFramework.Controls.MetroButton btnRefresh;
         private MetroFramework.Controls.MetroComboBox cmbBauduinTest;
+        private MetroFramework.Controls.MetroButton btnCapture;
     }
 }

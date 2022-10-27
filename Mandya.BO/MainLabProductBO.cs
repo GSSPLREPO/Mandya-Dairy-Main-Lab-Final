@@ -23,7 +23,7 @@ namespace Mandya.BO
         public const string MAINLABPRODUCTS_PHOSPHARASETEST = "PhospharaseTest";
         public const string MAINLABPRODUCTS_ALCOHOL = "Alcohol";
         public const string MAINLABPRODUCTS_ADULTRATION = "Adultration";
-        public const string MAINLABPRODUCTS_AEROBICPLATE = "AerobiPlate";
+        public const string MAINLABPRODUCTS_AEROBICPLATE = "AerobicPlate";
         public const string MAINLABPRODUCTS_COLIFORM = "Coliform";
         public const string MAINLABPRODUCTS_YESTANDMOULDS = "YeastAndMoulds";
         public const string MAINLABPRODUCTS_SOMATICCELL = "SomaticCell";
