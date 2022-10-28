@@ -32,8 +32,11 @@ namespace WeightBridgeMandya
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            LabReport frmLabReport = new LabReport();
-            frmLabReport.Show();
+            // LabReport frmLabReport = new LabReport();
+            //frmLabReport.Show();
+
+            EditDeleteData frmData = new EditDeleteData();
+            frmData.Show();
             this.Hide();
         }
 
@@ -47,6 +50,15 @@ namespace WeightBridgeMandya
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Program.intUserId = 0;
+            Program.intRoleId = 0;
+            Login frmLogin = new Login();
+            frmLogin.Show();
         }
     }
 }

@@ -29,7 +29,7 @@ namespace Mandya.BL
         {
             try
             {
-                pSqlParameter = new SqlParameter[38];
+                pSqlParameter = new SqlParameter[40];
 
                 pSqlParameter[0] = new SqlParameter("@DateTime", SqlDbType.DateTime);
                 pSqlParameter[0].Direction = ParameterDirection.Input;
@@ -183,6 +183,14 @@ namespace Mandya.BL
                 pSqlParameter[37].Direction = ParameterDirection.Input;
                 pSqlParameter[37].Value = objMainLabAnalysisBO.CreatedByDate;
 
+                pSqlParameter[38] = new SqlParameter("@Status", SqlDbType.Int);
+                pSqlParameter[38].Direction = ParameterDirection.Input;
+                pSqlParameter[38].Value = objMainLabAnalysisBO.Status;
+
+                pSqlParameter[39] = new SqlParameter("@Remarks", SqlDbType.VarChar);
+                pSqlParameter[39].Direction = ParameterDirection.Input;
+                pSqlParameter[39].Value = objMainLabAnalysisBO.Remarks;
+
 
                 sSql = "usp_tbl_MainLabAnalysis_Insert_New";
 
@@ -215,16 +223,22 @@ namespace Mandya.BL
         #region Select All Main lab Analysis Details
         /// <summary>
         /// To Select All data from the Main lab Analysis table
-        /// Created By : Chirag
+        /// Created By : Chiragkumar Solanki
         /// Modified By :
         /// </summary>
-        public ApplicationResult MainLabAnalysis_SelectAll_For_Gridview()
+        public ApplicationResult MainLabAnalysis_SelectAll_For_Gridview(DateTime dtDateTime)
         {
             try
             {
-                sSql = "usp_tbl_MainLabAnalysis_SelectAll_For_Gridview";
+                pSqlParameter = new SqlParameter[1];
+
+                pSqlParameter[0] = new SqlParameter("@DateTime", SqlDbType.DateTime);
+                pSqlParameter[0].Direction = ParameterDirection.Input;
+                pSqlParameter[0].Value = dtDateTime;
+
+                sSql = "usp_tbl_MainLabAnalysis_SelectAll_For_Gridview_New";
                 DataTable dtFault = new DataTable();
-                dtFault = Database.ExecuteDataTable(CommandType.StoredProcedure, sSql, null);
+                dtFault = Database.ExecuteDataTable(CommandType.StoredProcedure, sSql, pSqlParameter);
 
                 ApplicationResult objResults = new ApplicationResult(dtFault);
                 objResults.Status = ApplicationResult.CommonStatusType.Success;
@@ -327,11 +341,11 @@ namespace Mandya.BL
             {
                 pSqlParameter = new SqlParameter[1];
 
-                pSqlParameter[0] = new SqlParameter("@MainLabAnalysisID", SqlDbType.Int);
+                pSqlParameter[0] = new SqlParameter("@ID", SqlDbType.Int);
                 pSqlParameter[0].Direction = ParameterDirection.Input;
                 pSqlParameter[0].Value = intMainLabAnalysisID;
 
-                strStoredProcName = "usp_tbl_MainLabAnalysis_Select_For_Edit";
+                strStoredProcName = "usp_tbl_MainLabAnalysis_Select_For_Edit_New";
 
                 DataTable dtResult = new DataTable();
                 dtResult = Database.ExecuteDataTable(CommandType.StoredProcedure, strStoredProcName, pSqlParameter);
@@ -492,9 +506,10 @@ namespace Mandya.BL
                 pSqlParameter[2].Direction = ParameterDirection.Input;
                 pSqlParameter[2].Value = dtDateTime;
 
-                strStoredProcName = "usp_tbl_MainLabAnalysis_Delete";
+                strStoredProcName = "usp_tbl_MainLabAnalysis_Delete_New";
 
                 int iResult = Database.ExecuteNonQuery(CommandType.StoredProcedure, strStoredProcName, pSqlParameter);
+                
                 if (iResult > 0)
                 {
                     ApplicationResult objResults = new ApplicationResult();

@@ -88,101 +88,91 @@ namespace WeightBridgeMandya.clientui
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(44, 22);
-            this.metroLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel1.Location = new System.Drawing.Point(33, 18);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(45, 20);
+            this.metroLabel1.Size = new System.Drawing.Size(43, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Date :";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(317, 22);
-            this.metroLabel3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel3.Location = new System.Drawing.Point(238, 18);
             this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(47, 20);
+            this.metroLabel3.Size = new System.Drawing.Size(45, 19);
             this.metroLabel3.TabIndex = 2;
             this.metroLabel3.Text = "Time :";
             // 
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(924, 20);
-            this.metroLabel4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel4.Location = new System.Drawing.Point(693, 16);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(73, 20);
+            this.metroLabel4.Size = new System.Drawing.Size(70, 19);
             this.metroLabel4.TabIndex = 3;
             this.metroLabel4.Text = "Batch No :";
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(240, 66);
-            this.metroLabel5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel5.Location = new System.Drawing.Point(180, 54);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(106, 20);
+            this.metroLabel5.Size = new System.Drawing.Size(102, 19);
             this.metroLabel5.TabIndex = 4;
             this.metroLabel5.Text = "Product Name :";
             // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(141, 27);
-            this.metroLabel6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel6.Location = new System.Drawing.Point(106, 22);
             this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(34, 20);
+            this.metroLabel6.Size = new System.Drawing.Size(33, 19);
             this.metroLabel6.TabIndex = 5;
             this.metroLabel6.Text = "OT :";
             // 
             // metroLabel7
             // 
             this.metroLabel7.AutoSize = true;
-            this.metroLabel7.Location = new System.Drawing.Point(105, 71);
-            this.metroLabel7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel7.Location = new System.Drawing.Point(79, 58);
             this.metroLabel7.Name = "metroLabel7";
-            this.metroLabel7.Size = new System.Drawing.Size(62, 20);
+            this.metroLabel7.Size = new System.Drawing.Size(60, 19);
             this.metroLabel7.TabIndex = 6;
             this.metroLabel7.Text = "Temp \'C:";
             // 
             // metroLabel8
             // 
             this.metroLabel8.AutoSize = true;
-            this.metroLabel8.Location = new System.Drawing.Point(77, 286);
-            this.metroLabel8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel8.Location = new System.Drawing.Point(58, 232);
             this.metroLabel8.Name = "metroLabel8";
-            this.metroLabel8.Size = new System.Drawing.Size(90, 20);
+            this.metroLabel8.Size = new System.Drawing.Size(85, 19);
             this.metroLabel8.TabIndex = 7;
             this.metroLabel8.Text = "Alcohol Test :";
             // 
             // dtDate
             // 
             this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDate.Location = new System.Drawing.Point(112, 17);
-            this.dtDate.Margin = new System.Windows.Forms.Padding(4);
-            this.dtDate.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtDate.Location = new System.Drawing.Point(84, 14);
+            this.dtDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtDate.Name = "dtDate";
-            this.dtDate.Size = new System.Drawing.Size(173, 30);
+            this.dtDate.Size = new System.Drawing.Size(131, 30);
             this.dtDate.TabIndex = 0;
             // 
             // cmbTankNo
             // 
             this.cmbTankNo.FormattingEnabled = true;
-            this.cmbTankNo.ItemHeight = 24;
-            this.cmbTankNo.Location = new System.Drawing.Point(649, 17);
-            this.cmbTankNo.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTankNo.ItemHeight = 23;
+            this.cmbTankNo.Location = new System.Drawing.Point(487, 14);
             this.cmbTankNo.Name = "cmbTankNo";
-            this.cmbTankNo.Size = new System.Drawing.Size(236, 30);
+            this.cmbTankNo.Size = new System.Drawing.Size(178, 29);
             this.cmbTankNo.TabIndex = 2;
             this.cmbTankNo.UseSelectable = true;
             // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(556, 22);
-            this.metroLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel2.Location = new System.Drawing.Point(417, 18);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(67, 20);
+            this.metroLabel2.Size = new System.Drawing.Size(63, 19);
             this.metroLabel2.TabIndex = 10;
             this.metroLabel2.Text = "Tank No :";
             // 
@@ -192,10 +182,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // 
             this.txtBatchNo.CustomButton.Image = null;
-            this.txtBatchNo.CustomButton.Location = new System.Drawing.Point(218, 2);
-            this.txtBatchNo.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBatchNo.CustomButton.Location = new System.Drawing.Point(121, 1);
             this.txtBatchNo.CustomButton.Name = "";
-            this.txtBatchNo.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.txtBatchNo.CustomButton.Size = new System.Drawing.Size(20, 22);
             this.txtBatchNo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtBatchNo.CustomButton.TabIndex = 1;
             this.txtBatchNo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -203,8 +192,7 @@ namespace WeightBridgeMandya.clientui
             this.txtBatchNo.CustomButton.Visible = false;
             this.txtBatchNo.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtBatchNo.Lines = new string[0];
-            this.txtBatchNo.Location = new System.Drawing.Point(1025, 15);
-            this.txtBatchNo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBatchNo.Location = new System.Drawing.Point(769, 12);
             this.txtBatchNo.MaxLength = 20;
             this.txtBatchNo.Name = "txtBatchNo";
             this.txtBatchNo.PasswordChar = '\0';
@@ -213,7 +201,7 @@ namespace WeightBridgeMandya.clientui
             this.txtBatchNo.SelectionLength = 0;
             this.txtBatchNo.SelectionStart = 0;
             this.txtBatchNo.ShortcutsEnabled = true;
-            this.txtBatchNo.Size = new System.Drawing.Size(252, 36);
+            this.txtBatchNo.Size = new System.Drawing.Size(189, 29);
             this.txtBatchNo.TabIndex = 50;
             this.txtBatchNo.UseSelectable = true;
             this.txtBatchNo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -223,73 +211,65 @@ namespace WeightBridgeMandya.clientui
             // metroLabel9
             // 
             this.metroLabel9.AutoSize = true;
-            this.metroLabel9.Location = new System.Drawing.Point(121, 113);
-            this.metroLabel9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel9.Location = new System.Drawing.Point(91, 92);
             this.metroLabel9.Name = "metroLabel9";
-            this.metroLabel9.Size = new System.Drawing.Size(49, 20);
+            this.metroLabel9.Size = new System.Drawing.Size(48, 19);
             this.metroLabel9.TabIndex = 14;
             this.metroLabel9.Text = "Fat % :";
             // 
             // metroLabel11
             // 
             this.metroLabel11.AutoSize = true;
-            this.metroLabel11.Location = new System.Drawing.Point(112, 156);
-            this.metroLabel11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel11.Location = new System.Drawing.Point(84, 127);
             this.metroLabel11.Name = "metroLabel11";
-            this.metroLabel11.Size = new System.Drawing.Size(57, 20);
+            this.metroLabel11.Size = new System.Drawing.Size(55, 19);
             this.metroLabel11.TabIndex = 16;
             this.metroLabel11.Text = "SNF % :";
             // 
             // metroLabel15
             // 
             this.metroLabel15.AutoSize = true;
-            this.metroLabel15.Location = new System.Drawing.Point(60, 198);
-            this.metroLabel15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel15.Location = new System.Drawing.Point(45, 161);
             this.metroLabel15.Name = "metroLabel15";
-            this.metroLabel15.Size = new System.Drawing.Size(98, 20);
+            this.metroLabel15.Size = new System.Drawing.Size(94, 19);
             this.metroLabel15.TabIndex = 20;
             this.metroLabel15.Text = "Acidity (%LA) :";
             // 
             // metroLabel17
             // 
             this.metroLabel17.AutoSize = true;
-            this.metroLabel17.Location = new System.Drawing.Point(835, 114);
-            this.metroLabel17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel17.Location = new System.Drawing.Point(626, 93);
             this.metroLabel17.Name = "metroLabel17";
-            this.metroLabel17.Size = new System.Drawing.Size(37, 20);
+            this.metroLabel17.Size = new System.Drawing.Size(37, 19);
             this.metroLabel17.TabIndex = 22;
             this.metroLabel17.Text = "Salt :";
             // 
             // metroLabel18
             // 
             this.metroLabel18.AutoSize = true;
-            this.metroLabel18.Location = new System.Drawing.Point(783, 28);
-            this.metroLabel18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel18.Location = new System.Drawing.Point(587, 23);
             this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(81, 20);
+            this.metroLabel18.Size = new System.Drawing.Size(76, 19);
             this.metroLabel18.TabIndex = 23;
             this.metroLabel18.Text = "Neutrilizer :";
             // 
             // cmbProduct
             // 
             this.cmbProduct.FormattingEnabled = true;
-            this.cmbProduct.ItemHeight = 24;
-            this.cmbProduct.Location = new System.Drawing.Point(384, 62);
-            this.cmbProduct.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbProduct.ItemHeight = 23;
+            this.cmbProduct.Location = new System.Drawing.Point(288, 50);
             this.cmbProduct.Name = "cmbProduct";
-            this.cmbProduct.Size = new System.Drawing.Size(339, 30);
+            this.cmbProduct.Size = new System.Drawing.Size(255, 29);
             this.cmbProduct.TabIndex = 4;
             this.cmbProduct.UseSelectable = true;
-            //this.cmbProduct.SelectedIndexChanged += new System.EventHandler(this.cmbProduct_SelectedIndexChanged);
             // 
             // cmbOT
             // 
             this.cmbOT.FormattingEnabled = true;
-            this.cmbOT.ItemHeight = 24;
-            this.cmbOT.Location = new System.Drawing.Point(207, 22);
-            this.cmbOT.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbOT.ItemHeight = 23;
+            this.cmbOT.Location = new System.Drawing.Point(155, 18);
             this.cmbOT.Name = "cmbOT";
-            this.cmbOT.Size = new System.Drawing.Size(309, 30);
+            this.cmbOT.Size = new System.Drawing.Size(233, 29);
             this.cmbOT.TabIndex = 3;
             this.cmbOT.UseSelectable = true;
             // 
@@ -306,11 +286,9 @@ namespace WeightBridgeMandya.clientui
             this.groupBox1.Controls.Add(this.metroLabel2);
             this.groupBox1.Controls.Add(this.cmbTankNo);
             this.groupBox1.Controls.Add(this.txtBatchNo);
-            this.groupBox1.Location = new System.Drawing.Point(31, 78);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Location = new System.Drawing.Point(23, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1288, 105);
+            this.groupBox1.Size = new System.Drawing.Size(966, 85);
             this.groupBox1.TabIndex = 29;
             this.groupBox1.TabStop = false;
             // 
@@ -319,29 +297,26 @@ namespace WeightBridgeMandya.clientui
             this.pnlEntryType.Controls.Add(this.metroLabel22);
             this.pnlEntryType.Controls.Add(this.rdoManual);
             this.pnlEntryType.Controls.Add(this.rdoAuto);
-            this.pnlEntryType.Location = new System.Drawing.Point(755, 58);
-            this.pnlEntryType.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlEntryType.Location = new System.Drawing.Point(566, 47);
             this.pnlEntryType.Name = "pnlEntryType";
-            this.pnlEntryType.Size = new System.Drawing.Size(464, 41);
+            this.pnlEntryType.Size = new System.Drawing.Size(348, 33);
             this.pnlEntryType.TabIndex = 47;
             // 
             // metroLabel22
             // 
             this.metroLabel22.AutoSize = true;
-            this.metroLabel22.Location = new System.Drawing.Point(80, 6);
-            this.metroLabel22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel22.Location = new System.Drawing.Point(60, 5);
             this.metroLabel22.Name = "metroLabel22";
-            this.metroLabel22.Size = new System.Drawing.Size(83, 20);
+            this.metroLabel22.Size = new System.Drawing.Size(77, 19);
             this.metroLabel22.TabIndex = 56;
             this.metroLabel22.Text = "Entry Type :";
             // 
             // rdoManual
             // 
             this.rdoManual.AutoSize = true;
-            this.rdoManual.Location = new System.Drawing.Point(305, 10);
-            this.rdoManual.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoManual.Location = new System.Drawing.Point(229, 8);
             this.rdoManual.Name = "rdoManual";
-            this.rdoManual.Size = new System.Drawing.Size(67, 17);
+            this.rdoManual.Size = new System.Drawing.Size(63, 15);
             this.rdoManual.TabIndex = 55;
             this.rdoManual.Text = "Manual";
             this.rdoManual.UseSelectable = true;
@@ -350,10 +325,9 @@ namespace WeightBridgeMandya.clientui
             // rdoAuto
             // 
             this.rdoAuto.AutoSize = true;
-            this.rdoAuto.Location = new System.Drawing.Point(209, 10);
-            this.rdoAuto.Margin = new System.Windows.Forms.Padding(4);
+            this.rdoAuto.Location = new System.Drawing.Point(157, 8);
             this.rdoAuto.Name = "rdoAuto";
-            this.rdoAuto.Size = new System.Drawing.Size(51, 17);
+            this.rdoAuto.Size = new System.Drawing.Size(49, 15);
             this.rdoAuto.TabIndex = 54;
             this.rdoAuto.Text = "Auto";
             this.rdoAuto.UseSelectable = true;
@@ -363,11 +337,10 @@ namespace WeightBridgeMandya.clientui
             // 
             this.dtTime.CustomFormat = " HH:mm:ss";
             this.dtTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtTime.Location = new System.Drawing.Point(384, 23);
-            this.dtTime.Margin = new System.Windows.Forms.Padding(4);
+            this.dtTime.Location = new System.Drawing.Point(288, 19);
             this.dtTime.Name = "dtTime";
             this.dtTime.ShowUpDown = true;
-            this.dtTime.Size = new System.Drawing.Size(132, 22);
+            this.dtTime.Size = new System.Drawing.Size(100, 20);
             this.dtTime.TabIndex = 1;
             // 
             // groupBox2
@@ -399,84 +372,75 @@ namespace WeightBridgeMandya.clientui
             this.groupBox2.Controls.Add(this.metroLabel15);
             this.groupBox2.Controls.Add(this.metroLabel17);
             this.groupBox2.Controls.Add(this.metroLabel8);
-            this.groupBox2.Location = new System.Drawing.Point(31, 190);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox2.Location = new System.Drawing.Point(23, 154);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox2.Size = new System.Drawing.Size(1288, 335);
+            this.groupBox2.Size = new System.Drawing.Size(966, 272);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             // 
             // cmbFPD
             // 
             this.cmbFPD.FormattingEnabled = true;
-            this.cmbFPD.ItemHeight = 24;
-            this.cmbFPD.Location = new System.Drawing.Point(907, 194);
-            this.cmbFPD.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbFPD.ItemHeight = 23;
+            this.cmbFPD.Location = new System.Drawing.Point(680, 158);
             this.cmbFPD.Name = "cmbFPD";
-            this.cmbFPD.Size = new System.Drawing.Size(311, 30);
+            this.cmbFPD.Size = new System.Drawing.Size(234, 29);
             this.cmbFPD.TabIndex = 45;
             this.cmbFPD.UseSelectable = true;
             // 
             // metroLabel12
             // 
             this.metroLabel12.AutoSize = true;
-            this.metroLabel12.Location = new System.Drawing.Point(832, 201);
-            this.metroLabel12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel12.Location = new System.Drawing.Point(624, 163);
             this.metroLabel12.Name = "metroLabel12";
-            this.metroLabel12.Size = new System.Drawing.Size(41, 20);
+            this.metroLabel12.Size = new System.Drawing.Size(40, 19);
             this.metroLabel12.TabIndex = 46;
             this.metroLabel12.Text = "FPD :";
             // 
             // cmbStarch
             // 
             this.cmbStarch.FormattingEnabled = true;
-            this.cmbStarch.ItemHeight = 24;
-            this.cmbStarch.Location = new System.Drawing.Point(907, 151);
-            this.cmbStarch.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbStarch.ItemHeight = 23;
+            this.cmbStarch.Location = new System.Drawing.Point(680, 123);
             this.cmbStarch.Name = "cmbStarch";
-            this.cmbStarch.Size = new System.Drawing.Size(311, 30);
+            this.cmbStarch.Size = new System.Drawing.Size(234, 29);
             this.cmbStarch.TabIndex = 43;
             this.cmbStarch.UseSelectable = true;
             // 
             // metroLabel10
             // 
             this.metroLabel10.AutoSize = true;
-            this.metroLabel10.Location = new System.Drawing.Point(816, 158);
-            this.metroLabel10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel10.Location = new System.Drawing.Point(612, 128);
             this.metroLabel10.Name = "metroLabel10";
-            this.metroLabel10.Size = new System.Drawing.Size(54, 20);
+            this.metroLabel10.Size = new System.Drawing.Size(52, 19);
             this.metroLabel10.TabIndex = 44;
             this.metroLabel10.Text = "Starch :";
             // 
             // cmbNeutrilizer
             // 
             this.cmbNeutrilizer.FormattingEnabled = true;
-            this.cmbNeutrilizer.ItemHeight = 24;
-            this.cmbNeutrilizer.Location = new System.Drawing.Point(907, 22);
-            this.cmbNeutrilizer.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbNeutrilizer.ItemHeight = 23;
+            this.cmbNeutrilizer.Location = new System.Drawing.Point(680, 18);
             this.cmbNeutrilizer.Name = "cmbNeutrilizer";
-            this.cmbNeutrilizer.Size = new System.Drawing.Size(311, 30);
+            this.cmbNeutrilizer.Size = new System.Drawing.Size(234, 29);
             this.cmbNeutrilizer.TabIndex = 18;
             this.cmbNeutrilizer.UseSelectable = true;
             // 
             // cmbSalt
             // 
             this.cmbSalt.FormattingEnabled = true;
-            this.cmbSalt.ItemHeight = 24;
-            this.cmbSalt.Location = new System.Drawing.Point(907, 108);
-            this.cmbSalt.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbSalt.ItemHeight = 23;
+            this.cmbSalt.Location = new System.Drawing.Point(680, 88);
             this.cmbSalt.Name = "cmbSalt";
-            this.cmbSalt.Size = new System.Drawing.Size(311, 30);
+            this.cmbSalt.Size = new System.Drawing.Size(234, 29);
             this.cmbSalt.TabIndex = 10;
             this.cmbSalt.UseSelectable = true;
             // 
             // btnCapture
             // 
-            this.btnCapture.Location = new System.Drawing.Point(525, 151);
-            this.btnCapture.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCapture.Location = new System.Drawing.Point(394, 123);
             this.btnCapture.Name = "btnCapture";
-            this.btnCapture.Size = new System.Drawing.Size(107, 36);
+            this.btnCapture.Size = new System.Drawing.Size(80, 29);
             this.btnCapture.TabIndex = 12;
             this.btnCapture.Text = "Capture";
             this.btnCapture.UseSelectable = true;
@@ -485,63 +449,57 @@ namespace WeightBridgeMandya.clientui
             // cmbStatus
             // 
             this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.ItemHeight = 24;
-            this.cmbStatus.Location = new System.Drawing.Point(907, 238);
-            this.cmbStatus.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbStatus.ItemHeight = 23;
+            this.cmbStatus.Location = new System.Drawing.Point(680, 193);
             this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(311, 30);
+            this.cmbStatus.Size = new System.Drawing.Size(234, 29);
             this.cmbStatus.TabIndex = 20;
             this.cmbStatus.UseSelectable = true;
             // 
             // cmbUrea
             // 
             this.cmbUrea.FormattingEnabled = true;
-            this.cmbUrea.ItemHeight = 24;
-            this.cmbUrea.Location = new System.Drawing.Point(907, 65);
-            this.cmbUrea.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbUrea.ItemHeight = 23;
+            this.cmbUrea.Location = new System.Drawing.Point(680, 53);
             this.cmbUrea.Name = "cmbUrea";
-            this.cmbUrea.Size = new System.Drawing.Size(311, 30);
+            this.cmbUrea.Size = new System.Drawing.Size(234, 29);
             this.cmbUrea.TabIndex = 19;
             this.cmbUrea.UseSelectable = true;
             // 
             // cmbCob
             // 
             this.cmbCob.FormattingEnabled = true;
-            this.cmbCob.ItemHeight = 24;
-            this.cmbCob.Location = new System.Drawing.Point(205, 238);
-            this.cmbCob.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbCob.ItemHeight = 23;
+            this.cmbCob.Location = new System.Drawing.Point(154, 193);
             this.cmbCob.Name = "cmbCob";
-            this.cmbCob.Size = new System.Drawing.Size(311, 30);
+            this.cmbCob.Size = new System.Drawing.Size(234, 29);
             this.cmbCob.TabIndex = 11;
             this.cmbCob.UseSelectable = true;
             // 
             // metroLabel21
             // 
             this.metroLabel21.AutoSize = true;
-            this.metroLabel21.Location = new System.Drawing.Point(820, 242);
-            this.metroLabel21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel21.Location = new System.Drawing.Point(615, 197);
             this.metroLabel21.Name = "metroLabel21";
-            this.metroLabel21.Size = new System.Drawing.Size(52, 20);
+            this.metroLabel21.Size = new System.Drawing.Size(50, 19);
             this.metroLabel21.TabIndex = 42;
             this.metroLabel21.Text = "Status :";
             // 
             // metroLabel20
             // 
             this.metroLabel20.AutoSize = true;
-            this.metroLabel20.Location = new System.Drawing.Point(825, 73);
-            this.metroLabel20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel20.Location = new System.Drawing.Point(619, 59);
             this.metroLabel20.Name = "metroLabel20";
-            this.metroLabel20.Size = new System.Drawing.Size(46, 20);
+            this.metroLabel20.Size = new System.Drawing.Size(44, 19);
             this.metroLabel20.TabIndex = 41;
             this.metroLabel20.Text = "Urea :";
             // 
             // metroLabel19
             // 
             this.metroLabel19.AutoSize = true;
-            this.metroLabel19.Location = new System.Drawing.Point(127, 244);
-            this.metroLabel19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.metroLabel19.Location = new System.Drawing.Point(95, 198);
             this.metroLabel19.Name = "metroLabel19";
-            this.metroLabel19.Size = new System.Drawing.Size(44, 20);
+            this.metroLabel19.Size = new System.Drawing.Size(44, 19);
             this.metroLabel19.TabIndex = 40;
             this.metroLabel19.Text = "COB :";
             // 
@@ -551,10 +509,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // 
             this.txtAcidity.CustomButton.Image = null;
-            this.txtAcidity.CustomButton.Location = new System.Drawing.Point(277, 2);
-            this.txtAcidity.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAcidity.CustomButton.Location = new System.Drawing.Point(154, 1);
             this.txtAcidity.CustomButton.Name = "";
-            this.txtAcidity.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.txtAcidity.CustomButton.Size = new System.Drawing.Size(20, 22);
             this.txtAcidity.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtAcidity.CustomButton.TabIndex = 1;
             this.txtAcidity.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -563,8 +520,7 @@ namespace WeightBridgeMandya.clientui
             this.txtAcidity.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtAcidity.Lines = new string[] {
         "0"};
-            this.txtAcidity.Location = new System.Drawing.Point(207, 194);
-            this.txtAcidity.Margin = new System.Windows.Forms.Padding(4);
+            this.txtAcidity.Location = new System.Drawing.Point(155, 158);
             this.txtAcidity.MaxLength = 5;
             this.txtAcidity.Name = "txtAcidity";
             this.txtAcidity.PasswordChar = '\0';
@@ -573,7 +529,7 @@ namespace WeightBridgeMandya.clientui
             this.txtAcidity.SelectionLength = 0;
             this.txtAcidity.SelectionStart = 0;
             this.txtAcidity.ShortcutsEnabled = true;
-            this.txtAcidity.Size = new System.Drawing.Size(311, 36);
+            this.txtAcidity.Size = new System.Drawing.Size(233, 29);
             this.txtAcidity.TabIndex = 8;
             this.txtAcidity.Text = "0";
             this.txtAcidity.UseSelectable = true;
@@ -587,10 +543,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // 
             this.txtSnf.CustomButton.Image = null;
-            this.txtSnf.CustomButton.Location = new System.Drawing.Point(278, 2);
-            this.txtSnf.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSnf.CustomButton.Location = new System.Drawing.Point(154, 1);
             this.txtSnf.CustomButton.Name = "";
-            this.txtSnf.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.txtSnf.CustomButton.Size = new System.Drawing.Size(20, 22);
             this.txtSnf.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSnf.CustomButton.TabIndex = 1;
             this.txtSnf.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -599,8 +554,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSnf.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtSnf.Lines = new string[] {
         "0"};
-            this.txtSnf.Location = new System.Drawing.Point(205, 151);
-            this.txtSnf.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSnf.Location = new System.Drawing.Point(154, 123);
             this.txtSnf.MaxLength = 5;
             this.txtSnf.Name = "txtSnf";
             this.txtSnf.PasswordChar = '\0';
@@ -609,7 +563,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSnf.SelectionLength = 0;
             this.txtSnf.SelectionStart = 0;
             this.txtSnf.ShortcutsEnabled = true;
-            this.txtSnf.Size = new System.Drawing.Size(312, 36);
+            this.txtSnf.Size = new System.Drawing.Size(234, 29);
             this.txtSnf.TabIndex = 7;
             this.txtSnf.Text = "0";
             this.txtSnf.UseSelectable = true;
@@ -623,10 +577,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // 
             this.txtFat.CustomButton.Image = null;
-            this.txtFat.CustomButton.Location = new System.Drawing.Point(278, 2);
-            this.txtFat.CustomButton.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFat.CustomButton.Location = new System.Drawing.Point(154, 1);
             this.txtFat.CustomButton.Name = "";
-            this.txtFat.CustomButton.Size = new System.Drawing.Size(31, 31);
+            this.txtFat.CustomButton.Size = new System.Drawing.Size(20, 22);
             this.txtFat.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtFat.CustomButton.TabIndex = 1;
             this.txtFat.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -635,8 +588,7 @@ namespace WeightBridgeMandya.clientui
             this.txtFat.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtFat.Lines = new string[] {
         "0"};
-            this.txtFat.Location = new System.Drawing.Point(205, 108);
-            this.txtFat.Margin = new System.Windows.Forms.Padding(4);
+            this.txtFat.Location = new System.Drawing.Point(154, 88);
             this.txtFat.MaxLength = 5;
             this.txtFat.Name = "txtFat";
             this.txtFat.PasswordChar = '\0';
@@ -645,7 +597,7 @@ namespace WeightBridgeMandya.clientui
             this.txtFat.SelectionLength = 0;
             this.txtFat.SelectionStart = 0;
             this.txtFat.ShortcutsEnabled = true;
-            this.txtFat.Size = new System.Drawing.Size(312, 36);
+            this.txtFat.Size = new System.Drawing.Size(234, 29);
             this.txtFat.TabIndex = 6;
             this.txtFat.Text = "0";
             this.txtFat.UseSelectable = true;
@@ -656,44 +608,39 @@ namespace WeightBridgeMandya.clientui
             // cmbAlcohol
             // 
             this.cmbAlcohol.FormattingEnabled = true;
-            this.cmbAlcohol.ItemHeight = 24;
-            this.cmbAlcohol.Location = new System.Drawing.Point(205, 281);
-            this.cmbAlcohol.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbAlcohol.ItemHeight = 23;
+            this.cmbAlcohol.Location = new System.Drawing.Point(154, 228);
             this.cmbAlcohol.Name = "cmbAlcohol";
-            this.cmbAlcohol.Size = new System.Drawing.Size(311, 30);
+            this.cmbAlcohol.Size = new System.Drawing.Size(234, 29);
             this.cmbAlcohol.TabIndex = 13;
             this.cmbAlcohol.UseSelectable = true;
             // 
             // cmbTemp
             // 
             this.cmbTemp.FormattingEnabled = true;
-            this.cmbTemp.ItemHeight = 24;
-            this.cmbTemp.Location = new System.Drawing.Point(207, 65);
-            this.cmbTemp.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbTemp.ItemHeight = 23;
+            this.cmbTemp.Location = new System.Drawing.Point(155, 53);
             this.cmbTemp.Name = "cmbTemp";
-            this.cmbTemp.Size = new System.Drawing.Size(309, 30);
+            this.cmbTemp.Size = new System.Drawing.Size(233, 29);
             this.cmbTemp.TabIndex = 5;
             this.cmbTemp.UseSelectable = true;
-            //this.cmbTemp.SelectedIndexChanged += new System.EventHandler(this.cmbTemp_SelectedIndexChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btnClear);
             this.groupBox3.Controls.Add(this.btnSave);
-            this.groupBox3.Location = new System.Drawing.Point(31, 532);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.groupBox3.Location = new System.Drawing.Point(23, 432);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox3.Size = new System.Drawing.Size(1288, 80);
+            this.groupBox3.Size = new System.Drawing.Size(966, 65);
             this.groupBox3.TabIndex = 31;
             this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(661, 22);
-            this.btnClear.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClear.Location = new System.Drawing.Point(496, 18);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(116, 36);
+            this.btnClear.Size = new System.Drawing.Size(87, 29);
             this.btnClear.TabIndex = 22;
             this.btnClear.Text = "Clear";
             this.btnClear.UseSelectable = true;
@@ -701,10 +648,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(501, 22);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSave.Location = new System.Drawing.Point(376, 18);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(120, 36);
+            this.btnSave.Size = new System.Drawing.Size(90, 29);
             this.btnSave.TabIndex = 21;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
@@ -713,10 +659,9 @@ namespace WeightBridgeMandya.clientui
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(1117, 22);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Location = new System.Drawing.Point(838, 18);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(116, 36);
+            this.btnClose.Size = new System.Drawing.Size(87, 29);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "Close";
             this.btnClose.UseSelectable = true;
@@ -731,19 +676,17 @@ namespace WeightBridgeMandya.clientui
             // MainLab
             // 
             this.AcceptButton = this.btnSave;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(1369, 656);
+            this.ClientSize = new System.Drawing.Size(1027, 533);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "MainLab";
-            this.Padding = new System.Windows.Forms.Padding(27, 74, 27, 25);
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "Main Lab";

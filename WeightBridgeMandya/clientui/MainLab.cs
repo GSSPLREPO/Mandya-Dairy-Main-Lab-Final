@@ -1206,5 +1206,9 @@ namespace WeightBridgeMandya.clientui
         }
         #endregion
 
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

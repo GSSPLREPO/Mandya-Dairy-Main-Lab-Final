@@ -33,10 +33,13 @@ namespace WeightBridgeMandya.clientui
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditDeleteData));
-            this.btnAddNew = new MetroFramework.Controls.MetroButton();
-            this.txtSearch = new MetroFramework.Controls.MetroTextBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.gvMainLab = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnLabReport = new MetroFramework.Controls.MetroButton();
+            this.dtDate = new MetroFramework.Controls.MetroDateTime();
+            this.btnGo = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.MainLabAnalysisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,81 +47,39 @@ namespace WeightBridgeMandya.clientui
             this.TankNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BatchNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.OT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Temp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Acidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fat = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SNF = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Acidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.COB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Mbrt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhospharaseTest = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Alcohol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Neutrilizer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Urea = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Starch = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FPD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnOldData = new MetroFramework.Controls.MetroButton();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnLogout = new MetroFramework.Controls.MetroButton();
-            this.AddNewProduct = new MetroFramework.Controls.MetroButton();
-            this.btnLabReport = new MetroFramework.Controls.MetroButton();
+            this.Adultration = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AerobicPlate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Coliform = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SomaticCell = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CremingIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalSolid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ph = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Appearance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BodyAndTexture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Flavour = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Moisture = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FFAOA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BRReading = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RMValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BauduinTest = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.EColi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SucrosePercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InsolubilityIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Protein = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalAsh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ScorchedParticle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BulkDensity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Wettability = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvMainLab)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnAddNew
-            // 
-            this.btnAddNew.Location = new System.Drawing.Point(1029, 16);
-            this.btnAddNew.Name = "btnAddNew";
-            this.btnAddNew.Size = new System.Drawing.Size(88, 34);
-            this.btnAddNew.TabIndex = 1;
-            this.btnAddNew.Text = "Add New";
-            this.btnAddNew.UseSelectable = true;
-            this.btnAddNew.Visible = false;
-            this.btnAddNew.Click += new System.EventHandler(this.btnAddNew_Click);
-            // 
-            // txtSearch
-            // 
-            // 
-            // 
-            // 
-            this.txtSearch.CustomButton.Image = null;
-            this.txtSearch.CustomButton.Location = new System.Drawing.Point(104, 1);
-            this.txtSearch.CustomButton.Name = "";
-            this.txtSearch.CustomButton.Size = new System.Drawing.Size(20, 22);
-            this.txtSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtSearch.CustomButton.TabIndex = 1;
-            this.txtSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtSearch.CustomButton.UseSelectable = true;
-            this.txtSearch.CustomButton.Visible = false;
-            this.txtSearch.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtSearch.Lines = new string[0];
-            this.txtSearch.Location = new System.Drawing.Point(278, 21);
-            this.txtSearch.MaxLength = 10;
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.PasswordChar = '\0';
-            this.txtSearch.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtSearch.SelectedText = "";
-            this.txtSearch.SelectionLength = 0;
-            this.txtSearch.SelectionStart = 0;
-            this.txtSearch.ShortcutsEnabled = true;
-            this.txtSearch.Size = new System.Drawing.Size(166, 29);
-            this.txtSearch.TabIndex = 3;
-            this.txtSearch.UseSelectable = true;
-            this.txtSearch.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtSearch.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
-            this.txtSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSearch_KeyPress);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(195, 26);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(65, 19);
-            this.metroLabel1.TabIndex = 4;
-            this.metroLabel1.Text = "Tank No :";
             // 
             // gvMainLab
             // 
@@ -148,19 +109,37 @@ namespace WeightBridgeMandya.clientui
             this.TankNo,
             this.BatchNo,
             this.Product,
-            this.OT,
             this.Temp,
+            this.Acidity,
             this.Fat,
             this.SNF,
-            this.Acidity,
-            this.COB,
+            this.Mbrt,
+            this.PhospharaseTest,
             this.Alcohol,
-            this.Neutrilizer,
-            this.Urea,
-            this.Salt,
-            this.Starch,
-            this.FPD,
-            this.Status});
+            this.Adultration,
+            this.AerobicPlate,
+            this.Coliform,
+            this.SomaticCell,
+            this.CremingIndex,
+            this.TotalSolid,
+            this.Ph,
+            this.Appearance,
+            this.BodyAndTexture,
+            this.Flavour,
+            this.Moisture,
+            this.FFAOA,
+            this.BRReading,
+            this.RMValue,
+            this.PValue,
+            this.BauduinTest,
+            this.EColi,
+            this.SucrosePercent,
+            this.InsolubilityIndex,
+            this.Protein,
+            this.TotalAsh,
+            this.ScorchedParticle,
+            this.BulkDensity,
+            this.Wettability});
             this.gvMainLab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvMainLab.EnableHeadersVisualStyles = false;
             this.gvMainLab.GridColor = System.Drawing.SystemColors.AppWorkspace;
@@ -184,9 +163,68 @@ namespace WeightBridgeMandya.clientui
             this.gvMainLab.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.gvMainLab.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gvMainLab.ShowCellErrors = false;
-            this.gvMainLab.Size = new System.Drawing.Size(1346, 506);
+            this.gvMainLab.Size = new System.Drawing.Size(2235, 506);
             this.gvMainLab.TabIndex = 156;
             this.gvMainLab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvMainLab_CellContentClick);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Edit";
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "Edit";
+            this.dataGridViewImageColumn1.Image = global::WeightBridgeMandya.Properties.Resources.Edit;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 31;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewImageColumn2.DataPropertyName = "Delete";
+            this.dataGridViewImageColumn2.FillWeight = 60F;
+            this.dataGridViewImageColumn2.HeaderText = "Delete";
+            this.dataGridViewImageColumn2.Image = global::WeightBridgeMandya.Properties.Resources.Delete;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // btnLabReport
+            // 
+            this.btnLabReport.Location = new System.Drawing.Point(555, 16);
+            this.btnLabReport.Name = "btnLabReport";
+            this.btnLabReport.Size = new System.Drawing.Size(110, 34);
+            this.btnLabReport.TabIndex = 159;
+            this.btnLabReport.Text = "Test Product";
+            this.btnLabReport.UseSelectable = true;
+            this.btnLabReport.Click += new System.EventHandler(this.btnLabReport_Click);
+            // 
+            // dtDate
+            // 
+            this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDate.Location = new System.Drawing.Point(302, 18);
+            this.dtDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtDate.Name = "dtDate";
+            this.dtDate.Size = new System.Drawing.Size(113, 29);
+            this.dtDate.TabIndex = 160;
+            // 
+            // btnGo
+            // 
+            this.btnGo.Location = new System.Drawing.Point(421, 16);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(54, 34);
+            this.btnGo.TabIndex = 161;
+            this.btnGo.Text = "Go";
+            this.btnGo.UseSelectable = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(247, 23);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel1.TabIndex = 162;
+            this.metroLabel1.Text = "Date :";
             // 
             // Edit
             // 
@@ -236,7 +274,6 @@ namespace WeightBridgeMandya.clientui
             this.TankNo.MinimumWidth = 6;
             this.TankNo.Name = "TankNo";
             this.TankNo.ReadOnly = true;
-            this.TankNo.Width = 125;
             // 
             // BatchNo
             // 
@@ -249,21 +286,12 @@ namespace WeightBridgeMandya.clientui
             // 
             // Product
             // 
-            this.Product.DataPropertyName = "Product";
+            this.Product.DataPropertyName = "ProductName";
             this.Product.FillWeight = 250F;
             this.Product.HeaderText = "Product Name";
             this.Product.MinimumWidth = 6;
             this.Product.Name = "Product";
             this.Product.ReadOnly = true;
-            // 
-            // OT
-            // 
-            this.OT.DataPropertyName = "OT";
-            this.OT.FillWeight = 80F;
-            this.OT.HeaderText = "OT";
-            this.OT.MinimumWidth = 6;
-            this.OT.Name = "OT";
-            this.OT.ReadOnly = true;
             // 
             // Temp
             // 
@@ -273,6 +301,14 @@ namespace WeightBridgeMandya.clientui
             this.Temp.MinimumWidth = 6;
             this.Temp.Name = "Temp";
             this.Temp.ReadOnly = true;
+            // 
+            // Acidity
+            // 
+            this.Acidity.DataPropertyName = "Acidity";
+            this.Acidity.HeaderText = "Acidity";
+            this.Acidity.MinimumWidth = 6;
+            this.Acidity.Name = "Acidity";
+            this.Acidity.ReadOnly = true;
             // 
             // Fat
             // 
@@ -292,164 +328,212 @@ namespace WeightBridgeMandya.clientui
             this.SNF.Name = "SNF";
             this.SNF.ReadOnly = true;
             // 
-            // Acidity
+            // Mbrt
             // 
-            this.Acidity.DataPropertyName = "Acidity";
-            this.Acidity.HeaderText = "Acidity (%LA)";
-            this.Acidity.MinimumWidth = 6;
-            this.Acidity.Name = "Acidity";
-            this.Acidity.ReadOnly = true;
+            this.Mbrt.DataPropertyName = "Mbrt";
+            this.Mbrt.HeaderText = "MBRT";
+            this.Mbrt.Name = "Mbrt";
+            this.Mbrt.ReadOnly = true;
             // 
-            // COB
+            // PhospharaseTest
             // 
-            this.COB.DataPropertyName = "COB";
-            this.COB.FillWeight = 70F;
-            this.COB.HeaderText = "COB";
-            this.COB.MinimumWidth = 6;
-            this.COB.Name = "COB";
-            this.COB.ReadOnly = true;
+            this.PhospharaseTest.DataPropertyName = "PhospharaseTest";
+            this.PhospharaseTest.HeaderText = "Phospharase Test";
+            this.PhospharaseTest.Name = "PhospharaseTest";
+            this.PhospharaseTest.ReadOnly = true;
             // 
             // Alcohol
             // 
             this.Alcohol.DataPropertyName = "Alcohol";
             this.Alcohol.FillWeight = 90F;
-            this.Alcohol.HeaderText = "Alcohol Test";
+            this.Alcohol.HeaderText = "Alcohol";
             this.Alcohol.MinimumWidth = 6;
             this.Alcohol.Name = "Alcohol";
             this.Alcohol.ReadOnly = true;
             // 
-            // Neutrilizer
+            // Adultration
             // 
-            this.Neutrilizer.DataPropertyName = "Neutrilizer";
-            this.Neutrilizer.FillWeight = 110F;
-            this.Neutrilizer.HeaderText = "Neutrilizer";
-            this.Neutrilizer.MinimumWidth = 6;
-            this.Neutrilizer.Name = "Neutrilizer";
-            this.Neutrilizer.ReadOnly = true;
+            this.Adultration.DataPropertyName = "Adultration";
+            this.Adultration.HeaderText = "Adultration";
+            this.Adultration.Name = "Adultration";
+            this.Adultration.ReadOnly = true;
             // 
-            // Urea
+            // AerobicPlate
             // 
-            this.Urea.DataPropertyName = "Urea";
-            this.Urea.FillWeight = 80F;
-            this.Urea.HeaderText = "Urea";
-            this.Urea.MinimumWidth = 6;
-            this.Urea.Name = "Urea";
-            this.Urea.ReadOnly = true;
+            this.AerobicPlate.DataPropertyName = "AerobicPlate";
+            this.AerobicPlate.HeaderText = "Aerobic Plate Count";
+            this.AerobicPlate.Name = "AerobicPlate";
+            this.AerobicPlate.ReadOnly = true;
             // 
-            // Salt
+            // Coliform
             // 
-            this.Salt.DataPropertyName = "Salt";
-            this.Salt.FillWeight = 80F;
-            this.Salt.HeaderText = "Salt";
-            this.Salt.MinimumWidth = 6;
-            this.Salt.Name = "Salt";
-            this.Salt.ReadOnly = true;
+            this.Coliform.DataPropertyName = "Coliform";
+            this.Coliform.HeaderText = "Coliform";
+            this.Coliform.Name = "Coliform";
+            this.Coliform.ReadOnly = true;
             // 
-            // Starch
+            // SomaticCell
             // 
-            this.Starch.DataPropertyName = "Starch";
-            this.Starch.FillWeight = 90F;
-            this.Starch.HeaderText = "Starch";
-            this.Starch.MinimumWidth = 6;
-            this.Starch.Name = "Starch";
-            this.Starch.ReadOnly = true;
+            this.SomaticCell.DataPropertyName = "SomaticCell";
+            this.SomaticCell.HeaderText = "Somatic Cell Count";
+            this.SomaticCell.Name = "SomaticCell";
+            this.SomaticCell.ReadOnly = true;
             // 
-            // FPD
+            // CremingIndex
             // 
-            this.FPD.DataPropertyName = "Fpd";
-            this.FPD.FillWeight = 80F;
-            this.FPD.HeaderText = "FPD";
-            this.FPD.MinimumWidth = 6;
-            this.FPD.Name = "FPD";
-            this.FPD.ReadOnly = true;
+            this.CremingIndex.DataPropertyName = "CremingIndex";
+            this.CremingIndex.HeaderText = "Creming Index";
+            this.CremingIndex.Name = "CremingIndex";
+            this.CremingIndex.ReadOnly = true;
             // 
-            // Status
+            // TotalSolid
             // 
-            this.Status.DataPropertyName = "Status";
-            this.Status.FillWeight = 150F;
-            this.Status.HeaderText = "Status";
-            this.Status.MinimumWidth = 6;
-            this.Status.Name = "Status";
-            this.Status.ReadOnly = true;
+            this.TotalSolid.DataPropertyName = "TotalSolid";
+            this.TotalSolid.HeaderText = "Total Solid %";
+            this.TotalSolid.Name = "TotalSolid";
+            this.TotalSolid.ReadOnly = true;
             // 
-            // btnOldData
+            // Ph
             // 
-            this.btnOldData.Location = new System.Drawing.Point(764, 16);
-            this.btnOldData.Name = "btnOldData";
-            this.btnOldData.Size = new System.Drawing.Size(105, 34);
-            this.btnOldData.TabIndex = 157;
-            this.btnOldData.Text = "Old Data";
-            this.btnOldData.UseSelectable = true;
-            this.btnOldData.Click += new System.EventHandler(this.btnOldData_Click);
+            this.Ph.DataPropertyName = "Ph";
+            this.Ph.HeaderText = "PH";
+            this.Ph.Name = "Ph";
+            this.Ph.ReadOnly = true;
             // 
-            // dataGridViewImageColumn1
+            // Appearance
             // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Edit";
-            this.dataGridViewImageColumn1.FillWeight = 50F;
-            this.dataGridViewImageColumn1.HeaderText = "Edit";
-            this.dataGridViewImageColumn1.Image = global::WeightBridgeMandya.Properties.Resources.Edit;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 31;
+            this.Appearance.DataPropertyName = "Appearance";
+            this.Appearance.HeaderText = "Appearance";
+            this.Appearance.Name = "Appearance";
+            this.Appearance.ReadOnly = true;
             // 
-            // dataGridViewImageColumn2
+            // BodyAndTexture
             // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn2.DataPropertyName = "Delete";
-            this.dataGridViewImageColumn2.FillWeight = 60F;
-            this.dataGridViewImageColumn2.HeaderText = "Delete";
-            this.dataGridViewImageColumn2.Image = global::WeightBridgeMandya.Properties.Resources.Delete;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.BodyAndTexture.DataPropertyName = "BodyAndTexture";
+            this.BodyAndTexture.HeaderText = "Body & Texture";
+            this.BodyAndTexture.Name = "BodyAndTexture";
+            this.BodyAndTexture.ReadOnly = true;
             // 
-            // btnLogout
+            // Flavour
             // 
-            this.btnLogout.Location = new System.Drawing.Point(1123, 16);
-            this.btnLogout.Name = "btnLogout";
-            this.btnLogout.Size = new System.Drawing.Size(90, 34);
-            this.btnLogout.TabIndex = 2;
-            this.btnLogout.Text = "Logout";
-            this.btnLogout.UseSelectable = true;
-            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            this.Flavour.DataPropertyName = "Flavour";
+            this.Flavour.HeaderText = "Flavour";
+            this.Flavour.Name = "Flavour";
+            this.Flavour.ReadOnly = true;
             // 
-            // AddNewProduct
+            // Moisture
             // 
-            this.AddNewProduct.Location = new System.Drawing.Point(635, 16);
-            this.AddNewProduct.Name = "AddNewProduct";
-            this.AddNewProduct.Size = new System.Drawing.Size(114, 34);
-            this.AddNewProduct.TabIndex = 158;
-            this.AddNewProduct.Text = " Add New Product";
-            this.AddNewProduct.UseSelectable = true;
-            this.AddNewProduct.Click += new System.EventHandler(this.btnAddNewProduct);
+            this.Moisture.DataPropertyName = "Moisture";
+            this.Moisture.HeaderText = "Moisture %";
+            this.Moisture.Name = "Moisture";
+            this.Moisture.ReadOnly = true;
             // 
-            // btnLabReport
+            // FFAOA
             // 
-            this.btnLabReport.Location = new System.Drawing.Point(506, 16);
-            this.btnLabReport.Name = "btnLabReport";
-            this.btnLabReport.Size = new System.Drawing.Size(110, 34);
-            this.btnLabReport.TabIndex = 159;
-            this.btnLabReport.Text = "Test New Product";
-            this.btnLabReport.UseSelectable = true;
-            this.btnLabReport.Click += new System.EventHandler(this.btnLabReport_Click);
+            this.FFAOA.DataPropertyName = "FFAOA";
+            this.FFAOA.HeaderText = "FFA % OA";
+            this.FFAOA.Name = "FFAOA";
+            this.FFAOA.ReadOnly = true;
+            // 
+            // BRReading
+            // 
+            this.BRReading.DataPropertyName = "BRReading";
+            this.BRReading.HeaderText = "BR Reading";
+            this.BRReading.Name = "BRReading";
+            this.BRReading.ReadOnly = true;
+            // 
+            // RMValue
+            // 
+            this.RMValue.DataPropertyName = "RMValue";
+            this.RMValue.HeaderText = "Rmvalue";
+            this.RMValue.Name = "RMValue";
+            this.RMValue.ReadOnly = true;
+            // 
+            // PValue
+            // 
+            this.PValue.DataPropertyName = "PValue";
+            this.PValue.HeaderText = "P Value";
+            this.PValue.Name = "PValue";
+            this.PValue.ReadOnly = true;
+            // 
+            // BauduinTest
+            // 
+            this.BauduinTest.DataPropertyName = "BauduinTest";
+            this.BauduinTest.HeaderText = "Baudouin Test";
+            this.BauduinTest.Name = "BauduinTest";
+            this.BauduinTest.ReadOnly = true;
+            // 
+            // EColi
+            // 
+            this.EColi.DataPropertyName = "EColi";
+            this.EColi.HeaderText = "E-Coli";
+            this.EColi.Name = "EColi";
+            this.EColi.ReadOnly = true;
+            // 
+            // SucrosePercent
+            // 
+            this.SucrosePercent.DataPropertyName = "SucrosePercent";
+            this.SucrosePercent.HeaderText = "Sucrose Percent";
+            this.SucrosePercent.Name = "SucrosePercent";
+            this.SucrosePercent.ReadOnly = true;
+            // 
+            // InsolubilityIndex
+            // 
+            this.InsolubilityIndex.DataPropertyName = "InsolubilityIndex";
+            this.InsolubilityIndex.HeaderText = "Insolubility Index";
+            this.InsolubilityIndex.Name = "InsolubilityIndex";
+            this.InsolubilityIndex.ReadOnly = true;
+            // 
+            // Protein
+            // 
+            this.Protein.DataPropertyName = "Protein";
+            this.Protein.HeaderText = "Protein";
+            this.Protein.Name = "Protein";
+            this.Protein.ReadOnly = true;
+            // 
+            // TotalAsh
+            // 
+            this.TotalAsh.DataPropertyName = "TotalAsh";
+            this.TotalAsh.HeaderText = "Total Ash %";
+            this.TotalAsh.Name = "TotalAsh";
+            this.TotalAsh.ReadOnly = true;
+            // 
+            // ScorchedParticle
+            // 
+            this.ScorchedParticle.DataPropertyName = "ScorchedParticle";
+            this.ScorchedParticle.HeaderText = "Scorched Particle";
+            this.ScorchedParticle.Name = "ScorchedParticle";
+            this.ScorchedParticle.ReadOnly = true;
+            // 
+            // BulkDensity
+            // 
+            this.BulkDensity.DataPropertyName = "BulkDensity";
+            this.BulkDensity.HeaderText = "Bulk Density";
+            this.BulkDensity.Name = "BulkDensity";
+            this.BulkDensity.ReadOnly = true;
+            // 
+            // Wettability
+            // 
+            this.Wettability.DataPropertyName = "Wettability";
+            this.Wettability.HeaderText = "Wettability";
+            this.Wettability.Name = "Wettability";
+            this.Wettability.ReadOnly = true;
             // 
             // EditDeleteData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 586);
-            this.Controls.Add(this.btnLabReport);
-            this.Controls.Add(this.AddNewProduct);
-            this.Controls.Add(this.btnOldData);
-            this.Controls.Add(this.gvMainLab);
+            this.ClientSize = new System.Drawing.Size(2275, 586);
             this.Controls.Add(this.metroLabel1);
-            this.Controls.Add(this.txtSearch);
-            this.Controls.Add(this.btnLogout);
-            this.Controls.Add(this.btnAddNew);
+            this.Controls.Add(this.btnGo);
+            this.Controls.Add(this.dtDate);
+            this.Controls.Add(this.btnLabReport);
+            this.Controls.Add(this.gvMainLab);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditDeleteData";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
-            this.Text = "Today Data";
+            this.Text = "Data";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditDeleteData_FormClosing);
             this.Load += new System.EventHandler(this.EditDeleteData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvMainLab)).EndInit();
@@ -459,13 +543,13 @@ namespace WeightBridgeMandya.clientui
         }
 
         #endregion
-        private MetroFramework.Controls.MetroButton btnAddNew;
-        private MetroFramework.Controls.MetroTextBox txtSearch;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.DataGridView gvMainLab;
-        private MetroFramework.Controls.MetroButton btnOldData;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private MetroFramework.Controls.MetroButton btnLabReport;
+        private MetroFramework.Controls.MetroDateTime dtDate;
+        private MetroFramework.Controls.MetroButton btnGo;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.DataGridViewImageColumn Edit;
         private System.Windows.Forms.DataGridViewImageColumn Delete;
         private System.Windows.Forms.DataGridViewTextBoxColumn MainLabAnalysisID;
@@ -473,21 +557,36 @@ namespace WeightBridgeMandya.clientui
         private System.Windows.Forms.DataGridViewTextBoxColumn TankNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn BatchNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn OT;
         private System.Windows.Forms.DataGridViewTextBoxColumn Temp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Acidity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fat;
         private System.Windows.Forms.DataGridViewTextBoxColumn SNF;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Acidity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn COB;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Mbrt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PhospharaseTest;
         private System.Windows.Forms.DataGridViewTextBoxColumn Alcohol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Neutrilizer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Urea;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Salt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Starch;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FPD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
-        private MetroFramework.Controls.MetroButton btnLogout;
-        private MetroFramework.Controls.MetroButton AddNewProduct;
-        private MetroFramework.Controls.MetroButton btnLabReport;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Adultration;
+        private System.Windows.Forms.DataGridViewTextBoxColumn AerobicPlate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Coliform;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SomaticCell;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CremingIndex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalSolid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ph;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Appearance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BodyAndTexture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Flavour;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Moisture;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FFAOA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BRReading;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RMValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BauduinTest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn EColi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SucrosePercent;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InsolubilityIndex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Protein;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalAsh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ScorchedParticle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BulkDensity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Wettability;
     }
 }

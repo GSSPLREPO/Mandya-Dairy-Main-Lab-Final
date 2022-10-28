@@ -31,6 +31,7 @@ namespace WeightBridgeMandya
         {
             this.metroTile1 = new MetroFramework.Controls.MetroTile();
             this.metroTile2 = new MetroFramework.Controls.MetroTile();
+            this.btnLogout = new MetroFramework.Controls.MetroButton();
             this.SuspendLayout();
             // 
             // metroTile1
@@ -61,11 +62,22 @@ namespace WeightBridgeMandya
             this.metroTile2.UseSelectable = true;
             this.metroTile2.Click += new System.EventHandler(this.metroTile2_Click);
             // 
+            // btnLogout
+            // 
+            this.btnLogout.Location = new System.Drawing.Point(246, 24);
+            this.btnLogout.Name = "btnLogout";
+            this.btnLogout.Size = new System.Drawing.Size(89, 31);
+            this.btnLogout.TabIndex = 2;
+            this.btnLogout.Text = "Logout";
+            this.btnLogout.UseSelectable = true;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(933, 428);
+            this.Controls.Add(this.btnLogout);
             this.Controls.Add(this.metroTile2);
             this.Controls.Add(this.metroTile1);
             this.MaximizeBox = false;
@@ -82,6 +94,7 @@ namespace WeightBridgeMandya
 
         private MetroFramework.Controls.MetroTile metroTile1;
         private MetroFramework.Controls.MetroTile metroTile2;
+        private MetroFramework.Controls.MetroButton btnLogout;
     }
 }
 

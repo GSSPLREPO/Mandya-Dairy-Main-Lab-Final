@@ -48,6 +48,8 @@ namespace Mandya.BO
         public const string MAINLABANALYSIS_SCORCHEDPARTICLE = "ScorchedParticle";
         public const string MAINLABANALYSIS_BULKDENSITY = "BulkDensity";
         public const string MAINLABANALYSIS_WETTABILITY = "Wettability";
+        public const string MAINLABANALYSIS_STATUS = "Status";
+        public const string MAINLABANALYSIS_REMARKS = "Remarks";
         public const string MAINLABANALYSIS_ISDELETED = "IsDeleted";
         public const string MAINLABANALYSIS_CREATEDBYID = "CreatedByID";
         public const string MAINLABANALYSIS_CREATEDBYDATE = "CreatedByDate";
@@ -91,6 +93,8 @@ namespace Mandya.BO
         private float flScorchedParticle = 0;
         private float flBulkDensity = 0;
         private float flWettability = 0;
+        private int intStatus = 0;
+        private string strRemarks = string.Empty;
         private int intIsDeleted = 0;
         private int intCreatedByID = 0;
         private DateTime dtCreatedByDate;
@@ -314,6 +318,18 @@ namespace Mandya.BO
         {
             get { return flWettability; }
             set { flWettability = value; }
+        }
+
+        public int Status
+        {
+            get { return intStatus; }
+            set { intStatus = value; }
+        }
+
+        public string Remarks
+        {
+            get { return strRemarks; }
+            set { strRemarks = value; }
         }
 
         public int IsDeleted

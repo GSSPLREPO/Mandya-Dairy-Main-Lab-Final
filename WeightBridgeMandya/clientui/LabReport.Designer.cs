@@ -52,6 +52,7 @@ namespace WeightBridgeMandya.clientui
             this.btnRefresh = new MetroFramework.Controls.MetroButton();
             this.btnClose = new MetroFramework.Controls.MetroButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnCapture = new MetroFramework.Controls.MetroButton();
             this.cmbBauduinTest = new MetroFramework.Controls.MetroComboBox();
             this.txtRemarks = new MetroFramework.Controls.MetroTextBox();
             this.lblRemarks = new MetroFramework.Controls.MetroLabel();
@@ -116,7 +117,8 @@ namespace WeightBridgeMandya.clientui
             this.txtTemp = new MetroFramework.Controls.MetroTextBox();
             this.cmbPhospharaseTest = new MetroFramework.Controls.MetroComboBox();
             this.lblTemp = new MetroFramework.Controls.MetroLabel();
-            this.btnCapture = new MetroFramework.Controls.MetroButton();
+            this.cmbStatus = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.pnlEntryType.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -359,6 +361,8 @@ namespace WeightBridgeMandya.clientui
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.cmbStatus);
+            this.groupBox2.Controls.Add(this.metroLabel6);
             this.groupBox2.Controls.Add(this.btnCapture);
             this.groupBox2.Controls.Add(this.cmbBauduinTest);
             this.groupBox2.Controls.Add(this.txtRemarks);
@@ -431,6 +435,17 @@ namespace WeightBridgeMandya.clientui
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             // 
+            // btnCapture
+            // 
+            this.btnCapture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnCapture.Location = new System.Drawing.Point(612, 17);
+            this.btnCapture.Name = "btnCapture";
+            this.btnCapture.Size = new System.Drawing.Size(92, 30);
+            this.btnCapture.TabIndex = 114;
+            this.btnCapture.Text = "Capture";
+            this.btnCapture.UseSelectable = true;
+            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
+            // 
             // cmbBauduinTest
             // 
             this.cmbBauduinTest.FormattingEnabled = true;
@@ -447,9 +462,9 @@ namespace WeightBridgeMandya.clientui
             // 
             // 
             this.txtRemarks.CustomButton.Image = null;
-            this.txtRemarks.CustomButton.Location = new System.Drawing.Point(856, 1);
+            this.txtRemarks.CustomButton.Location = new System.Drawing.Point(649, 1);
             this.txtRemarks.CustomButton.Name = "";
-            this.txtRemarks.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtRemarks.CustomButton.Size = new System.Drawing.Size(49, 49);
             this.txtRemarks.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtRemarks.CustomButton.TabIndex = 1;
             this.txtRemarks.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -1612,16 +1627,24 @@ namespace WeightBridgeMandya.clientui
             this.lblTemp.TabIndex = 0;
             this.lblTemp.Text = "Temp :";
             // 
-            // btnCapture
+            // cmbStatus
             // 
-            this.btnCapture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCapture.Location = new System.Drawing.Point(612, 17);
-            this.btnCapture.Name = "btnCapture";
-            this.btnCapture.Size = new System.Drawing.Size(92, 30);
-            this.btnCapture.TabIndex = 114;
-            this.btnCapture.Text = "Capture";
-            this.btnCapture.UseSelectable = true;
-            this.btnCapture.Click += new System.EventHandler(this.btnCapture_Click);
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.ItemHeight = 23;
+            this.cmbStatus.Location = new System.Drawing.Point(899, 233);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(317, 29);
+            this.cmbStatus.TabIndex = 115;
+            this.cmbStatus.UseSelectable = true;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(843, 238);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel6.TabIndex = 116;
+            this.metroLabel6.Text = "Status :";
             // 
             // LabReport
             // 
@@ -1741,5 +1764,7 @@ namespace WeightBridgeMandya.clientui
         private MetroFramework.Controls.MetroButton btnRefresh;
         private MetroFramework.Controls.MetroComboBox cmbBauduinTest;
         private MetroFramework.Controls.MetroButton btnCapture;
+        private MetroFramework.Controls.MetroComboBox cmbStatus;
+        private MetroFramework.Controls.MetroLabel metroLabel6;
     }
 }
