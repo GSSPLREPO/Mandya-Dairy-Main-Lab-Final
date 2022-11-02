@@ -50,8 +50,9 @@ namespace WeightBridgeMandya.clientui
             this.txtBatchNo = new MetroFramework.Controls.MetroTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnRefresh = new MetroFramework.Controls.MetroButton();
-            this.btnClose = new MetroFramework.Controls.MetroButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cmbStatus = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.btnCapture = new MetroFramework.Controls.MetroButton();
             this.cmbBauduinTest = new MetroFramework.Controls.MetroComboBox();
             this.txtRemarks = new MetroFramework.Controls.MetroTextBox();
@@ -117,8 +118,6 @@ namespace WeightBridgeMandya.clientui
             this.txtTemp = new MetroFramework.Controls.MetroTextBox();
             this.cmbPhospharaseTest = new MetroFramework.Controls.MetroComboBox();
             this.lblTemp = new MetroFramework.Controls.MetroLabel();
-            this.cmbStatus = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.pnlEntryType.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -150,7 +149,7 @@ namespace WeightBridgeMandya.clientui
             this.rdoManual.Location = new System.Drawing.Point(229, 8);
             this.rdoManual.Name = "rdoManual";
             this.rdoManual.Size = new System.Drawing.Size(63, 15);
-            this.rdoManual.TabIndex = 55;
+            this.rdoManual.TabIndex = 5;
             this.rdoManual.Text = "Manual";
             this.rdoManual.UseSelectable = true;
             this.rdoManual.CheckedChanged += new System.EventHandler(this.rdoManual_CheckedChanged);
@@ -161,7 +160,7 @@ namespace WeightBridgeMandya.clientui
             this.rdoAuto.Location = new System.Drawing.Point(157, 8);
             this.rdoAuto.Name = "rdoAuto";
             this.rdoAuto.Size = new System.Drawing.Size(49, 15);
-            this.rdoAuto.TabIndex = 54;
+            this.rdoAuto.TabIndex = 4;
             this.rdoAuto.Text = "Auto";
             this.rdoAuto.UseSelectable = true;
             this.rdoAuto.CheckedChanged += new System.EventHandler(this.rdoAuto_CheckedChanged);
@@ -181,7 +180,7 @@ namespace WeightBridgeMandya.clientui
             this.btnClear.Location = new System.Drawing.Point(638, 16);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(87, 29);
-            this.btnClear.TabIndex = 37;
+            this.btnClear.TabIndex = 40;
             this.btnClear.Text = "Clear";
             this.btnClear.UseSelectable = true;
             // 
@@ -190,7 +189,7 @@ namespace WeightBridgeMandya.clientui
             this.btnSave.Location = new System.Drawing.Point(527, 16);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(90, 29);
-            this.btnSave.TabIndex = 36;
+            this.btnSave.TabIndex = 39;
             this.btnSave.Text = "Save";
             this.btnSave.UseSelectable = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -209,7 +208,7 @@ namespace WeightBridgeMandya.clientui
             this.dtTime.Name = "dtTime";
             this.dtTime.ShowUpDown = true;
             this.dtTime.Size = new System.Drawing.Size(100, 20);
-            this.dtTime.TabIndex = 1;
+            this.dtTime.TabIndex = 201;
             // 
             // metroLabel1
             // 
@@ -266,7 +265,7 @@ namespace WeightBridgeMandya.clientui
             this.dtDate.MinimumSize = new System.Drawing.Size(0, 29);
             this.dtDate.Name = "dtDate";
             this.dtDate.Size = new System.Drawing.Size(131, 29);
-            this.dtDate.TabIndex = 0;
+            this.dtDate.TabIndex = 200;
             // 
             // metroLabel2
             // 
@@ -348,17 +347,6 @@ namespace WeightBridgeMandya.clientui
             this.btnRefresh.UseSelectable = true;
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             // 
-            // btnClose
-            // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(1087, 18);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(87, 30);
-            this.btnClose.TabIndex = 32;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseSelectable = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cmbStatus);
@@ -435,6 +423,26 @@ namespace WeightBridgeMandya.clientui
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             // 
+            // cmbStatus
+            // 
+            this.cmbStatus.FormattingEnabled = true;
+            this.cmbStatus.ItemHeight = 23;
+            this.cmbStatus.Location = new System.Drawing.Point(899, 233);
+            this.cmbStatus.Name = "cmbStatus";
+            this.cmbStatus.Size = new System.Drawing.Size(317, 29);
+            this.cmbStatus.TabIndex = 37;
+            this.cmbStatus.UseCustomBackColor = true;
+            this.cmbStatus.UseSelectable = true;
+            // 
+            // metroLabel6
+            // 
+            this.metroLabel6.AutoSize = true;
+            this.metroLabel6.Location = new System.Drawing.Point(843, 238);
+            this.metroLabel6.Name = "metroLabel6";
+            this.metroLabel6.Size = new System.Drawing.Size(50, 19);
+            this.metroLabel6.TabIndex = 116;
+            this.metroLabel6.Text = "Status :";
+            // 
             // btnCapture
             // 
             this.btnCapture.DialogResult = System.Windows.Forms.DialogResult.Cancel;
@@ -453,7 +461,8 @@ namespace WeightBridgeMandya.clientui
             this.cmbBauduinTest.Location = new System.Drawing.Point(899, 163);
             this.cmbBauduinTest.Name = "cmbBauduinTest";
             this.cmbBauduinTest.Size = new System.Drawing.Size(100, 29);
-            this.cmbBauduinTest.TabIndex = 26;
+            this.cmbBauduinTest.TabIndex = 28;
+            this.cmbBauduinTest.UseCustomBackColor = true;
             this.cmbBauduinTest.UseSelectable = true;
             // 
             // txtRemarks
@@ -484,7 +493,7 @@ namespace WeightBridgeMandya.clientui
             this.txtRemarks.SelectionStart = 0;
             this.txtRemarks.ShortcutsEnabled = true;
             this.txtRemarks.Size = new System.Drawing.Size(699, 51);
-            this.txtRemarks.TabIndex = 35;
+            this.txtRemarks.TabIndex = 38;
             this.txtRemarks.UseSelectable = true;
             this.txtRemarks.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtRemarks.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -525,7 +534,8 @@ namespace WeightBridgeMandya.clientui
             this.txtWettability.SelectionStart = 0;
             this.txtWettability.ShortcutsEnabled = true;
             this.txtWettability.Size = new System.Drawing.Size(100, 29);
-            this.txtWettability.TabIndex = 31;
+            this.txtWettability.TabIndex = 33;
+            this.txtWettability.UseCustomBackColor = true;
             this.txtWettability.UseSelectable = true;
             this.txtWettability.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtWettability.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -566,7 +576,8 @@ namespace WeightBridgeMandya.clientui
             this.txtBulkDensity.SelectionStart = 0;
             this.txtBulkDensity.ShortcutsEnabled = true;
             this.txtBulkDensity.Size = new System.Drawing.Size(100, 29);
-            this.txtBulkDensity.TabIndex = 34;
+            this.txtBulkDensity.TabIndex = 19;
+            this.txtBulkDensity.UseCustomBackColor = true;
             this.txtBulkDensity.UseSelectable = true;
             this.txtBulkDensity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBulkDensity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -607,7 +618,8 @@ namespace WeightBridgeMandya.clientui
             this.txtScorchedParticle.SelectionStart = 0;
             this.txtScorchedParticle.ShortcutsEnabled = true;
             this.txtScorchedParticle.Size = new System.Drawing.Size(100, 29);
-            this.txtScorchedParticle.TabIndex = 23;
+            this.txtScorchedParticle.TabIndex = 25;
+            this.txtScorchedParticle.UseCustomBackColor = true;
             this.txtScorchedParticle.UseSelectable = true;
             this.txtScorchedParticle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtScorchedParticle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -648,7 +660,8 @@ namespace WeightBridgeMandya.clientui
             this.txtTotalAsh.SelectionStart = 0;
             this.txtTotalAsh.ShortcutsEnabled = true;
             this.txtTotalAsh.Size = new System.Drawing.Size(100, 29);
-            this.txtTotalAsh.TabIndex = 30;
+            this.txtTotalAsh.TabIndex = 32;
+            this.txtTotalAsh.UseCustomBackColor = true;
             this.txtTotalAsh.UseSelectable = true;
             this.txtTotalAsh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTotalAsh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -689,7 +702,8 @@ namespace WeightBridgeMandya.clientui
             this.txtProtein.SelectionStart = 0;
             this.txtProtein.ShortcutsEnabled = true;
             this.txtProtein.Size = new System.Drawing.Size(100, 29);
-            this.txtProtein.TabIndex = 28;
+            this.txtProtein.TabIndex = 24;
+            this.txtProtein.UseCustomBackColor = true;
             this.txtProtein.UseSelectable = true;
             this.txtProtein.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtProtein.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -730,7 +744,8 @@ namespace WeightBridgeMandya.clientui
             this.txtInsolubilityIndex.SelectionStart = 0;
             this.txtInsolubilityIndex.ShortcutsEnabled = true;
             this.txtInsolubilityIndex.Size = new System.Drawing.Size(100, 29);
-            this.txtInsolubilityIndex.TabIndex = 29;
+            this.txtInsolubilityIndex.TabIndex = 31;
+            this.txtInsolubilityIndex.UseCustomBackColor = true;
             this.txtInsolubilityIndex.UseSelectable = true;
             this.txtInsolubilityIndex.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtInsolubilityIndex.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -771,7 +786,8 @@ namespace WeightBridgeMandya.clientui
             this.txtSucrosePercent.SelectionStart = 0;
             this.txtSucrosePercent.ShortcutsEnabled = true;
             this.txtSucrosePercent.Size = new System.Drawing.Size(100, 29);
-            this.txtSucrosePercent.TabIndex = 27;
+            this.txtSucrosePercent.TabIndex = 29;
+            this.txtSucrosePercent.UseCustomBackColor = true;
             this.txtSucrosePercent.UseSelectable = true;
             this.txtSucrosePercent.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSucrosePercent.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -812,7 +828,8 @@ namespace WeightBridgeMandya.clientui
             this.txtEColi.SelectionStart = 0;
             this.txtEColi.ShortcutsEnabled = true;
             this.txtEColi.Size = new System.Drawing.Size(100, 29);
-            this.txtEColi.TabIndex = 32;
+            this.txtEColi.TabIndex = 30;
+            this.txtEColi.UseCustomBackColor = true;
             this.txtEColi.UseSelectable = true;
             this.txtEColi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEColi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -862,7 +879,8 @@ namespace WeightBridgeMandya.clientui
             this.txtPValue.SelectionStart = 0;
             this.txtPValue.ShortcutsEnabled = true;
             this.txtPValue.Size = new System.Drawing.Size(100, 29);
-            this.txtPValue.TabIndex = 25;
+            this.txtPValue.TabIndex = 27;
+            this.txtPValue.UseCustomBackColor = true;
             this.txtPValue.UseSelectable = true;
             this.txtPValue.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPValue.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -903,7 +921,8 @@ namespace WeightBridgeMandya.clientui
             this.txtRMValue.SelectionStart = 0;
             this.txtRMValue.ShortcutsEnabled = true;
             this.txtRMValue.Size = new System.Drawing.Size(100, 29);
-            this.txtRMValue.TabIndex = 24;
+            this.txtRMValue.TabIndex = 26;
+            this.txtRMValue.UseCustomBackColor = true;
             this.txtRMValue.UseSelectable = true;
             this.txtRMValue.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtRMValue.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -913,9 +932,9 @@ namespace WeightBridgeMandya.clientui
             this.lblRMValue.AutoSize = true;
             this.lblRMValue.Location = new System.Drawing.Point(444, 167);
             this.lblRMValue.Name = "lblRMValue";
-            this.lblRMValue.Size = new System.Drawing.Size(66, 19);
+            this.lblRMValue.Size = new System.Drawing.Size(70, 19);
             this.lblRMValue.TabIndex = 91;
-            this.lblRMValue.Text = "RMValue :";
+            this.lblRMValue.Text = "RM Value :";
             // 
             // txtBRReading
             // 
@@ -944,7 +963,8 @@ namespace WeightBridgeMandya.clientui
             this.txtBRReading.SelectionStart = 0;
             this.txtBRReading.ShortcutsEnabled = true;
             this.txtBRReading.Size = new System.Drawing.Size(100, 29);
-            this.txtBRReading.TabIndex = 33;
+            this.txtBRReading.TabIndex = 21;
+            this.txtBRReading.UseCustomBackColor = true;
             this.txtBRReading.UseSelectable = true;
             this.txtBRReading.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBRReading.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -954,9 +974,9 @@ namespace WeightBridgeMandya.clientui
             this.lblBRReading.AutoSize = true;
             this.lblBRReading.Location = new System.Drawing.Point(615, 131);
             this.lblBRReading.Name = "lblBRReading";
-            this.lblBRReading.Size = new System.Drawing.Size(80, 19);
+            this.lblBRReading.Size = new System.Drawing.Size(84, 19);
             this.lblBRReading.TabIndex = 89;
-            this.lblBRReading.Text = "BRReading :";
+            this.lblBRReading.Text = "BR Reading :";
             // 
             // txtFFAOA
             // 
@@ -985,7 +1005,8 @@ namespace WeightBridgeMandya.clientui
             this.txtFFAOA.SelectionStart = 0;
             this.txtFFAOA.ShortcutsEnabled = true;
             this.txtFFAOA.Size = new System.Drawing.Size(100, 29);
-            this.txtFFAOA.TabIndex = 21;
+            this.txtFFAOA.TabIndex = 23;
+            this.txtFFAOA.UseCustomBackColor = true;
             this.txtFFAOA.UseSelectable = true;
             this.txtFFAOA.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtFFAOA.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1026,7 +1047,8 @@ namespace WeightBridgeMandya.clientui
             this.txtMoisture.SelectionStart = 0;
             this.txtMoisture.ShortcutsEnabled = true;
             this.txtMoisture.Size = new System.Drawing.Size(100, 29);
-            this.txtMoisture.TabIndex = 20;
+            this.txtMoisture.TabIndex = 22;
+            this.txtMoisture.UseCustomBackColor = true;
             this.txtMoisture.UseSelectable = true;
             this.txtMoisture.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMoisture.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1047,7 +1069,8 @@ namespace WeightBridgeMandya.clientui
             this.cmbFlavour.Location = new System.Drawing.Point(516, 233);
             this.cmbFlavour.Name = "cmbFlavour";
             this.cmbFlavour.Size = new System.Drawing.Size(285, 29);
-            this.cmbFlavour.TabIndex = 19;
+            this.cmbFlavour.TabIndex = 36;
+            this.cmbFlavour.UseCustomBackColor = true;
             this.cmbFlavour.UseSelectable = true;
             // 
             // lblFlavour
@@ -1066,7 +1089,8 @@ namespace WeightBridgeMandya.clientui
             this.cmbBodyAndTexture.Location = new System.Drawing.Point(102, 233);
             this.cmbBodyAndTexture.Name = "cmbBodyAndTexture";
             this.cmbBodyAndTexture.Size = new System.Drawing.Size(330, 29);
-            this.cmbBodyAndTexture.TabIndex = 82;
+            this.cmbBodyAndTexture.TabIndex = 35;
+            this.cmbBodyAndTexture.UseCustomBackColor = true;
             this.cmbBodyAndTexture.UseSelectable = true;
             // 
             // lblBodyAndTexture
@@ -1074,9 +1098,9 @@ namespace WeightBridgeMandya.clientui
             this.lblBodyAndTexture.AutoSize = true;
             this.lblBodyAndTexture.Location = new System.Drawing.Point(3, 238);
             this.lblBodyAndTexture.Name = "lblBodyAndTexture";
-            this.lblBodyAndTexture.Size = new System.Drawing.Size(95, 19);
+            this.lblBodyAndTexture.Size = new System.Drawing.Size(101, 19);
             this.lblBodyAndTexture.TabIndex = 81;
-            this.lblBodyAndTexture.Text = "Body & Texture :";
+            this.lblBodyAndTexture.Text = "Body - Texture :";
             // 
             // cmbAppearance
             // 
@@ -1085,7 +1109,8 @@ namespace WeightBridgeMandya.clientui
             this.cmbAppearance.Location = new System.Drawing.Point(899, 198);
             this.cmbAppearance.Name = "cmbAppearance";
             this.cmbAppearance.Size = new System.Drawing.Size(317, 29);
-            this.cmbAppearance.TabIndex = 17;
+            this.cmbAppearance.TabIndex = 34;
+            this.cmbAppearance.UseCustomBackColor = true;
             this.cmbAppearance.UseSelectable = true;
             // 
             // lblAppearance
@@ -1124,7 +1149,8 @@ namespace WeightBridgeMandya.clientui
             this.txtPh.SelectionStart = 0;
             this.txtPh.ShortcutsEnabled = true;
             this.txtPh.Size = new System.Drawing.Size(100, 29);
-            this.txtPh.TabIndex = 18;
+            this.txtPh.TabIndex = 20;
+            this.txtPh.UseCustomBackColor = true;
             this.txtPh.UseSelectable = true;
             this.txtPh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1165,7 +1191,8 @@ namespace WeightBridgeMandya.clientui
             this.txtTotalSolid.SelectionStart = 0;
             this.txtTotalSolid.ShortcutsEnabled = true;
             this.txtTotalSolid.Size = new System.Drawing.Size(100, 29);
-            this.txtTotalSolid.TabIndex = 16;
+            this.txtTotalSolid.TabIndex = 18;
+            this.txtTotalSolid.UseCustomBackColor = true;
             this.txtTotalSolid.UseSelectable = true;
             this.txtTotalSolid.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTotalSolid.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1206,7 +1233,8 @@ namespace WeightBridgeMandya.clientui
             this.txtCremingIndex.SelectionStart = 0;
             this.txtCremingIndex.ShortcutsEnabled = true;
             this.txtCremingIndex.Size = new System.Drawing.Size(100, 29);
-            this.txtCremingIndex.TabIndex = 15;
+            this.txtCremingIndex.TabIndex = 17;
+            this.txtCremingIndex.UseCustomBackColor = true;
             this.txtCremingIndex.UseSelectable = true;
             this.txtCremingIndex.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCremingIndex.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1247,7 +1275,8 @@ namespace WeightBridgeMandya.clientui
             this.txtSomaticCell.SelectionStart = 0;
             this.txtSomaticCell.ShortcutsEnabled = true;
             this.txtSomaticCell.Size = new System.Drawing.Size(100, 29);
-            this.txtSomaticCell.TabIndex = 14;
+            this.txtSomaticCell.TabIndex = 16;
+            this.txtSomaticCell.UseCustomBackColor = true;
             this.txtSomaticCell.UseSelectable = true;
             this.txtSomaticCell.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSomaticCell.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1288,7 +1317,8 @@ namespace WeightBridgeMandya.clientui
             this.txtColiform.SelectionStart = 0;
             this.txtColiform.ShortcutsEnabled = true;
             this.txtColiform.Size = new System.Drawing.Size(100, 29);
-            this.txtColiform.TabIndex = 13;
+            this.txtColiform.TabIndex = 15;
+            this.txtColiform.UseCustomBackColor = true;
             this.txtColiform.UseSelectable = true;
             this.txtColiform.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtColiform.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1309,7 +1339,8 @@ namespace WeightBridgeMandya.clientui
             this.cmbAdultration.Location = new System.Drawing.Point(1116, 58);
             this.cmbAdultration.Name = "cmbAdultration";
             this.cmbAdultration.Size = new System.Drawing.Size(100, 29);
-            this.cmbAdultration.TabIndex = 9;
+            this.cmbAdultration.TabIndex = 11;
+            this.cmbAdultration.UseCustomBackColor = true;
             this.cmbAdultration.UseSelectable = true;
             // 
             // txtAerobicPlate
@@ -1339,7 +1370,8 @@ namespace WeightBridgeMandya.clientui
             this.txtAerobicPlate.SelectionStart = 0;
             this.txtAerobicPlate.ShortcutsEnabled = true;
             this.txtAerobicPlate.Size = new System.Drawing.Size(100, 29);
-            this.txtAerobicPlate.TabIndex = 10;
+            this.txtAerobicPlate.TabIndex = 12;
+            this.txtAerobicPlate.UseCustomBackColor = true;
             this.txtAerobicPlate.UseSelectable = true;
             this.txtAerobicPlate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAerobicPlate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1349,9 +1381,9 @@ namespace WeightBridgeMandya.clientui
             this.lblAerobicPlate.AutoSize = true;
             this.lblAerobicPlate.Location = new System.Drawing.Point(6, 96);
             this.lblAerobicPlate.Name = "lblAerobicPlate";
-            this.lblAerobicPlate.Size = new System.Drawing.Size(91, 19);
+            this.lblAerobicPlate.Size = new System.Drawing.Size(95, 19);
             this.lblAerobicPlate.TabIndex = 65;
-            this.lblAerobicPlate.Text = "AerobicPlate :";
+            this.lblAerobicPlate.Text = "Aerobic Plate :";
             // 
             // lblAdultration
             // 
@@ -1389,7 +1421,8 @@ namespace WeightBridgeMandya.clientui
             this.txtAlcohol.SelectionStart = 0;
             this.txtAlcohol.ShortcutsEnabled = true;
             this.txtAlcohol.Size = new System.Drawing.Size(100, 29);
-            this.txtAlcohol.TabIndex = 12;
+            this.txtAlcohol.TabIndex = 14;
+            this.txtAlcohol.UseCustomBackColor = true;
             this.txtAlcohol.UseSelectable = true;
             this.txtAlcohol.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAlcohol.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1439,7 +1472,8 @@ namespace WeightBridgeMandya.clientui
             this.txtMbrt.SelectionStart = 0;
             this.txtMbrt.ShortcutsEnabled = true;
             this.txtMbrt.Size = new System.Drawing.Size(100, 29);
-            this.txtMbrt.TabIndex = 8;
+            this.txtMbrt.TabIndex = 10;
+            this.txtMbrt.UseCustomBackColor = true;
             this.txtMbrt.UseSelectable = true;
             this.txtMbrt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMbrt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1467,6 +1501,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSnf.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtSnf.CustomButton.UseSelectable = true;
             this.txtSnf.CustomButton.Visible = false;
+            this.txtSnf.Enabled = false;
             this.txtSnf.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtSnf.Lines = new string[0];
             this.txtSnf.Location = new System.Drawing.Point(700, 58);
@@ -1480,7 +1515,8 @@ namespace WeightBridgeMandya.clientui
             this.txtSnf.SelectionStart = 0;
             this.txtSnf.ShortcutsEnabled = true;
             this.txtSnf.Size = new System.Drawing.Size(100, 29);
-            this.txtSnf.TabIndex = 7;
+            this.txtSnf.TabIndex = 9;
+            this.txtSnf.UseCustomBackColor = true;
             this.txtSnf.UseSelectable = true;
             this.txtSnf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSnf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1521,7 +1557,8 @@ namespace WeightBridgeMandya.clientui
             this.txtAcidity.SelectionStart = 0;
             this.txtAcidity.ShortcutsEnabled = true;
             this.txtAcidity.Size = new System.Drawing.Size(100, 29);
-            this.txtAcidity.TabIndex = 5;
+            this.txtAcidity.TabIndex = 7;
+            this.txtAcidity.UseCustomBackColor = true;
             this.txtAcidity.UseSelectable = true;
             this.txtAcidity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAcidity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1549,6 +1586,7 @@ namespace WeightBridgeMandya.clientui
             this.txtFat.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.txtFat.CustomButton.UseSelectable = true;
             this.txtFat.CustomButton.Visible = false;
+            this.txtFat.Enabled = false;
             this.txtFat.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtFat.Lines = new string[0];
             this.txtFat.Location = new System.Drawing.Point(516, 58);
@@ -1562,7 +1600,8 @@ namespace WeightBridgeMandya.clientui
             this.txtFat.SelectionStart = 0;
             this.txtFat.ShortcutsEnabled = true;
             this.txtFat.Size = new System.Drawing.Size(100, 29);
-            this.txtFat.TabIndex = 6;
+            this.txtFat.TabIndex = 8;
+            this.txtFat.UseCustomBackColor = true;
             this.txtFat.UseSelectable = true;
             this.txtFat.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtFat.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1603,7 +1642,8 @@ namespace WeightBridgeMandya.clientui
             this.txtTemp.SelectionStart = 0;
             this.txtTemp.ShortcutsEnabled = true;
             this.txtTemp.Size = new System.Drawing.Size(100, 29);
-            this.txtTemp.TabIndex = 4;
+            this.txtTemp.TabIndex = 6;
+            this.txtTemp.UseCustomBackColor = true;
             this.txtTemp.UseSelectable = true;
             this.txtTemp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTemp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -1615,7 +1655,8 @@ namespace WeightBridgeMandya.clientui
             this.cmbPhospharaseTest.Location = new System.Drawing.Point(332, 93);
             this.cmbPhospharaseTest.Name = "cmbPhospharaseTest";
             this.cmbPhospharaseTest.Size = new System.Drawing.Size(100, 29);
-            this.cmbPhospharaseTest.TabIndex = 11;
+            this.cmbPhospharaseTest.TabIndex = 13;
+            this.cmbPhospharaseTest.UseCustomBackColor = true;
             this.cmbPhospharaseTest.UseSelectable = true;
             // 
             // lblTemp
@@ -1627,36 +1668,13 @@ namespace WeightBridgeMandya.clientui
             this.lblTemp.TabIndex = 0;
             this.lblTemp.Text = "Temp :";
             // 
-            // cmbStatus
-            // 
-            this.cmbStatus.FormattingEnabled = true;
-            this.cmbStatus.ItemHeight = 23;
-            this.cmbStatus.Location = new System.Drawing.Point(899, 233);
-            this.cmbStatus.Name = "cmbStatus";
-            this.cmbStatus.Size = new System.Drawing.Size(317, 29);
-            this.cmbStatus.TabIndex = 115;
-            this.cmbStatus.UseSelectable = true;
-            // 
-            // metroLabel6
-            // 
-            this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(843, 238);
-            this.metroLabel6.Name = "metroLabel6";
-            this.metroLabel6.Size = new System.Drawing.Size(50, 19);
-            this.metroLabel6.TabIndex = 116;
-            this.metroLabel6.Text = "Status :";
-            // 
             // LabReport
             // 
             this.AcceptButton = this.btnSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoSize = true;
-            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(1261, 566);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -1664,6 +1682,7 @@ namespace WeightBridgeMandya.clientui
             this.Name = "LabReport";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "Main Lab";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LabReport_FormClosed);
             this.Load += new System.EventHandler(this.LabReport_Load);
             this.pnlEntryType.ResumeLayout(false);
             this.pnlEntryType.PerformLayout();
@@ -1696,75 +1715,74 @@ namespace WeightBridgeMandya.clientui
         private MetroFramework.Controls.MetroComboBox cmbTankNo;
         private MetroFramework.Controls.MetroTextBox txtBatchNo;
         private System.Windows.Forms.GroupBox groupBox1;
-        private MetroFramework.Controls.MetroButton btnClose;
         private System.Windows.Forms.GroupBox groupBox2;
-        private MetroFramework.Controls.MetroTextBox txtAlcohol;
         private MetroFramework.Controls.MetroLabel lblAlcohol;
         private MetroFramework.Controls.MetroLabel lblPhospharaseTest;
-        private MetroFramework.Controls.MetroTextBox txtMbrt;
         private MetroFramework.Controls.MetroLabel lblMbrt;
-        private MetroFramework.Controls.MetroTextBox txtSnf;
         private MetroFramework.Controls.MetroLabel lblSnf;
-        private MetroFramework.Controls.MetroTextBox txtAcidity;
         private MetroFramework.Controls.MetroLabel lblAcidity;
-        private MetroFramework.Controls.MetroTextBox txtFat;
         private MetroFramework.Controls.MetroLabel lblFat;
-        private MetroFramework.Controls.MetroTextBox txtTemp;
-        private MetroFramework.Controls.MetroComboBox cmbPhospharaseTest;
         private MetroFramework.Controls.MetroLabel lblTemp;
-        private MetroFramework.Controls.MetroTextBox txtSomaticCell;
         private MetroFramework.Controls.MetroLabel lblSomaticCell;
-        private MetroFramework.Controls.MetroTextBox txtColiform;
         private MetroFramework.Controls.MetroLabel lblColiform;
-        private MetroFramework.Controls.MetroComboBox cmbAdultration;
-        private MetroFramework.Controls.MetroTextBox txtAerobicPlate;
         private MetroFramework.Controls.MetroLabel lblAerobicPlate;
         private MetroFramework.Controls.MetroLabel lblAdultration;
-        private MetroFramework.Controls.MetroTextBox txtTotalSolid;
         private MetroFramework.Controls.MetroLabel lblTotalSolid;
-        private MetroFramework.Controls.MetroTextBox txtCremingIndex;
         private MetroFramework.Controls.MetroLabel lblCremingIndex;
-        private MetroFramework.Controls.MetroComboBox cmbAppearance;
         private MetroFramework.Controls.MetroLabel lblAppearance;
-        private MetroFramework.Controls.MetroTextBox txtPh;
         private MetroFramework.Controls.MetroLabel lblPh;
-        private MetroFramework.Controls.MetroComboBox cmbBodyAndTexture;
         private MetroFramework.Controls.MetroLabel lblBodyAndTexture;
-        private MetroFramework.Controls.MetroTextBox txtWettability;
         private MetroFramework.Controls.MetroLabel lblWettability;
-        private MetroFramework.Controls.MetroTextBox txtBulkDensity;
         private MetroFramework.Controls.MetroLabel lblBulkDensity;
-        private MetroFramework.Controls.MetroTextBox txtScorchedParticle;
         private MetroFramework.Controls.MetroLabel lblScorchedParticle;
-        private MetroFramework.Controls.MetroTextBox txtTotalAsh;
         private MetroFramework.Controls.MetroLabel lblTotalAsh;
-        private MetroFramework.Controls.MetroTextBox txtProtein;
         private MetroFramework.Controls.MetroLabel lblProtein;
-        private MetroFramework.Controls.MetroTextBox txtInsolubilityIndex;
         private MetroFramework.Controls.MetroLabel lblInsolubilityIndex;
-        private MetroFramework.Controls.MetroTextBox txtSucrosePercent;
         private MetroFramework.Controls.MetroLabel lblSucrosePercent;
-        private MetroFramework.Controls.MetroTextBox txtEColi;
         private MetroFramework.Controls.MetroLabel lblEColi;
         private MetroFramework.Controls.MetroLabel lblBauduinTest;
-        private MetroFramework.Controls.MetroTextBox txtPValue;
         private MetroFramework.Controls.MetroLabel lblPValue;
-        private MetroFramework.Controls.MetroTextBox txtRMValue;
         private MetroFramework.Controls.MetroLabel lblRMValue;
-        private MetroFramework.Controls.MetroTextBox txtBRReading;
         private MetroFramework.Controls.MetroLabel lblBRReading;
-        private MetroFramework.Controls.MetroTextBox txtFFAOA;
         private MetroFramework.Controls.MetroLabel lblFFAOA;
-        private MetroFramework.Controls.MetroTextBox txtMoisture;
         private MetroFramework.Controls.MetroLabel lblMoisture;
-        private MetroFramework.Controls.MetroComboBox cmbFlavour;
         private MetroFramework.Controls.MetroLabel lblFlavour;
         private MetroFramework.Controls.MetroTextBox txtRemarks;
         private MetroFramework.Controls.MetroLabel lblRemarks;
         private MetroFramework.Controls.MetroButton btnRefresh;
-        private MetroFramework.Controls.MetroComboBox cmbBauduinTest;
         private MetroFramework.Controls.MetroButton btnCapture;
-        private MetroFramework.Controls.MetroComboBox cmbStatus;
         private MetroFramework.Controls.MetroLabel metroLabel6;
+        public MetroFramework.Controls.MetroTextBox txtAlcohol;
+        public MetroFramework.Controls.MetroTextBox txtMbrt;
+        public MetroFramework.Controls.MetroTextBox txtSnf;
+        public MetroFramework.Controls.MetroTextBox txtAcidity;
+        public MetroFramework.Controls.MetroTextBox txtFat;
+        public MetroFramework.Controls.MetroTextBox txtTemp;
+        public MetroFramework.Controls.MetroComboBox cmbPhospharaseTest;
+        public MetroFramework.Controls.MetroTextBox txtSomaticCell;
+        public MetroFramework.Controls.MetroTextBox txtColiform;
+        public MetroFramework.Controls.MetroComboBox cmbAdultration;
+        public MetroFramework.Controls.MetroTextBox txtAerobicPlate;
+        public MetroFramework.Controls.MetroTextBox txtTotalSolid;
+        public MetroFramework.Controls.MetroTextBox txtCremingIndex;
+        public MetroFramework.Controls.MetroComboBox cmbAppearance;
+        public MetroFramework.Controls.MetroTextBox txtPh;
+        public MetroFramework.Controls.MetroComboBox cmbBodyAndTexture;
+        public MetroFramework.Controls.MetroTextBox txtWettability;
+        public MetroFramework.Controls.MetroTextBox txtBulkDensity;
+        public MetroFramework.Controls.MetroTextBox txtScorchedParticle;
+        public MetroFramework.Controls.MetroTextBox txtTotalAsh;
+        public MetroFramework.Controls.MetroTextBox txtProtein;
+        public MetroFramework.Controls.MetroTextBox txtInsolubilityIndex;
+        public MetroFramework.Controls.MetroTextBox txtSucrosePercent;
+        public MetroFramework.Controls.MetroTextBox txtEColi;
+        public MetroFramework.Controls.MetroTextBox txtPValue;
+        public MetroFramework.Controls.MetroTextBox txtRMValue;
+        public MetroFramework.Controls.MetroTextBox txtBRReading;
+        public MetroFramework.Controls.MetroTextBox txtFFAOA;
+        public MetroFramework.Controls.MetroTextBox txtMoisture;
+        public MetroFramework.Controls.MetroComboBox cmbFlavour;
+        public MetroFramework.Controls.MetroComboBox cmbBauduinTest;
+        public MetroFramework.Controls.MetroComboBox cmbStatus;
     }
 }

@@ -162,15 +162,6 @@ namespace WeightBridgeMandya.clientui
         }
         #endregion
 
-        #region Close Button Click Event
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Form1 frmMainForm = new Form1();
-            frmMainForm.Show();
-            this.Close();
-        }
-        #endregion
-
         #region Bind Product Dropdown
 
         private void BindDropDownProduct()
@@ -483,5 +474,12 @@ namespace WeightBridgeMandya.clientui
             }
         }
         #endregion
+
+        private void LabProduct_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 frmMainForm = new Form1();
+            frmMainForm.Show();
+            this.Hide();
+        }
     }
 }

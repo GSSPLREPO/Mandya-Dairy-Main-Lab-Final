@@ -105,14 +105,18 @@ namespace WeightBridgeMandya
         #region Cancle Button Click Event
         private void btnCancel_Click(object sender, EventArgs e)
         {
+
             Application.Exit();
+          
         }
         #endregion
 
         #region Form Closing Event
         private void Login_FormClosing(object sender, FormClosingEventArgs e)
         {
+
             Application.Exit();
+           
         }
         #endregion
     }

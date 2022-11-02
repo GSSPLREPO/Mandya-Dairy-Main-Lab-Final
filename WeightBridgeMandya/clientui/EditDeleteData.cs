@@ -76,8 +76,7 @@ namespace WeightBridgeMandya.clientui
         private void btnAddNew_Click(object sender, EventArgs e)
         {
             LabReport frmLabReport = new LabReport(-1);
-            frmLabReport.ShowDialog();
-            this.Activate();
+            frmLabReport.Show();
             bindMainLabAnalysis(System.DateTime.Now);
         }
         #endregion
@@ -165,30 +164,14 @@ namespace WeightBridgeMandya.clientui
         }
         #endregion
 
-        #region Form Closing Event
-        private void EditDeleteData_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Application.Exit();
-        }
-        #endregion
-
-        #region AddProduct
-        private void btnAddNewProduct(object sender, EventArgs e)
-        {
-            LabProduct frmLabProduct = new LabProduct();
-            frmLabProduct.ShowDialog();
-            this.Activate();
-           
-        }
-        #endregion
-
         #region Lab report
         private void btnLabReport_Click(object sender, EventArgs e)
         {
-            LabReport frmLabProduct = new LabReport(-1);
-            frmLabProduct.ShowDialog();
             this.Activate();
-            bindMainLabAnalysis(System.DateTime.Now);
+            this.Hide();
+            LabReport frmLabProduct = new LabReport(-1);
+            frmLabProduct.Show();
+           // bindMainLabAnalysis(System.DateTime.Now);
         }
         #endregion
 
@@ -196,6 +179,15 @@ namespace WeightBridgeMandya.clientui
         private void btnGo_Click(object sender, EventArgs e)
         {
             bindMainLabAnalysis(Convert.ToDateTime(dtDate.Text));
+        }
+        #endregion
+
+        #region Form Close Event
+        private void EditDeleteData_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Form1 frmMainForm = new Form1();
+            frmMainForm.Show();
+            this.Hide();
         }
         #endregion
     }

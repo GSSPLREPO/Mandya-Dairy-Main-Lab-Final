@@ -34,7 +34,6 @@ namespace WeightBridgeMandya.clientui
             this.btnSave = new System.Windows.Forms.Button();
             this.btnClear = new MetroFramework.Controls.MetroButton();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnClose = new MetroFramework.Controls.MetroButton();
             this.gpProductTextbox = new System.Windows.Forms.GroupBox();
             this.btnAdd = new MetroFramework.Controls.MetroButton();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -85,7 +84,7 @@ namespace WeightBridgeMandya.clientui
             this.gpButton.Controls.Add(this.btnSave);
             this.gpButton.Controls.Add(this.btnClear);
             this.gpButton.Controls.Add(this.btnUpdate);
-            this.gpButton.Location = new System.Drawing.Point(75, 337);
+            this.gpButton.Location = new System.Drawing.Point(75, 312);
             this.gpButton.Name = "gpButton";
             this.gpButton.Size = new System.Drawing.Size(966, 65);
             this.gpButton.TabIndex = 35;
@@ -137,17 +136,6 @@ namespace WeightBridgeMandya.clientui
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btnClose
-            // 
-            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnClose.Location = new System.Drawing.Point(967, 34);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(87, 29);
-            this.btnClose.TabIndex = 32;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseSelectable = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
             // gpProductTextbox
             // 
             this.gpProductTextbox.Controls.Add(this.btnAdd);
@@ -155,7 +143,7 @@ namespace WeightBridgeMandya.clientui
             this.gpProductTextbox.Controls.Add(this.cmbProduct);
             this.gpProductTextbox.Controls.Add(this.txtProduct);
             this.gpProductTextbox.Controls.Add(this.lblProductName);
-            this.gpProductTextbox.Location = new System.Drawing.Point(88, 93);
+            this.gpProductTextbox.Location = new System.Drawing.Point(88, 79);
             this.gpProductTextbox.Name = "gpProductTextbox";
             this.gpProductTextbox.Size = new System.Drawing.Size(966, 85);
             this.gpProductTextbox.TabIndex = 33;
@@ -274,7 +262,7 @@ namespace WeightBridgeMandya.clientui
             this.gpProductCheckbox.Controls.Add(this.chkInsolubilityIndex);
             this.gpProductCheckbox.Controls.Add(this.chkTotalAsh);
             this.gpProductCheckbox.Controls.Add(this.chkTotalSolids);
-            this.gpProductCheckbox.Location = new System.Drawing.Point(34, 183);
+            this.gpProductCheckbox.Location = new System.Drawing.Point(34, 163);
             this.gpProductCheckbox.Margin = new System.Windows.Forms.Padding(2);
             this.gpProductCheckbox.Name = "gpProductCheckbox";
             this.gpProductCheckbox.Padding = new System.Windows.Forms.Padding(2);
@@ -641,7 +629,6 @@ namespace WeightBridgeMandya.clientui
             this.ClientSize = new System.Drawing.Size(1129, 428);
             this.Controls.Add(this.gpProductCheckbox);
             this.Controls.Add(this.gpButton);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.gpProductTextbox);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
@@ -649,6 +636,7 @@ namespace WeightBridgeMandya.clientui
             this.Name = "LabProduct";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "Lab Product";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.LabProduct_FormClosed);
             this.Load += new System.EventHandler(this.LabProduct_Load);
             this.gpButton.ResumeLayout(false);
             this.gpProductTextbox.ResumeLayout(false);
@@ -662,7 +650,6 @@ namespace WeightBridgeMandya.clientui
         #endregion
         private System.Windows.Forms.GroupBox gpButton;
         private MetroFramework.Controls.MetroButton btnClear;
-        private MetroFramework.Controls.MetroButton btnClose;
         private System.Windows.Forms.GroupBox gpProductTextbox;
         private MetroFramework.Controls.MetroComboBox cmbProduct;
         private MetroFramework.Controls.MetroTextBox txtProduct;

@@ -32,9 +32,6 @@ namespace WeightBridgeMandya
 
         private void metroTile1_Click(object sender, EventArgs e)
         {
-            // LabReport frmLabReport = new LabReport();
-            //frmLabReport.Show();
-
             EditDeleteData frmData = new EditDeleteData();
             frmData.Show();
             this.Hide();
@@ -49,7 +46,16 @@ namespace WeightBridgeMandya
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //if (Application.OpenForms.Count == 0)
+            //{
+            //    Application.Exit();
+            //}
+            //else
+            //{
+
+            //}
             Application.Exit();
+            
         }
 
         private void btnLogout_Click(object sender, EventArgs e)
@@ -60,5 +66,19 @@ namespace WeightBridgeMandya
             Login frmLogin = new Login();
             frmLogin.Show();
         }
+
+        #region Method to Close Open form befor Application Exit
+        public void IsFormOpen()
+        {
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form.GetType().Name == form.Name)
+                {
+                    string temp = form.ToString();
+                    
+                }
+            }  
+        }
+        #endregion
     }
 }

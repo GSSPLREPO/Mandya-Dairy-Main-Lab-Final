@@ -117,18 +117,6 @@
     <Compile Include="clientui\LabReport.Designer.cs">
       <DependentUpon>LabReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="clientui\MainLab.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="clientui\MainLab.Designer.cs">
-      <DependentUpon>MainLab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="clientui\OldData.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="clientui\OldData.Designer.cs">
-      <DependentUpon>OldData.cs</DependentUpon>
-    </Compile>
     <Compile Include="clientui\PortConfiguration.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,12 +146,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="clientui\LabReport.resx">
       <DependentUpon>LabReport.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="clientui\MainLab.resx">
-      <DependentUpon>MainLab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="clientui\OldData.resx">
-      <DependentUpon>OldData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="clientui\PortConfiguration.resx">
       <DependentUpon>PortConfiguration.cs</DependentUpon>

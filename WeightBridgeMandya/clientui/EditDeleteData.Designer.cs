@@ -78,6 +78,7 @@ namespace WeightBridgeMandya.clientui
             this.ScorchedParticle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BulkDensity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wettability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gvMainLab)).BeginInit();
             this.SuspendLayout();
             // 
@@ -85,10 +86,11 @@ namespace WeightBridgeMandya.clientui
             // 
             this.gvMainLab.AllowUserToAddRows = false;
             this.gvMainLab.AllowUserToDeleteRows = false;
+            this.gvMainLab.AllowUserToOrderColumns = true;
             this.gvMainLab.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvMainLab.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.gvMainLab.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvMainLab.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.gvMainLab.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.gvMainLab.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.gvMainLab.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -100,7 +102,7 @@ namespace WeightBridgeMandya.clientui
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlLight;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.gvMainLab.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.gvMainLab.ColumnHeadersHeight = 42;
+            this.gvMainLab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gvMainLab.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Edit,
             this.Delete,
@@ -139,11 +141,13 @@ namespace WeightBridgeMandya.clientui
             this.TotalAsh,
             this.ScorchedParticle,
             this.BulkDensity,
-            this.Wettability});
+            this.Wettability,
+            this.Status});
             this.gvMainLab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gvMainLab.EnableHeadersVisualStyles = false;
             this.gvMainLab.GridColor = System.Drawing.SystemColors.AppWorkspace;
             this.gvMainLab.Location = new System.Drawing.Point(20, 60);
+            this.gvMainLab.MultiSelect = false;
             this.gvMainLab.Name = "gvMainLab";
             this.gvMainLab.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -161,9 +165,8 @@ namespace WeightBridgeMandya.clientui
             this.gvMainLab.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.gvMainLab.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.LightGray;
             this.gvMainLab.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.gvMainLab.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.gvMainLab.ShowCellErrors = false;
-            this.gvMainLab.Size = new System.Drawing.Size(2235, 506);
+            this.gvMainLab.Size = new System.Drawing.Size(1212, 506);
             this.gvMainLab.TabIndex = 156;
             this.gvMainLab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvMainLab_CellContentClick);
             // 
@@ -235,6 +238,7 @@ namespace WeightBridgeMandya.clientui
             this.Edit.MinimumWidth = 6;
             this.Edit.Name = "Edit";
             this.Edit.ReadOnly = true;
+            this.Edit.Width = 38;
             // 
             // Delete
             // 
@@ -243,7 +247,7 @@ namespace WeightBridgeMandya.clientui
             this.Delete.FillWeight = 70F;
             this.Delete.HeaderText = "Delete";
             this.Delete.Image = global::WeightBridgeMandya.Properties.Resources.Delete;
-            this.Delete.MinimumWidth = 6;
+            this.Delete.MinimumWidth = 50;
             this.Delete.Name = "Delete";
             this.Delete.ReadOnly = true;
             // 
@@ -255,6 +259,7 @@ namespace WeightBridgeMandya.clientui
             this.MainLabAnalysisID.Name = "MainLabAnalysisID";
             this.MainLabAnalysisID.ReadOnly = true;
             this.MainLabAnalysisID.Visible = false;
+            this.MainLabAnalysisID.Width = 156;
             // 
             // DateTime
             // 
@@ -264,6 +269,7 @@ namespace WeightBridgeMandya.clientui
             this.DateTime.MinimumWidth = 6;
             this.DateTime.Name = "DateTime";
             this.DateTime.ReadOnly = true;
+            this.DateTime.Width = 96;
             // 
             // TankNo
             // 
@@ -283,6 +289,7 @@ namespace WeightBridgeMandya.clientui
             this.BatchNo.MinimumWidth = 6;
             this.BatchNo.Name = "BatchNo";
             this.BatchNo.ReadOnly = true;
+            this.BatchNo.Width = 94;
             // 
             // Product
             // 
@@ -292,6 +299,7 @@ namespace WeightBridgeMandya.clientui
             this.Product.MinimumWidth = 6;
             this.Product.Name = "Product";
             this.Product.ReadOnly = true;
+            this.Product.Width = 128;
             // 
             // Temp
             // 
@@ -301,6 +309,7 @@ namespace WeightBridgeMandya.clientui
             this.Temp.MinimumWidth = 6;
             this.Temp.Name = "Temp";
             this.Temp.ReadOnly = true;
+            this.Temp.Width = 88;
             // 
             // Acidity
             // 
@@ -309,6 +318,7 @@ namespace WeightBridgeMandya.clientui
             this.Acidity.MinimumWidth = 6;
             this.Acidity.Name = "Acidity";
             this.Acidity.ReadOnly = true;
+            this.Acidity.Width = 74;
             // 
             // Fat
             // 
@@ -318,6 +328,7 @@ namespace WeightBridgeMandya.clientui
             this.Fat.MinimumWidth = 6;
             this.Fat.Name = "Fat";
             this.Fat.ReadOnly = true;
+            this.Fat.Width = 70;
             // 
             // SNF
             // 
@@ -327,6 +338,7 @@ namespace WeightBridgeMandya.clientui
             this.SNF.MinimumWidth = 6;
             this.SNF.Name = "SNF";
             this.SNF.ReadOnly = true;
+            this.SNF.Width = 79;
             // 
             // Mbrt
             // 
@@ -334,6 +346,7 @@ namespace WeightBridgeMandya.clientui
             this.Mbrt.HeaderText = "MBRT";
             this.Mbrt.Name = "Mbrt";
             this.Mbrt.ReadOnly = true;
+            this.Mbrt.Width = 75;
             // 
             // PhospharaseTest
             // 
@@ -341,6 +354,7 @@ namespace WeightBridgeMandya.clientui
             this.PhospharaseTest.HeaderText = "Phospharase Test";
             this.PhospharaseTest.Name = "PhospharaseTest";
             this.PhospharaseTest.ReadOnly = true;
+            this.PhospharaseTest.Width = 140;
             // 
             // Alcohol
             // 
@@ -350,6 +364,7 @@ namespace WeightBridgeMandya.clientui
             this.Alcohol.MinimumWidth = 6;
             this.Alcohol.Name = "Alcohol";
             this.Alcohol.ReadOnly = true;
+            this.Alcohol.Width = 81;
             // 
             // Adultration
             // 
@@ -357,6 +372,7 @@ namespace WeightBridgeMandya.clientui
             this.Adultration.HeaderText = "Adultration";
             this.Adultration.Name = "Adultration";
             this.Adultration.ReadOnly = true;
+            this.Adultration.Width = 101;
             // 
             // AerobicPlate
             // 
@@ -364,6 +380,7 @@ namespace WeightBridgeMandya.clientui
             this.AerobicPlate.HeaderText = "Aerobic Plate Count";
             this.AerobicPlate.Name = "AerobicPlate";
             this.AerobicPlate.ReadOnly = true;
+            this.AerobicPlate.Width = 113;
             // 
             // Coliform
             // 
@@ -371,6 +388,7 @@ namespace WeightBridgeMandya.clientui
             this.Coliform.HeaderText = "Coliform";
             this.Coliform.Name = "Coliform";
             this.Coliform.ReadOnly = true;
+            this.Coliform.Width = 89;
             // 
             // SomaticCell
             // 
@@ -378,6 +396,7 @@ namespace WeightBridgeMandya.clientui
             this.SomaticCell.HeaderText = "Somatic Cell Count";
             this.SomaticCell.Name = "SomaticCell";
             this.SomaticCell.ReadOnly = true;
+            this.SomaticCell.Width = 110;
             // 
             // CremingIndex
             // 
@@ -385,6 +404,7 @@ namespace WeightBridgeMandya.clientui
             this.CremingIndex.HeaderText = "Creming Index";
             this.CremingIndex.Name = "CremingIndex";
             this.CremingIndex.ReadOnly = true;
+            this.CremingIndex.Width = 115;
             // 
             // TotalSolid
             // 
@@ -392,6 +412,7 @@ namespace WeightBridgeMandya.clientui
             this.TotalSolid.HeaderText = "Total Solid %";
             this.TotalSolid.Name = "TotalSolid";
             this.TotalSolid.ReadOnly = true;
+            this.TotalSolid.Width = 97;
             // 
             // Ph
             // 
@@ -399,6 +420,7 @@ namespace WeightBridgeMandya.clientui
             this.Ph.HeaderText = "PH";
             this.Ph.Name = "Ph";
             this.Ph.ReadOnly = true;
+            this.Ph.Width = 53;
             // 
             // Appearance
             // 
@@ -406,6 +428,7 @@ namespace WeightBridgeMandya.clientui
             this.Appearance.HeaderText = "Appearance";
             this.Appearance.Name = "Appearance";
             this.Appearance.ReadOnly = true;
+            this.Appearance.Width = 110;
             // 
             // BodyAndTexture
             // 
@@ -413,6 +436,7 @@ namespace WeightBridgeMandya.clientui
             this.BodyAndTexture.HeaderText = "Body & Texture";
             this.BodyAndTexture.Name = "BodyAndTexture";
             this.BodyAndTexture.ReadOnly = true;
+            this.BodyAndTexture.Width = 122;
             // 
             // Flavour
             // 
@@ -420,6 +444,7 @@ namespace WeightBridgeMandya.clientui
             this.Flavour.HeaderText = "Flavour";
             this.Flavour.Name = "Flavour";
             this.Flavour.ReadOnly = true;
+            this.Flavour.Width = 81;
             // 
             // Moisture
             // 
@@ -427,6 +452,7 @@ namespace WeightBridgeMandya.clientui
             this.Moisture.HeaderText = "Moisture %";
             this.Moisture.Name = "Moisture";
             this.Moisture.ReadOnly = true;
+            this.Moisture.Width = 98;
             // 
             // FFAOA
             // 
@@ -434,6 +460,7 @@ namespace WeightBridgeMandya.clientui
             this.FFAOA.HeaderText = "FFA % OA";
             this.FFAOA.Name = "FFAOA";
             this.FFAOA.ReadOnly = true;
+            this.FFAOA.Width = 74;
             // 
             // BRReading
             // 
@@ -441,6 +468,7 @@ namespace WeightBridgeMandya.clientui
             this.BRReading.HeaderText = "BR Reading";
             this.BRReading.Name = "BRReading";
             this.BRReading.ReadOnly = true;
+            this.BRReading.Width = 102;
             // 
             // RMValue
             // 
@@ -448,6 +476,7 @@ namespace WeightBridgeMandya.clientui
             this.RMValue.HeaderText = "Rmvalue";
             this.RMValue.Name = "RMValue";
             this.RMValue.ReadOnly = true;
+            this.RMValue.Width = 90;
             // 
             // PValue
             // 
@@ -455,6 +484,7 @@ namespace WeightBridgeMandya.clientui
             this.PValue.HeaderText = "P Value";
             this.PValue.Name = "PValue";
             this.PValue.ReadOnly = true;
+            this.PValue.Width = 76;
             // 
             // BauduinTest
             // 
@@ -462,6 +492,7 @@ namespace WeightBridgeMandya.clientui
             this.BauduinTest.HeaderText = "Baudouin Test";
             this.BauduinTest.Name = "BauduinTest";
             this.BauduinTest.ReadOnly = true;
+            this.BauduinTest.Width = 116;
             // 
             // EColi
             // 
@@ -469,6 +500,7 @@ namespace WeightBridgeMandya.clientui
             this.EColi.HeaderText = "E-Coli";
             this.EColi.Name = "EColi";
             this.EColi.ReadOnly = true;
+            this.EColi.Width = 73;
             // 
             // SucrosePercent
             // 
@@ -476,6 +508,7 @@ namespace WeightBridgeMandya.clientui
             this.SucrosePercent.HeaderText = "Sucrose Percent";
             this.SucrosePercent.Name = "SucrosePercent";
             this.SucrosePercent.ReadOnly = true;
+            this.SucrosePercent.Width = 131;
             // 
             // InsolubilityIndex
             // 
@@ -483,6 +516,7 @@ namespace WeightBridgeMandya.clientui
             this.InsolubilityIndex.HeaderText = "Insolubility Index";
             this.InsolubilityIndex.Name = "InsolubilityIndex";
             this.InsolubilityIndex.ReadOnly = true;
+            this.InsolubilityIndex.Width = 125;
             // 
             // Protein
             // 
@@ -490,6 +524,7 @@ namespace WeightBridgeMandya.clientui
             this.Protein.HeaderText = "Protein";
             this.Protein.Name = "Protein";
             this.Protein.ReadOnly = true;
+            this.Protein.Width = 79;
             // 
             // TotalAsh
             // 
@@ -497,6 +532,7 @@ namespace WeightBridgeMandya.clientui
             this.TotalAsh.HeaderText = "Total Ash %";
             this.TotalAsh.Name = "TotalAsh";
             this.TotalAsh.ReadOnly = true;
+            this.TotalAsh.Width = 90;
             // 
             // ScorchedParticle
             // 
@@ -504,6 +540,7 @@ namespace WeightBridgeMandya.clientui
             this.ScorchedParticle.HeaderText = "Scorched Particle";
             this.ScorchedParticle.Name = "ScorchedParticle";
             this.ScorchedParticle.ReadOnly = true;
+            this.ScorchedParticle.Width = 136;
             // 
             // BulkDensity
             // 
@@ -511,6 +548,7 @@ namespace WeightBridgeMandya.clientui
             this.BulkDensity.HeaderText = "Bulk Density";
             this.BulkDensity.Name = "BulkDensity";
             this.BulkDensity.ReadOnly = true;
+            this.BulkDensity.Width = 104;
             // 
             // Wettability
             // 
@@ -518,12 +556,21 @@ namespace WeightBridgeMandya.clientui
             this.Wettability.HeaderText = "Wettability";
             this.Wettability.Name = "Wettability";
             this.Wettability.ReadOnly = true;
+            this.Wettability.Width = 99;
+            // 
+            // Status
+            // 
+            this.Status.DataPropertyName = "Status";
+            this.Status.HeaderText = "Status";
+            this.Status.Name = "Status";
+            this.Status.ReadOnly = true;
+            this.Status.Width = 74;
             // 
             // EditDeleteData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2275, 586);
+            this.ClientSize = new System.Drawing.Size(1252, 586);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.dtDate);
@@ -534,7 +581,7 @@ namespace WeightBridgeMandya.clientui
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
             this.Text = "Data";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EditDeleteData_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditDeleteData_FormClosed);
             this.Load += new System.EventHandler(this.EditDeleteData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvMainLab)).EndInit();
             this.ResumeLayout(false);
@@ -588,5 +635,6 @@ namespace WeightBridgeMandya.clientui
         private System.Windows.Forms.DataGridViewTextBoxColumn ScorchedParticle;
         private System.Windows.Forms.DataGridViewTextBoxColumn BulkDensity;
         private System.Windows.Forms.DataGridViewTextBoxColumn Wettability;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Status;
     }
 }

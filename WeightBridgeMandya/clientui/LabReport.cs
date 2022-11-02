@@ -34,6 +34,9 @@ namespace WeightBridgeMandya.clientui
                 strMode = "New";
                 btnSave.Text = "Save";
                 btnClear.Enabled = true;
+                groupBox2.Visible = false;
+                groupBox3.Visible = false;
+                rdoAuto.Checked = true;
             }
             else
             {
@@ -42,7 +45,6 @@ namespace WeightBridgeMandya.clientui
                 btnClear.Enabled = false;
                 intid = Id;
             }
-
         }
 
         #region Form Load Event
@@ -51,11 +53,11 @@ namespace WeightBridgeMandya.clientui
         {
             try
             {
+                
                 BindDropDownProduct();
                 bindTankDropdown();
                 BindCommonDropdown();
                 setDefaultValue();
-                rdoAuto.Checked = true;
                 defineDataTable();
                 bindRow();
                 bindCombobox();
@@ -67,9 +69,12 @@ namespace WeightBridgeMandya.clientui
 
                     if (objResult.ResultDt.Rows.Count > 0)
                     {
+                        BindDataToBox(Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PRODUCTID]));
+
                         tempDate = Convert.ToDateTime(objResult.ResultDt.Rows[0]["Date"].ToString() + " " + objResult.ResultDt.Rows[0]["Time"].ToString());
                         btnRefresh.Enabled = false;
                         cmbTankNo.Enabled = false;
+                        cmbProduct.Enabled = false;
                         dtDate.Text = objResult.ResultDt.Rows[0]["Date"].ToString();
                         dtTime.Text = objResult.ResultDt.Rows[0]["Time"].ToString();
                         cmbTankNo.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TANKID]);
@@ -265,11 +270,11 @@ namespace WeightBridgeMandya.clientui
                     {
                         if (objResult.Status == ApplicationResult.CommonStatusType.Success)
                         {
-                            MetroMessageBox.Show(this, "Record Saved Successfully.", "Lab",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            
+                            
                             WriteLMPPLC(cmbTankNo.SelectedText,float.Parse(txtFat.Text),float.Parse(txtSnf.Text),cmbStatus.SelectedText);
                             WriteFERMPLC(cmbTankNo.SelectedText, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), cmbStatus.SelectedText);
-
+                            MetroMessageBox.Show(this, "Record Saved Successfully.", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
 
                         }
@@ -314,1006 +319,10 @@ namespace WeightBridgeMandya.clientui
         }
         #endregion
 
-        #region Close Button Click Event
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Form1 frmMainForm = new Form1();
-            frmMainForm.Show();
-            this.Close();
-        }
-        #endregion
-
-        #region Validate
-        /* private Boolean validateFields(int validate) {
-            int intValid = 0;
-
-            #region Raw Milk
-            
-            if (validate == 1) 
-            {
-                if (Convert.ToDouble(txtTEMP.Text) != 4) {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) < 0.135 || Convert.ToDouble(txtAcidity.Text) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 3.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 8.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMBRT.Text) < 90)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAlcohol.Text) < 68)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //if (Convert.ToDouble(txtAreobicPlateCountML.Text) < 0.135 && Convert.ToDouble(txtAreobicPlateCountML) > 0.153)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                else if (Convert.ToDouble(txtSomaticCellCount.Text) > 300000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-
-            }
-#endregion
-            #region  Pasteurised Milk
-            else if (validate == 2) 
-            {
-                if (Convert.ToDouble(txtTEMP.Text) < 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 3.1)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 8.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMBRT.Text) < 330)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtAlcohol.Text) < 68)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                if (Convert.ToDouble(txtAreobicPlateCountML.Text) > 30000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtSomaticCellCount.Text) < 300000)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                else if (Convert.ToDouble(txtColiformML.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion 
-            #region Pasteurised HCM
-            else if (validate == 3)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) < 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 3.6)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 8.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMBRT.Text) < 330)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtAlcohol.Text) < 68)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                if (Convert.ToDouble(txtAreobicPlateCountML.Text) > 30000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtSomaticCellCount.Text) < 300000)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                else if (Convert.ToDouble(txtColiformML.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtCreamingIndex.Text) > 10) 
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Pasteurised SSM
-            else if (validate == 4)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) < 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 4.6)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 8.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMBRT.Text) < 330)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtAlcohol.Text) < 68)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                if (Convert.ToDouble(txtAreobicPlateCountML.Text) > 30000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtSomaticCellCount.Text) < 300000)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                else if (Convert.ToDouble(txtColiformML.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtCreamingIndex.Text) > 10)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-            }
-#endregion
-            #region Pasteurized NSM
-            else if (validate == 5)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) < 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 4.1)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 9.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMBRT.Text) < 330)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtAlcohol.Text) < 68)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                if (Convert.ToDouble(txtAreobicPlateCountML.Text) > 30000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtSomaticCellCount.Text) < 300000)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                else if (Convert.ToDouble(txtColiformML.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtCreamingIndex.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Pasteurised Curd MIlk
-            else if (validate == 6)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) < 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 3.1)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMBRT.Text) < 300)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtAlcohol.Text) < 68)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                else if (Convert.ToDouble(txtAreobicPlateCountML.Text) > 30000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtSomaticCellCount.Text) < 300000)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                else if (Convert.ToDouble(txtColiformML.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtCreamingIndex.Text) > 10)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-            }
-#endregion
-            #region Pasteurised Panner Milk
-            else if (validate == 7)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) < 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 4.6)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 8.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMBRT.Text) < 360)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtAlcohol.Text) < 68)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                if (Convert.ToDouble(txtAreobicPlateCountML.Text) > 30000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtSomaticCellCount.Text) < 300000)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-                else if (Convert.ToDouble(txtColiformML.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                //else if (Convert.ToDouble(txtCreamingIndex.Text) > 10)
-                //{
-                //    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    intValid = 1;
-                //}
-            }
-#endregion
-            #region Curd/Dahi
-            else if (validate == 8)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) > 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) < 0.6 || Convert.ToDouble(txtAcidity) > 0.8)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 3.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtTotalSolids.Text) < 13.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtColiformML.Text) > 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtYeastMoulds.Text) > 50.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region UHT Toned Milk
-            else if (validate == 9)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) > 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) < 0.135 || Convert.ToDouble(txtAcidity) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 3.1)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 8.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtpH.Text) < 6.3 || Convert.ToDouble(txtpH) > 6.7)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicSporeCountML.Text) > 5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtCreamingIndex.Text) > 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region UHT Double Toned Milk
-            else if (validate == 10)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) > 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) < 0.135 || Convert.ToDouble(txtAcidity) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 1.6)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 9.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtpH.Text) < 6.3 || Convert.ToDouble(txtpH) > 6.7)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicSporeCountML.Text) > 5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtCreamingIndex.Text) > 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-            #endregion
-            #region UHT Skimmed MIlk
-            else if (validate == 11)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) > 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) < 0.135 || Convert.ToDouble(txtAcidity) > 0.153)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) > 0.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 8.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtpH.Text) < 6.3 || Convert.ToDouble(txtpH) > 6.7)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicSporeCountML.Text) > 5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtCreamingIndex.Text) > 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Pasteurised Cream
-            else if (validate == 12)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.08)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 40)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMBRT.Text) < 240)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Spiced Butter MIlk
-            else if (validate == 13)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) > 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.45)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 1.2)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSNF.Text) < 4.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtTotalSolids.Text) < 13.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtColiformML.Text) > 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtYeastMoulds.Text) > 50.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Pasturised Sweet Lassi
-            else if (validate == 14)
-            {
-                if (Convert.ToDouble(txtTEMP.Text) > 4)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 2.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtColiformML.Text) > 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtYeastMoulds.Text) > 50.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Pasteurised Cooking Butter
-            else if (validate == 15)
-            {
-                if (Convert.ToDouble(txtFatbyMass.Text) < 82.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMoistureBymass.Text) > 16)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtCurbBymass.Text) < 1.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAciditybyMass.Text) > 0.06)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicPlateCountg.Text) < 25000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtColiformCountg.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtYeastMouldsG.Text) > 20.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Ghee Special Grade
-            else if (validate == 16)
-            {
-                if (Convert.ToDouble(txtMoisture.Text) > 0.3)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFFAOA.Text) > 0.6)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtBRReading.Text) < 40 || Convert.ToDouble(txtBRReading) > 43)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtRMvalue.Text) < 28.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtPValue.Text) < 1.0 || Convert.ToDouble(txtPValue) > 2.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Paneer
-            else if (validate == 17)
-            {
-                if (Convert.ToDouble(txtMoisture.Text) > 60)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFatonDryMaterBasics.Text) < 50)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAciditybyMass.Text) > 50)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicPlateCountg.Text) > 150000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtColiformCountg.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtYeastMouldsG.Text) > 50)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txteColig.Text) < 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Milk Peda
-            else if (validate == 18)
-            {
-                if (Convert.ToDouble(txtMoisture.Text) > 17.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFat.Text) < 16)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicPlateCountg.Text) > 25000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtYeastMouldsG.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Milk Burfi
-            else if (validate == 19)
-            {
-                if (Convert.ToDouble(txtMoisture.Text) > 15.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFatbyWeight.Text) < 10.0 || Convert.ToDouble(txtFatbyWeight) > 23.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.45)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicPlateCountg.Text) > 25000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtYeastMouldsG.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region Mysore Pak
-            else if (validate == 20)
-            {
-                if (Convert.ToDouble(txtMoisture.Text) > 5.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFatbyMass.Text) < 42.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 1.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSucroseByWeight.Text) > 40.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicPlateCountg.Text) > 5000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-
-            }
-#endregion
-            #region Ladoo
-            else if (validate == 21)
-            {
-                if (Convert.ToDouble(txtMoisture.Text) > 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtFatbyMass.Text) < 20.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidity.Text) > 0.45)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtSucroseByWeight.Text) > 33.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicPlateCountg.Text) > 5000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-#endregion
-            #region SMP Standered Grade
-            else if (validate == 22)
-            {
-                if (Convert.ToDouble(txtFatbyMass.Text) > 1.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtInsolubilityIndexProtein.Text) > 0.5)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMoistureBymass.Text) > 4.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtProtein.Text) > 34.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtTotalAshDryBasis.Text) > 8.2)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicPlateCountg.Text) > 30000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtColiformCountg.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtYeastMouldsG.Text) > 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidityNaOH.Text) > 18.0 || Convert.ToDouble(txtAcidityNaOH) < 12)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtBulkDensity.Text) > 0.60 || Convert.ToDouble(txtBulkDensity) < 0.50)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtWettability.Text) > 60)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-
-#endregion
-            #region WMP
-            else if (validate == 23)
-            {
-                if (Convert.ToDouble(txtFatbyMass.Text) > 26)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtInsolubilityIndexProtein.Text) > 2.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtMoistureBymass.Text) > 4.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtProtein.Text) > 34.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtTotalAshDryBasis.Text) > 7.3)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAerobicPlateCountg.Text) > 30000)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtColiformCountg.Text) > 10)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtYeastMouldsG.Text) > 10.0)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtBulkDensity.Text) > 0.60 || Convert.ToDouble(txtBulkDensity) < 0.50)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtAcidityNaOH.Text) > 1.2)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-                else if (Convert.ToDouble(txtWettability.Text) > 60)
-                {
-                    //MetroMessageBox.Show(this, "Enter ProductName", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    intValid = 1;
-                }
-            }
-            #endregion
-
-            if (intValid == 1) return false;
-            return true;
-        }*/
-        #endregion
-
         #region Product ComboBox Selected Index Change Event 
         private void cmbProduct_SelectedIndexChanged(object sender, EventArgs e)
         {
+            rdoAuto_CheckedChanged(sender, e);
             BindDataToBox(Convert.ToInt32(cmbProduct.SelectedValue));
         }
 
@@ -1330,14 +339,19 @@ namespace WeightBridgeMandya.clientui
             {
                 if (objResult.ResultDt.Rows.Count > 0)
                 {
+                    
+                    groupBox2.Visible = true;
+                    groupBox3.Visible = true;
                     txtTemp.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TEMP]);
                     EnabledChanged(txtTemp);
                     txtAcidity.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ACIDITY]);
                     EnabledChanged(txtAcidity);
                     txtFat.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_FAT]);
                     EnabledChanged(txtFat);
+                    txtFat.Enabled = false;
                     txtSnf.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_SNF]);
                     EnabledChanged(txtSnf);
+                    txtSnf.Enabled = false;
                     txtMbrt.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_MBRT]);
                     EnabledChanged(txtMbrt);
                     cmbAdultration.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_ADULTRATION]);
@@ -1472,6 +486,8 @@ namespace WeightBridgeMandya.clientui
                 MainLabProductBO objMainLabProductBO = new MainLabProductBO();
                 LabReportProductBL objLabReportProductBL = new LabReportProductBL();
                 ApplicationResult objResult1 = new ApplicationResult();
+                ApplicationResult objResult1_2 = new ApplicationResult();
+                ApplicationResult objResult1_3 = new ApplicationResult();
                 ApplicationResult objResult2 = new ApplicationResult();
                 ApplicationResult objResult3 = new ApplicationResult();
                 ApplicationResult objResult4 = new ApplicationResult();
@@ -1486,24 +502,40 @@ namespace WeightBridgeMandya.clientui
                     cmbPhospharaseTest.DisplayMember = objResult1.ResultDt.Columns["Name"].ToString();
                     cmbPhospharaseTest.SelectedIndex = 0;
 
-                    cmbAdultration.DataSource = objResult1.ResultDt;
-                    cmbAdultration.ValueMember = objResult1.ResultDt.Columns["ID"].ToString();
-                    cmbAdultration.DisplayMember = objResult1.ResultDt.Columns["Name"].ToString();
-                    cmbAdultration.SelectedIndex = 0;
-
-                    cmbBauduinTest.DataSource = objResult1.ResultDt;
-                    cmbBauduinTest.ValueMember = objResult1.ResultDt.Columns["ID"].ToString();
-                    cmbBauduinTest.DisplayMember = objResult1.ResultDt.Columns["Name"].ToString();
-                    cmbBauduinTest.SelectedIndex = 0;
                 }
                 else
                 {
                     cmbPhospharaseTest.Items.Insert(0, "--Select--");
                     cmbPhospharaseTest.SelectedIndex = 0;
 
+                }
+
+                objResult1_2 = objLabReportProductBL.bindCommonValueDropdown();
+                if (objResult1_2.ResultDt.Rows.Count > 0)
+                {
+                    cmbAdultration.DataSource = objResult1_2.ResultDt;
+                    cmbAdultration.ValueMember = objResult1_2.ResultDt.Columns["ID"].ToString();
+                    cmbAdultration.DisplayMember = objResult1_2.ResultDt.Columns["Name"].ToString();
+                    cmbAdultration.SelectedIndex = 0;
+
+                }
+                else
+                {
                     cmbAdultration.Items.Insert(0, "--Select--");
                     cmbAdultration.SelectedIndex = 0;
 
+                }
+
+                objResult1_3 = objLabReportProductBL.bindCommonValueDropdown();
+                if (objResult1_3.ResultDt.Rows.Count > 0)
+                {
+                    cmbBauduinTest.DataSource = objResult1_3.ResultDt;
+                    cmbBauduinTest.ValueMember = objResult1_3.ResultDt.Columns["ID"].ToString();
+                    cmbBauduinTest.DisplayMember = objResult1_3.ResultDt.Columns["Name"].ToString();
+                    cmbBauduinTest.SelectedIndex = 0;
+                }
+                else
+                {
                     cmbBauduinTest.Items.Insert(0, "--Select--");
                     cmbBauduinTest.SelectedIndex = 0;
                 }
@@ -1571,12 +603,10 @@ namespace WeightBridgeMandya.clientui
             if (textBox.Enabled == true)
             {
                 textBox.BackColor = Color.White;
-
             }
             else
             {
-                textBox.BackColor = Color.LightGray; //same here with the color
-
+                textBox.BackColor = Color.DarkGray;
             }
         }
 
@@ -1589,7 +619,7 @@ namespace WeightBridgeMandya.clientui
             }
             else
             {
-                comboBox.BackColor = Color.LightGray; //same here with the color
+                comboBox.BackColor = Color.DarkGray;
 
             }
         }
@@ -1611,6 +641,12 @@ namespace WeightBridgeMandya.clientui
                 txtSnf.Enabled = false;
                 btnCapture.Enabled = true;
             }
+            else
+            {
+                txtFat.Enabled = true;
+                txtSnf.Enabled = true;
+                btnCapture.Enabled = false;
+            }
         }
 
         private void rdoManual_CheckedChanged(object sender, EventArgs e)
@@ -1620,6 +656,12 @@ namespace WeightBridgeMandya.clientui
                 txtFat.Enabled = true;
                 txtSnf.Enabled = true;
                 btnCapture.Enabled = false;
+            }
+            else
+            {
+                txtFat.Enabled = false;
+                txtSnf.Enabled = false;
+                btnCapture.Enabled = true;
             }
         }
         #endregion
@@ -2190,6 +1232,15 @@ namespace WeightBridgeMandya.clientui
                 MetroMessageBox.Show(this, "Opps! There is some technical issue. Please Contact to your administrator.", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
+        }
+        #endregion
+
+        #region Form Close Event
+        private void LabReport_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            EditDeleteData frmEditDeleteData = new EditDeleteData();
+            frmEditDeleteData.Show();
+            this.Hide();
         }
         #endregion
     }
