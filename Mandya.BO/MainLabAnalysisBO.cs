@@ -39,7 +39,7 @@ namespace Mandya.BO
         public const string MAINLABANALYSIS_BRREADING = "BRReading";
         public const string MAINLABANALYSIS_RMVALUE = "RMValue";
         public const string MAINLABANALYSIS_PVALUE = "PValue";
-        public const string MAINLABANALYSIS_BAUDUINTEST = "BauduinsTest";
+        public const string MAINLABANALYSIS_BAUDUINTEST = "BauduinTest";
         public const string MAINLABANALYSIS_ECOLI = "EColi";
         public const string MAINLABANALYSIS_SUCROSEPERCENT = "SucrosePercent";
         public const string MAINLABANALYSIS_INSOLUBILITYINDEX = "InsolubilityIndex";

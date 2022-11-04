@@ -59,7 +59,7 @@ namespace WeightBridgeMandya.clientui
                         gvMainLab.DataSource = objResult.ResultDt;
                         dtMainLabAnalysis = objResult.ResultDt;
                         gvMainLab.Visible = false;
-                       // txtSearch.Enabled = false;
+                        // txtSearch.Enabled = false;
                         //MetroMessageBox.Show(this, "Record Not Found !", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
@@ -167,11 +167,10 @@ namespace WeightBridgeMandya.clientui
         #region Lab report
         private void btnLabReport_Click(object sender, EventArgs e)
         {
-            this.Activate();
             this.Hide();
             LabReport frmLabProduct = new LabReport(-1);
-            frmLabProduct.Show();
-           // bindMainLabAnalysis(System.DateTime.Now);
+            frmLabProduct.ShowDialog();
+            
         }
         #endregion
 
@@ -185,9 +184,11 @@ namespace WeightBridgeMandya.clientui
         #region Form Close Event
         private void EditDeleteData_FormClosed(object sender, FormClosedEventArgs e)
         {
+
+            this.Hide();
             Form1 frmMainForm = new Form1();
             frmMainForm.Show();
-            this.Hide();
+
         }
         #endregion
     }

@@ -34,12 +34,6 @@ namespace WeightBridgeMandya.clientui
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditDeleteData));
             this.gvMainLab = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.btnLabReport = new MetroFramework.Controls.MetroButton();
-            this.dtDate = new MetroFramework.Controls.MetroDateTime();
-            this.btnGo = new MetroFramework.Controls.MetroButton();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.Edit = new System.Windows.Forms.DataGridViewImageColumn();
             this.Delete = new System.Windows.Forms.DataGridViewImageColumn();
             this.MainLabAnalysisID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +73,12 @@ namespace WeightBridgeMandya.clientui
             this.BulkDensity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Wettability = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnLabReport = new MetroFramework.Controls.MetroButton();
+            this.dtDate = new MetroFramework.Controls.MetroDateTime();
+            this.btnGo = new MetroFramework.Controls.MetroButton();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             ((System.ComponentModel.ISupportInitialize)(this.gvMainLab)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,68 +166,9 @@ namespace WeightBridgeMandya.clientui
             this.gvMainLab.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.LightGray;
             this.gvMainLab.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
             this.gvMainLab.ShowCellErrors = false;
-            this.gvMainLab.Size = new System.Drawing.Size(1212, 506);
+            this.gvMainLab.Size = new System.Drawing.Size(1212, 461);
             this.gvMainLab.TabIndex = 156;
             this.gvMainLab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gvMainLab_CellContentClick);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Edit";
-            this.dataGridViewImageColumn1.FillWeight = 50F;
-            this.dataGridViewImageColumn1.HeaderText = "Edit";
-            this.dataGridViewImageColumn1.Image = global::WeightBridgeMandya.Properties.Resources.Edit;
-            this.dataGridViewImageColumn1.MinimumWidth = 6;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 31;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewImageColumn2.DataPropertyName = "Delete";
-            this.dataGridViewImageColumn2.FillWeight = 60F;
-            this.dataGridViewImageColumn2.HeaderText = "Delete";
-            this.dataGridViewImageColumn2.Image = global::WeightBridgeMandya.Properties.Resources.Delete;
-            this.dataGridViewImageColumn2.MinimumWidth = 6;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            // 
-            // btnLabReport
-            // 
-            this.btnLabReport.Location = new System.Drawing.Point(555, 16);
-            this.btnLabReport.Name = "btnLabReport";
-            this.btnLabReport.Size = new System.Drawing.Size(110, 34);
-            this.btnLabReport.TabIndex = 159;
-            this.btnLabReport.Text = "Test Product";
-            this.btnLabReport.UseSelectable = true;
-            this.btnLabReport.Click += new System.EventHandler(this.btnLabReport_Click);
-            // 
-            // dtDate
-            // 
-            this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtDate.Location = new System.Drawing.Point(302, 18);
-            this.dtDate.MinimumSize = new System.Drawing.Size(0, 29);
-            this.dtDate.Name = "dtDate";
-            this.dtDate.Size = new System.Drawing.Size(113, 29);
-            this.dtDate.TabIndex = 160;
-            // 
-            // btnGo
-            // 
-            this.btnGo.Location = new System.Drawing.Point(421, 16);
-            this.btnGo.Name = "btnGo";
-            this.btnGo.Size = new System.Drawing.Size(54, 34);
-            this.btnGo.TabIndex = 161;
-            this.btnGo.Text = "Go";
-            this.btnGo.UseSelectable = true;
-            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.AutoSize = true;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.Location = new System.Drawing.Point(247, 23);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(45, 19);
-            this.metroLabel1.TabIndex = 162;
-            this.metroLabel1.Text = "Date :";
             // 
             // Edit
             // 
@@ -289,7 +230,7 @@ namespace WeightBridgeMandya.clientui
             this.BatchNo.MinimumWidth = 6;
             this.BatchNo.Name = "BatchNo";
             this.BatchNo.ReadOnly = true;
-            this.BatchNo.Width = 94;
+            this.BatchNo.Width = 86;
             // 
             // Product
             // 
@@ -299,7 +240,7 @@ namespace WeightBridgeMandya.clientui
             this.Product.MinimumWidth = 6;
             this.Product.Name = "Product";
             this.Product.ReadOnly = true;
-            this.Product.Width = 128;
+            this.Product.Width = 117;
             // 
             // Temp
             // 
@@ -309,7 +250,7 @@ namespace WeightBridgeMandya.clientui
             this.Temp.MinimumWidth = 6;
             this.Temp.Name = "Temp";
             this.Temp.ReadOnly = true;
-            this.Temp.Width = 88;
+            this.Temp.Width = 81;
             // 
             // Acidity
             // 
@@ -328,7 +269,7 @@ namespace WeightBridgeMandya.clientui
             this.Fat.MinimumWidth = 6;
             this.Fat.Name = "Fat";
             this.Fat.ReadOnly = true;
-            this.Fat.Width = 70;
+            this.Fat.Width = 53;
             // 
             // SNF
             // 
@@ -338,7 +279,7 @@ namespace WeightBridgeMandya.clientui
             this.SNF.MinimumWidth = 6;
             this.SNF.Name = "SNF";
             this.SNF.ReadOnly = true;
-            this.SNF.Width = 79;
+            this.SNF.Width = 73;
             // 
             // Mbrt
             // 
@@ -566,11 +507,70 @@ namespace WeightBridgeMandya.clientui
             this.Status.ReadOnly = true;
             this.Status.Width = 74;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Edit";
+            this.dataGridViewImageColumn1.FillWeight = 50F;
+            this.dataGridViewImageColumn1.HeaderText = "Edit";
+            this.dataGridViewImageColumn1.Image = global::WeightBridgeMandya.Properties.Resources.Edit;
+            this.dataGridViewImageColumn1.MinimumWidth = 6;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 31;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewImageColumn2.DataPropertyName = "Delete";
+            this.dataGridViewImageColumn2.FillWeight = 60F;
+            this.dataGridViewImageColumn2.HeaderText = "Delete";
+            this.dataGridViewImageColumn2.Image = global::WeightBridgeMandya.Properties.Resources.Delete;
+            this.dataGridViewImageColumn2.MinimumWidth = 6;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            // 
+            // btnLabReport
+            // 
+            this.btnLabReport.Location = new System.Drawing.Point(555, 16);
+            this.btnLabReport.Name = "btnLabReport";
+            this.btnLabReport.Size = new System.Drawing.Size(110, 34);
+            this.btnLabReport.TabIndex = 159;
+            this.btnLabReport.Text = "Test Product";
+            this.btnLabReport.UseSelectable = true;
+            this.btnLabReport.Click += new System.EventHandler(this.btnLabReport_Click);
+            // 
+            // dtDate
+            // 
+            this.dtDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtDate.Location = new System.Drawing.Point(302, 18);
+            this.dtDate.MinimumSize = new System.Drawing.Size(0, 29);
+            this.dtDate.Name = "dtDate";
+            this.dtDate.Size = new System.Drawing.Size(113, 29);
+            this.dtDate.TabIndex = 160;
+            // 
+            // btnGo
+            // 
+            this.btnGo.Location = new System.Drawing.Point(421, 16);
+            this.btnGo.Name = "btnGo";
+            this.btnGo.Size = new System.Drawing.Size(54, 34);
+            this.btnGo.TabIndex = 161;
+            this.btnGo.Text = "Go";
+            this.btnGo.UseSelectable = true;
+            this.btnGo.Click += new System.EventHandler(this.btnGo_Click);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.AutoSize = true;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(247, 23);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(45, 19);
+            this.metroLabel1.TabIndex = 162;
+            this.metroLabel1.Text = "Date :";
+            // 
             // EditDeleteData
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1252, 586);
+            this.ClientSize = new System.Drawing.Size(1252, 541);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.btnGo);
             this.Controls.Add(this.dtDate);
@@ -580,7 +580,7 @@ namespace WeightBridgeMandya.clientui
             this.Name = "EditDeleteData";
             this.Resizable = false;
             this.Style = MetroFramework.MetroColorStyle.Teal;
-            this.Text = "Data";
+            this.Text = "Product Testing";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.EditDeleteData_FormClosed);
             this.Load += new System.EventHandler(this.EditDeleteData_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gvMainLab)).EndInit();

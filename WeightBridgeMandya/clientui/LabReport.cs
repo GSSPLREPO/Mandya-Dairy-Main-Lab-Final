@@ -238,7 +238,7 @@ namespace WeightBridgeMandya.clientui
                 objMainLabAnalysisBO.AerobicPlate = float.Parse(txtAerobicPlate.Text.Trim());
                 objMainLabAnalysisBO.Coliform = float.Parse(txtColiform.Text.Trim());
                 objMainLabAnalysisBO.SomaticCell = float.Parse(txtSomaticCell.Text.Trim());
-                objMainLabAnalysisBO.CremingIndex = float.Parse(txtTemp.Text.Trim());
+                objMainLabAnalysisBO.CremingIndex = float.Parse(txtCremingIndex.Text.Trim());
                 objMainLabAnalysisBO.TotalSolid = float.Parse(txtTotalSolid.Text.Trim());
                 objMainLabAnalysisBO.Ph = float.Parse(txtPh.Text.Trim());
                 objMainLabAnalysisBO.Appearance = Convert.ToInt32(cmbAppearance.SelectedValue);
@@ -266,15 +266,24 @@ namespace WeightBridgeMandya.clientui
                     objMainLabAnalysisBO.CreatedByID = Convert.ToInt32(Program.intUserId.ToString());
                     objMainLabAnalysisBO.CreatedByDate = Convert.ToDateTime(DateTime.Now.ToString());
                     objResult = objMainLabAnalysisBL.MainLabAnalysis_Insert(objMainLabAnalysisBO);
+
+                    string Status=string.Empty, TankName=string.Empty;
+                    Status = cmbStatus.Text.ToString();
+                    TankName = cmbTankNo.Text.ToString();
                     if (objResult != null)
                     {
                         if (objResult.Status == ApplicationResult.CommonStatusType.Success)
                         {
-                            
-                            
-                            WriteLMPPLC(cmbTankNo.SelectedText,float.Parse(txtFat.Text),float.Parse(txtSnf.Text),cmbStatus.SelectedText);
-                            WriteFERMPLC(cmbTankNo.SelectedText, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), cmbStatus.SelectedText);
+
+                            if (objMainLabAnalysisBO.Status == 0)
+                            {
+                                WriteLMPPLC(TankName, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), Status);
+                                WriteFERMPLC(TankName, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), Status);
+                            }
+                           
                             MetroMessageBox.Show(this, "Record Saved Successfully.", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            EditDeleteData frmForm = new EditDeleteData();
+                            frmForm.Show();
                             this.Close();
 
                         }
@@ -288,19 +297,26 @@ namespace WeightBridgeMandya.clientui
 
                 else if (strMode == "Edit")
                 {
+                    objMainLabAnalysisBO.MainLabID = intid;
                     objMainLabAnalysisBO.LastModifiedByID = Convert.ToInt32(Program.intUserId.ToString());
                     objMainLabAnalysisBO.LastModifiedByDate = Convert.ToDateTime(DateTime.Now.ToString());
-                    objResult = objMainLabAnalysisBL.MainLabAnalysis_Insert(objMainLabAnalysisBO);
+                    objResult = objMainLabAnalysisBL.MainLabAnalysis_Update(objMainLabAnalysisBO);
                     if (objResult != null)
                     {
                         if (objResult.Status == ApplicationResult.CommonStatusType.Success)
                         {
+                            
+                            if (objMainLabAnalysisBO.Status == 0)
+                            {
+                                WriteLMPPLC(cmbTankNo.SelectedText, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), cmbStatus.SelectedText);
+                                WriteFERMPLC(cmbTankNo.SelectedText, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), cmbStatus.SelectedText);
+                            }
                             MetroMessageBox.Show(this, "Record Updated Successfully.", "Lab",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            WriteLMPPLC(cmbTankNo.SelectedText, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), cmbStatus.SelectedText);
-                            WriteFERMPLC(cmbTankNo.SelectedText, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), cmbStatus.SelectedText);
+                            EditDeleteData frmForm = new EditDeleteData();
+                            frmForm.Show();
                             this.Close();
-
+                           
                         }
                         else
                         {
@@ -309,6 +325,7 @@ namespace WeightBridgeMandya.clientui
                         }
                     }
                 }
+
 
             }
             catch (Exception ex)
@@ -747,8 +764,8 @@ namespace WeightBridgeMandya.clientui
                 }
                 catch (PlcException)
                 {
-
-                    MessageBox.Show("PLC Connection Open Fails", MessageBoxIcon.Error.ToString());
+                    log.Error("PLC Connection Open Fails");
+                    //MessageBox.Show("PLC Connection Open Fails", MessageBoxIcon.Error.ToString());
                 }
 
                 if (plc.IsConnected)
@@ -1074,7 +1091,7 @@ namespace WeightBridgeMandya.clientui
                 catch (PlcException)
                 {
 
-                    MessageBox.Show("PLC Connection Open Fails", MessageBoxIcon.Error.ToString());
+                    //MessageBox.Show("PLC Connection Open Fails", MessageBoxIcon.Error.ToString());
                 }
 
 
@@ -1212,6 +1229,17 @@ namespace WeightBridgeMandya.clientui
                             plc.Write("DB13.DBX270.0", false);
                         }
                     }
+                    else if (strTankNo == "H11TK001")
+                    {
+                        plc.Write(DataType.DataBlock, 13, 272, fat);
+                        plc.Write(DataType.DataBlock, 13, 276, snf);
+                        plc.Write("DB13.DBX282.0", status);
+                        if (status == true)
+                        {
+                            Thread.Sleep(timeDelay);
+                            plc.Write("DB13.DBX282.0", false);
+                        }
+                    }
                     // Close Connection with PLC FERM
                     if (plc.IsConnected)
                     {
@@ -1240,7 +1268,7 @@ namespace WeightBridgeMandya.clientui
         {
             EditDeleteData frmEditDeleteData = new EditDeleteData();
             frmEditDeleteData.Show();
-            this.Hide();
+            this.Close();
         }
         #endregion
     }
