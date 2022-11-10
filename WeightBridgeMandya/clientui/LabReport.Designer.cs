@@ -30,6 +30,7 @@ namespace WeightBridgeMandya.clientui
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabReport));
             this.pnlEntryType = new System.Windows.Forms.Panel();
             this.metroLabel22 = new MetroFramework.Controls.MetroLabel();
             this.rdoManual = new MetroFramework.Controls.MetroRadioButton();
@@ -213,15 +214,17 @@ namespace WeightBridgeMandya.clientui
             // metroLabel1
             // 
             this.metroLabel1.AutoSize = true;
-            this.metroLabel1.Location = new System.Drawing.Point(161, 23);
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.Location = new System.Drawing.Point(104, 24);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(43, 19);
+            this.metroLabel1.Size = new System.Drawing.Size(45, 19);
             this.metroLabel1.TabIndex = 0;
             this.metroLabel1.Text = "Date :";
             // 
             // metroLabel3
             // 
             this.metroLabel3.AutoSize = true;
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.Location = new System.Drawing.Point(358, 23);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(45, 19);
@@ -231,18 +234,20 @@ namespace WeightBridgeMandya.clientui
             // metroLabel4
             // 
             this.metroLabel4.AutoSize = true;
-            this.metroLabel4.Location = new System.Drawing.Point(537, 59);
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.Location = new System.Drawing.Point(527, 59);
             this.metroLabel4.Name = "metroLabel4";
-            this.metroLabel4.Size = new System.Drawing.Size(70, 19);
+            this.metroLabel4.Size = new System.Drawing.Size(72, 19);
             this.metroLabel4.TabIndex = 3;
             this.metroLabel4.Text = "Batch No :";
             // 
             // metroLabel5
             // 
             this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(104, 58);
+            this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel5.Location = new System.Drawing.Point(102, 57);
             this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(102, 19);
+            this.metroLabel5.Size = new System.Drawing.Size(104, 19);
             this.metroLabel5.TabIndex = 4;
             this.metroLabel5.Text = "Product Name :";
             // 
@@ -270,9 +275,10 @@ namespace WeightBridgeMandya.clientui
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(544, 23);
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.Location = new System.Drawing.Point(534, 23);
             this.metroLabel2.Name = "metroLabel2";
-            this.metroLabel2.Size = new System.Drawing.Size(63, 19);
+            this.metroLabel2.Size = new System.Drawing.Size(65, 19);
             this.metroLabel2.TabIndex = 10;
             this.metroLabel2.Text = "Tank No :";
             // 
@@ -339,7 +345,7 @@ namespace WeightBridgeMandya.clientui
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(807, 19);
+            this.btnRefresh.Location = new System.Drawing.Point(867, 19);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(71, 29);
             this.btnRefresh.TabIndex = 23;
@@ -539,6 +545,7 @@ namespace WeightBridgeMandya.clientui
             this.txtWettability.UseSelectable = true;
             this.txtWettability.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtWettability.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtWettability.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtWettability_KeyPress);
             // 
             // lblWettability
             // 
@@ -581,6 +588,7 @@ namespace WeightBridgeMandya.clientui
             this.txtBulkDensity.UseSelectable = true;
             this.txtBulkDensity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBulkDensity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBulkDensity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBulkDensity_KeyPress);
             // 
             // lblBulkDensity
             // 
@@ -623,6 +631,7 @@ namespace WeightBridgeMandya.clientui
             this.txtScorchedParticle.UseSelectable = true;
             this.txtScorchedParticle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtScorchedParticle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtScorchedParticle.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtScorchedParticle_KeyPress);
             // 
             // lblScorchedParticle
             // 
@@ -665,6 +674,7 @@ namespace WeightBridgeMandya.clientui
             this.txtTotalAsh.UseSelectable = true;
             this.txtTotalAsh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTotalAsh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTotalAsh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalAsh_KeyPress);
             // 
             // lblTotalAsh
             // 
@@ -707,6 +717,7 @@ namespace WeightBridgeMandya.clientui
             this.txtProtein.UseSelectable = true;
             this.txtProtein.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtProtein.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtProtein.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtProtein_KeyPress);
             // 
             // lblProtein
             // 
@@ -749,6 +760,7 @@ namespace WeightBridgeMandya.clientui
             this.txtInsolubilityIndex.UseSelectable = true;
             this.txtInsolubilityIndex.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtInsolubilityIndex.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtInsolubilityIndex.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtInsolubilityIndex_KeyPress);
             // 
             // lblInsolubilityIndex
             // 
@@ -791,6 +803,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSucrosePercent.UseSelectable = true;
             this.txtSucrosePercent.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSucrosePercent.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSucrosePercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSucrosePercent_KeyPress);
             // 
             // lblSucrosePercent
             // 
@@ -833,6 +846,7 @@ namespace WeightBridgeMandya.clientui
             this.txtEColi.UseSelectable = true;
             this.txtEColi.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEColi.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtEColi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEColi_KeyPress);
             // 
             // lblEColi
             // 
@@ -884,6 +898,7 @@ namespace WeightBridgeMandya.clientui
             this.txtPValue.UseSelectable = true;
             this.txtPValue.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPValue.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPValue_KeyPress);
             // 
             // lblPValue
             // 
@@ -926,6 +941,7 @@ namespace WeightBridgeMandya.clientui
             this.txtRMValue.UseSelectable = true;
             this.txtRMValue.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtRMValue.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtRMValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRMValue_KeyPress);
             // 
             // lblRMValue
             // 
@@ -968,6 +984,7 @@ namespace WeightBridgeMandya.clientui
             this.txtBRReading.UseSelectable = true;
             this.txtBRReading.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBRReading.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtBRReading.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBRReading_KeyPress);
             // 
             // lblBRReading
             // 
@@ -1010,6 +1027,7 @@ namespace WeightBridgeMandya.clientui
             this.txtFFAOA.UseSelectable = true;
             this.txtFFAOA.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtFFAOA.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFFAOA.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFFAOA_KeyPress);
             // 
             // lblFFAOA
             // 
@@ -1052,6 +1070,7 @@ namespace WeightBridgeMandya.clientui
             this.txtMoisture.UseSelectable = true;
             this.txtMoisture.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMoisture.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMoisture.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMoisture_KeyPress);
             // 
             // lblMoisture
             // 
@@ -1154,6 +1173,7 @@ namespace WeightBridgeMandya.clientui
             this.txtPh.UseSelectable = true;
             this.txtPh.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtPh.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPh_KeyPress);
             // 
             // lblPh
             // 
@@ -1196,6 +1216,7 @@ namespace WeightBridgeMandya.clientui
             this.txtTotalSolid.UseSelectable = true;
             this.txtTotalSolid.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTotalSolid.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTotalSolid.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotalSolid_KeyPress);
             // 
             // lblTotalSolid
             // 
@@ -1238,6 +1259,7 @@ namespace WeightBridgeMandya.clientui
             this.txtCremingIndex.UseSelectable = true;
             this.txtCremingIndex.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCremingIndex.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtCremingIndex.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCremingIndex_KeyPress);
             // 
             // lblCremingIndex
             // 
@@ -1280,6 +1302,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSomaticCell.UseSelectable = true;
             this.txtSomaticCell.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSomaticCell.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSomaticCell.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSomaticCell_KeyPress);
             // 
             // lblSomaticCell
             // 
@@ -1322,6 +1345,7 @@ namespace WeightBridgeMandya.clientui
             this.txtColiform.UseSelectable = true;
             this.txtColiform.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtColiform.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtColiform.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtColiform_KeyPress);
             // 
             // lblColiform
             // 
@@ -1375,6 +1399,7 @@ namespace WeightBridgeMandya.clientui
             this.txtAerobicPlate.UseSelectable = true;
             this.txtAerobicPlate.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAerobicPlate.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAerobicPlate.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAerobicPlate_KeyPress);
             // 
             // lblAerobicPlate
             // 
@@ -1426,6 +1451,7 @@ namespace WeightBridgeMandya.clientui
             this.txtAlcohol.UseSelectable = true;
             this.txtAlcohol.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAlcohol.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAlcohol.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAlcohol_KeyPress);
             // 
             // lblAlcohol
             // 
@@ -1477,6 +1503,7 @@ namespace WeightBridgeMandya.clientui
             this.txtMbrt.UseSelectable = true;
             this.txtMbrt.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtMbrt.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtMbrt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMbrt_KeyPress);
             // 
             // lblMbrt
             // 
@@ -1520,6 +1547,7 @@ namespace WeightBridgeMandya.clientui
             this.txtSnf.UseSelectable = true;
             this.txtSnf.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSnf.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtSnf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSnf_KeyPress);
             // 
             // lblSnf
             // 
@@ -1562,6 +1590,7 @@ namespace WeightBridgeMandya.clientui
             this.txtAcidity.UseSelectable = true;
             this.txtAcidity.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtAcidity.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtAcidity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAcidity_KeyPress);
             // 
             // lblAcidity
             // 
@@ -1605,6 +1634,7 @@ namespace WeightBridgeMandya.clientui
             this.txtFat.UseSelectable = true;
             this.txtFat.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtFat.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtFat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFat_KeyPress);
             // 
             // lblFat
             // 
@@ -1647,6 +1677,7 @@ namespace WeightBridgeMandya.clientui
             this.txtTemp.UseSelectable = true;
             this.txtTemp.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTemp.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtTemp.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTemp_KeyPress);
             // 
             // cmbPhospharaseTest
             // 
@@ -1677,6 +1708,7 @@ namespace WeightBridgeMandya.clientui
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "LabReport";

@@ -119,9 +119,10 @@ namespace WeightBridgeMandya.clientui
                 {
                     if (e.RowIndex != -1 && e.ColumnIndex == 0)
                     {
+                        this.Hide();
                         int id = Convert.ToInt32(gvMainLab[2, e.RowIndex].Value);
                         LabReport frmLabReport = new LabReport(id);
-                        frmLabReport.ShowDialog();
+                        frmLabReport.Show();
                         this.Activate();
                         bindMainLabAnalysis(Convert.ToDateTime(dtDate.Text));
                     }
@@ -169,7 +170,7 @@ namespace WeightBridgeMandya.clientui
         {
             this.Hide();
             LabReport frmLabProduct = new LabReport(-1);
-            frmLabProduct.ShowDialog();
+            frmLabProduct.Show();
             
         }
         #endregion
@@ -184,7 +185,6 @@ namespace WeightBridgeMandya.clientui
         #region Form Close Event
         private void EditDeleteData_FormClosed(object sender, FormClosedEventArgs e)
         {
-
             this.Hide();
             Form1 frmMainForm = new Form1();
             frmMainForm.Show();

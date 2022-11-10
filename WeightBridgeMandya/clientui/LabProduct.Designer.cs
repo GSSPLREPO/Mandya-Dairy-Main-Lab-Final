@@ -29,6 +29,7 @@ namespace WeightBridgeMandya.clientui
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LabProduct));
             this.gpButton = new System.Windows.Forms.GroupBox();
             this.btnCancle = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -151,7 +152,6 @@ namespace WeightBridgeMandya.clientui
             // 
             // btnAdd
             // 
-            this.btnAdd.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnAdd.Location = new System.Drawing.Point(376, 28);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(87, 29);
@@ -178,7 +178,7 @@ namespace WeightBridgeMandya.clientui
             this.cmbProduct.ItemHeight = 23;
             this.cmbProduct.Items.AddRange(new object[] {
             "--Select--"});
-            this.cmbProduct.Location = new System.Drawing.Point(118, 28);
+            this.cmbProduct.Location = new System.Drawing.Point(136, 28);
             this.cmbProduct.Name = "cmbProduct";
             this.cmbProduct.Size = new System.Drawing.Size(234, 29);
             this.cmbProduct.TabIndex = 34;
@@ -202,7 +202,7 @@ namespace WeightBridgeMandya.clientui
             this.txtProduct.CustomButton.Visible = false;
             this.txtProduct.FontSize = MetroFramework.MetroTextBoxSize.Medium;
             this.txtProduct.Lines = new string[0];
-            this.txtProduct.Location = new System.Drawing.Point(118, 28);
+            this.txtProduct.Location = new System.Drawing.Point(136, 28);
             this.txtProduct.MaxLength = 250;
             this.txtProduct.Name = "txtProduct";
             this.txtProduct.PasswordChar = '\0';
@@ -222,9 +222,10 @@ namespace WeightBridgeMandya.clientui
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
+            this.lblProductName.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.lblProductName.Location = new System.Drawing.Point(9, 32);
             this.lblProductName.Name = "lblProductName";
-            this.lblProductName.Size = new System.Drawing.Size(102, 19);
+            this.lblProductName.Size = new System.Drawing.Size(104, 19);
             this.lblProductName.TabIndex = 4;
             this.lblProductName.Text = "Product Name :";
             // 
@@ -630,6 +631,7 @@ namespace WeightBridgeMandya.clientui
             this.Controls.Add(this.gpProductCheckbox);
             this.Controls.Add(this.gpButton);
             this.Controls.Add(this.gpProductTextbox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

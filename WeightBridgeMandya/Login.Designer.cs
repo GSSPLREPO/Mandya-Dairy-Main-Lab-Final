@@ -36,6 +36,7 @@ namespace WeightBridgeMandya
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.txtPassword = new MetroFramework.Controls.MetroTextBox();
             this.txtUserName = new MetroFramework.Controls.MetroTextBox();
+            this.htmlLabel1 = new MetroFramework.Drawing.Html.HtmlLabel();
             this.SuspendLayout();
             // 
             // metroPanel2
@@ -145,12 +146,26 @@ namespace WeightBridgeMandya
             this.txtUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
+            // htmlLabel1
+            // 
+            this.htmlLabel1.AutoScroll = true;
+            this.htmlLabel1.AutoScrollMinSize = new System.Drawing.Size(45, 23);
+            this.htmlLabel1.AutoSize = false;
+            this.htmlLabel1.BackColor = System.Drawing.SystemColors.Window;
+            this.htmlLabel1.Enabled = false;
+            this.htmlLabel1.Location = new System.Drawing.Point(622, 324);
+            this.htmlLabel1.Name = "htmlLabel1";
+            this.htmlLabel1.Size = new System.Drawing.Size(59, 23);
+            this.htmlLabel1.TabIndex = 36;
+            this.htmlLabel1.Text = "V 1.0.0";
+            // 
             // Login
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(692, 358);
+            this.Controls.Add(this.htmlLabel1);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.metroLabel3);
@@ -183,5 +198,6 @@ namespace WeightBridgeMandya
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroTextBox txtPassword;
         private MetroFramework.Controls.MetroTextBox txtUserName;
+        private MetroFramework.Drawing.Html.HtmlLabel htmlLabel1;
     }
 }

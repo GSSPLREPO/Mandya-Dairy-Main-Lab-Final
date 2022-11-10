@@ -53,7 +53,7 @@ namespace WeightBridgeMandya.clientui
         {
             try
             {
-                
+
                 BindDropDownProduct();
                 bindTankDropdown();
                 BindCommonDropdown();
@@ -78,46 +78,46 @@ namespace WeightBridgeMandya.clientui
                         dtDate.Text = objResult.ResultDt.Rows[0]["Date"].ToString();
                         dtTime.Text = objResult.ResultDt.Rows[0]["Time"].ToString();
                         cmbTankNo.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TANKID]);
-                        cmbProduct.SelectedValue= Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PRODUCTID]);
-                        txtBatchNo.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BATCHNO].ToString();
-                        txtTemp.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TEMP].ToString();
-                        txtAcidity.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ACIDITY].ToString();
-                        txtFat.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_FAT].ToString();
-                        txtSnf.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SNF].ToString();
-                        txtMbrt.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_MBRT].ToString();
-                        cmbAdultration.SelectedValue= Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ADULTRATION]);
-                        txtAerobicPlate.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_AEROBICPLATE].ToString();
-                        cmbPhospharaseTest.SelectedValue= Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PHOSPHARASETEST]);
-                        txtAlcohol.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ALCOHOL].ToString();
-                        txtColiform.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_COLIFORM].ToString();
-                        txtSomaticCell.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SOMATICCELL].ToString();
-                        txtCremingIndex.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_CREMINGINDEX].ToString();
-                        txtTotalSolid.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TOTALSOLID].ToString();
-                        txtBulkDensity.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BULKDENSITY].ToString();
-                        txtPh.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PH].ToString();
-                        txtBRReading.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BRREADING].ToString();
-                        txtMoisture.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_MOISTURE].ToString();
-                        txtFFAOA.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_FFAOA].ToString();
-                        txtProtein.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PROTEIN].ToString();
-                        txtScorchedParticle.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SCORCHEDPARTICLE].ToString();
-                        txtRMValue.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_RMVALUE].ToString();
-                        txtPValue.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PVALUE].ToString();
-                        cmbBauduinTest.SelectedValue= Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BAUDUINTEST]);
-                        txtSucrosePercent.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SUCROSEPERCENT].ToString();
-                        txtEColi.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ECOLI].ToString();
-                        txtInsolubilityIndex.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_INSOLUBILITYINDEX].ToString();
-                        txtTotalAsh.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TOTALASH].ToString();
-                        txtWettability.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_WETTABILITY].ToString();
+                        cmbProduct.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PRODUCTID]);
+                        txtBatchNo.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BATCHNO].ToString();
+                        txtTemp.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TEMP].ToString();
+                        txtAcidity.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ACIDITY].ToString();
+                        txtFat.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_FAT].ToString();
+                        txtSnf.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SNF].ToString();
+                        txtMbrt.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_MBRT].ToString();
+                        cmbAdultration.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ADULTRATION]);
+                        txtAerobicPlate.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_AEROBICPLATE].ToString();
+                        cmbPhospharaseTest.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PHOSPHARASETEST]);
+                        txtAlcohol.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ALCOHOL].ToString();
+                        txtColiform.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_COLIFORM].ToString();
+                        txtSomaticCell.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SOMATICCELL].ToString();
+                        txtCremingIndex.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_CREMINGINDEX].ToString();
+                        txtTotalSolid.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TOTALSOLID].ToString();
+                        txtBulkDensity.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BULKDENSITY].ToString();
+                        txtPh.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PH].ToString();
+                        txtBRReading.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BRREADING].ToString();
+                        txtMoisture.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_MOISTURE].ToString();
+                        txtFFAOA.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_FFAOA].ToString();
+                        txtProtein.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PROTEIN].ToString();
+                        txtScorchedParticle.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SCORCHEDPARTICLE].ToString();
+                        txtRMValue.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_RMVALUE].ToString();
+                        txtPValue.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PVALUE].ToString();
+                        cmbBauduinTest.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BAUDUINTEST]);
+                        txtSucrosePercent.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_SUCROSEPERCENT].ToString();
+                        txtEColi.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_ECOLI].ToString();
+                        txtInsolubilityIndex.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_INSOLUBILITYINDEX].ToString();
+                        txtTotalAsh.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TOTALASH].ToString();
+                        txtWettability.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_WETTABILITY].ToString();
                         cmbBodyAndTexture.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BODYANDTEXTURE]);
                         cmbFlavour.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_FLAVOUR]);
                         cmbAppearance.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_APPEARANCE]);
                         cmbStatus.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_STATUS]);
-                        txtRemarks.Text= objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_REMARKS].ToString();
+                        txtRemarks.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_REMARKS].ToString();
                     }
 
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 log.Error("Load Event :" + ex.ToString());
             }
@@ -267,7 +267,7 @@ namespace WeightBridgeMandya.clientui
                     objMainLabAnalysisBO.CreatedByDate = Convert.ToDateTime(DateTime.Now.ToString());
                     objResult = objMainLabAnalysisBL.MainLabAnalysis_Insert(objMainLabAnalysisBO);
 
-                    string Status=string.Empty, TankName=string.Empty;
+                    string Status = string.Empty, TankName = string.Empty;
                     Status = cmbStatus.Text.ToString();
                     TankName = cmbTankNo.Text.ToString();
                     if (objResult != null)
@@ -280,10 +280,8 @@ namespace WeightBridgeMandya.clientui
                                 WriteLMPPLC(TankName, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), Status);
                                 WriteFERMPLC(TankName, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), Status);
                             }
-                           
+
                             MetroMessageBox.Show(this, "Record Saved Successfully.", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            EditDeleteData frmForm = new EditDeleteData();
-                            frmForm.Show();
                             this.Close();
 
                         }
@@ -305,7 +303,7 @@ namespace WeightBridgeMandya.clientui
                     {
                         if (objResult.Status == ApplicationResult.CommonStatusType.Success)
                         {
-                            
+
                             if (objMainLabAnalysisBO.Status == 0)
                             {
                                 WriteLMPPLC(cmbTankNo.SelectedText, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), cmbStatus.SelectedText);
@@ -313,10 +311,8 @@ namespace WeightBridgeMandya.clientui
                             }
                             MetroMessageBox.Show(this, "Record Updated Successfully.", "Lab",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            EditDeleteData frmForm = new EditDeleteData();
-                            frmForm.Show();
                             this.Close();
-                           
+
                         }
                         else
                         {
@@ -356,7 +352,7 @@ namespace WeightBridgeMandya.clientui
             {
                 if (objResult.ResultDt.Rows.Count > 0)
                 {
-                    
+
                     groupBox2.Visible = true;
                     groupBox3.Visible = true;
                     txtTemp.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TEMP]);
@@ -1256,7 +1252,7 @@ namespace WeightBridgeMandya.clientui
             }
             catch (PlcException ex)
             {
-                log.Error("error",  ex);
+                log.Error("error", ex);
                 MetroMessageBox.Show(this, "Opps! There is some technical issue. Please Contact to your administrator.", "Lab", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -1266,9 +1262,164 @@ namespace WeightBridgeMandya.clientui
         #region Form Close Event
         private void LabReport_FormClosed(object sender, FormClosedEventArgs e)
         {
+            this.Hide();
             EditDeleteData frmEditDeleteData = new EditDeleteData();
             frmEditDeleteData.Show();
-            this.Close();
+
+        }
+        #endregion
+
+        #region Take Numeric Value only
+        public void takeNumber(object sender,KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+            (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            //if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            //{
+            //    e.Handled = true;
+            //}
+           
+        }
+
+        public void takeNumberOnly(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+        #endregion
+
+        #region Textbox KeyPress Event
+        private void txtTemp_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtAcidity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtFat_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtSnf_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtMbrt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtAerobicPlate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumberOnly(sender, e);
+        }
+
+        private void txtAlcohol_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtColiform_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtSomaticCell_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumberOnly(sender, e);
+        }
+
+        private void txtCremingIndex_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtTotalSolid_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtBulkDensity_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtPh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtBRReading_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtMoisture_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtFFAOA_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtProtein_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtScorchedParticle_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtRMValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtPValue_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtSucrosePercent_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtEColi_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtInsolubilityIndex_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtTotalAsh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
+        }
+
+        private void txtWettability_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            takeNumber(sender, e);
         }
         #endregion
     }
