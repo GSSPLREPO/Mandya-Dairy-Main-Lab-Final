@@ -107,8 +107,6 @@ namespace WeightBridgeMandya.clientui
                     }
                 }
 
-
-
             }
             catch (Exception ex)
             {
@@ -477,9 +475,7 @@ namespace WeightBridgeMandya.clientui
 
         private void LabProduct_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
-            Form1 frmMainForm = new Form1();
-            frmMainForm.Show();
+            this.Close();
            
         }
     }

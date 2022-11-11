@@ -37,9 +37,14 @@ namespace WeightBridgeMandya.clientui
                 groupBox2.Visible = false;
                 groupBox3.Visible = false;
                 rdoAuto.Checked = true;
+                cmbTankNo.Visible = true;
+                txtTankeName.Visible = false;
             }
             else
             {
+                cmbTankNo.Visible = false;
+                txtTankeName.Visible = true;
+                txtTankeName.Enabled = false;
                 strMode = "Edit";
                 btnSave.Text = "Update";
                 btnClear.Enabled = false;
@@ -77,6 +82,7 @@ namespace WeightBridgeMandya.clientui
                         cmbProduct.Enabled = false;
                         dtDate.Text = objResult.ResultDt.Rows[0]["Date"].ToString();
                         dtTime.Text = objResult.ResultDt.Rows[0]["Time"].ToString();
+                        txtTankeName.Text= objResult.ResultDt.Rows[0]["TankName"].ToString();
                         cmbTankNo.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_TANKID]);
                         cmbProduct.SelectedValue = Convert.ToInt32(objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_PRODUCTID]);
                         txtBatchNo.Text = objResult.ResultDt.Rows[0][MainLabAnalysisBO.MAINLABANALYSIS_BATCHNO].ToString();
@@ -261,21 +267,24 @@ namespace WeightBridgeMandya.clientui
                 objMainLabAnalysisBO.Status = cmbStatus.SelectedIndex;
                 objMainLabAnalysisBO.Remarks = txtRemarks.Text.Trim();
 
+                string Status = string.Empty, TankName = string.Empty;
+                Status = cmbStatus.Text.ToString();
                 if (strMode == "New")
                 {
                     objMainLabAnalysisBO.CreatedByID = Convert.ToInt32(Program.intUserId.ToString());
                     objMainLabAnalysisBO.CreatedByDate = Convert.ToDateTime(DateTime.Now.ToString());
                     objResult = objMainLabAnalysisBL.MainLabAnalysis_Insert(objMainLabAnalysisBO);
-
-                    string Status = string.Empty, TankName = string.Empty;
-                    Status = cmbStatus.Text.ToString();
+                    
                     TankName = cmbTankNo.Text.ToString();
+
+                   // MessageBox.Show("New Status :"+Status +" TankName :"+TankName);
+
                     if (objResult != null)
                     {
                         if (objResult.Status == ApplicationResult.CommonStatusType.Success)
                         {
 
-                            if (objMainLabAnalysisBO.Status == 0)
+                            if (Status == "Accepted")
                             {
                                 WriteLMPPLC(TankName, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), Status);
                                 WriteFERMPLC(TankName, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), Status);
@@ -298,21 +307,23 @@ namespace WeightBridgeMandya.clientui
                     objMainLabAnalysisBO.MainLabID = intid;
                     objMainLabAnalysisBO.LastModifiedByID = Convert.ToInt32(Program.intUserId.ToString());
                     objMainLabAnalysisBO.LastModifiedByDate = Convert.ToDateTime(DateTime.Now.ToString());
+                    
+                    TankName = txtTankeName.Text.Trim().ToString();
+                    //MessageBox.Show("Edit - Status :" + Status + " TankName :" + TankName);
                     objResult = objMainLabAnalysisBL.MainLabAnalysis_Update(objMainLabAnalysisBO);
                     if (objResult != null)
                     {
                         if (objResult.Status == ApplicationResult.CommonStatusType.Success)
                         {
 
-                            if (objMainLabAnalysisBO.Status == 0)
+                            if (Status == "Accepted")
                             {
-                                WriteLMPPLC(cmbTankNo.SelectedText, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), cmbStatus.SelectedText);
-                                WriteFERMPLC(cmbTankNo.SelectedText, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), cmbStatus.SelectedText);
+                                WriteLMPPLC(TankName, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), Status);
+                                WriteFERMPLC(TankName, float.Parse(txtFat.Text), float.Parse(txtSnf.Text), Status);
                             }
                             MetroMessageBox.Show(this, "Record Updated Successfully.", "Lab",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
-
                         }
                         else
                         {
@@ -352,7 +363,8 @@ namespace WeightBridgeMandya.clientui
             {
                 if (objResult.ResultDt.Rows.Count > 0)
                 {
-
+                    rdoAuto.Checked = true;
+                    rdoManual.Checked = false;
                     groupBox2.Visible = true;
                     groupBox3.Visible = true;
                     txtTemp.Enabled = Convert.ToBoolean(objResult.ResultDt.Rows[0][MainLabProductBO.MAINLABPRODUCTS_TEMP]);
@@ -1262,9 +1274,7 @@ namespace WeightBridgeMandya.clientui
         #region Form Close Event
         private void LabReport_FormClosed(object sender, FormClosedEventArgs e)
         {
-            this.Hide();
-            EditDeleteData frmEditDeleteData = new EditDeleteData();
-            frmEditDeleteData.Show();
+            this.Close();
 
         }
         #endregion

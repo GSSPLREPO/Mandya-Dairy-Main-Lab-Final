@@ -27,7 +27,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mandya.DataAccess", "Mandya
 		{B07593F3-6611-40F6-B197-0B0C831F4DB5} = {B07593F3-6611-40F6-B197-0B0C831F4DB5}
 	EndProjectSection
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Mandya MainLab 1.0.0", "..\..\..\Application Setup\Mandya MainLab 1.0.0\Mandya MainLab 1.0.0.vdproj", "{D3F55CAA-AE3F-44FA-8A3B-4558EA99ACC3}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Mandya MainLab 1.0.0", "..\..\..\Application Setup\Mandya MainLab 1.0.0\Mandya MainLab 1.0.0.vdproj", "{0B170F0E-7F48-4D62-9C4B-A2454410B771}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,8 +55,8 @@ Global
 		{DF39FE80-CA82-49A3-ACE5-A146A17EB99A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF39FE80-CA82-49A3-ACE5-A146A17EB99A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF39FE80-CA82-49A3-ACE5-A146A17EB99A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D3F55CAA-AE3F-44FA-8A3B-4558EA99ACC3}.Debug|Any CPU.ActiveCfg = Debug
-		{D3F55CAA-AE3F-44FA-8A3B-4558EA99ACC3}.Release|Any CPU.ActiveCfg = Release
+		{0B170F0E-7F48-4D62-9C4B-A2454410B771}.Debug|Any CPU.ActiveCfg = Debug
+		{0B170F0E-7F48-4D62-9C4B-A2454410B771}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

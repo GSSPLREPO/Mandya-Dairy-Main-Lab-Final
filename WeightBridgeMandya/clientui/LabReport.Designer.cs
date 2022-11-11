@@ -119,6 +119,7 @@ namespace WeightBridgeMandya.clientui
             this.txtTemp = new MetroFramework.Controls.MetroTextBox();
             this.cmbPhospharaseTest = new MetroFramework.Controls.MetroComboBox();
             this.lblTemp = new MetroFramework.Controls.MetroLabel();
+            this.txtTankeName = new MetroFramework.Controls.MetroTextBox();
             this.pnlEntryType.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -325,6 +326,7 @@ namespace WeightBridgeMandya.clientui
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.txtTankeName);
             this.groupBox1.Controls.Add(this.btnRefresh);
             this.groupBox1.Controls.Add(this.pnlEntryType);
             this.groupBox1.Controls.Add(this.dtTime);
@@ -1699,6 +1701,39 @@ namespace WeightBridgeMandya.clientui
             this.lblTemp.TabIndex = 0;
             this.lblTemp.Text = "Temp :";
             // 
+            // txtTankeName
+            // 
+            // 
+            // 
+            // 
+            this.txtTankeName.CustomButton.Image = null;
+            this.txtTankeName.CustomButton.Location = new System.Drawing.Point(149, 1);
+            this.txtTankeName.CustomButton.Name = "";
+            this.txtTankeName.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtTankeName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtTankeName.CustomButton.TabIndex = 1;
+            this.txtTankeName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtTankeName.CustomButton.UseSelectable = true;
+            this.txtTankeName.CustomButton.Visible = false;
+            this.txtTankeName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtTankeName.Lines = new string[0];
+            this.txtTankeName.Location = new System.Drawing.Point(615, 20);
+            this.txtTankeName.MaxLength = 5;
+            this.txtTankeName.MinimumSize = new System.Drawing.Size(100, 0);
+            this.txtTankeName.Name = "txtTankeName";
+            this.txtTankeName.PasswordChar = '\0';
+            this.txtTankeName.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtTankeName.SelectedText = "";
+            this.txtTankeName.SelectionLength = 0;
+            this.txtTankeName.SelectionStart = 0;
+            this.txtTankeName.ShortcutsEnabled = true;
+            this.txtTankeName.Size = new System.Drawing.Size(177, 29);
+            this.txtTankeName.TabIndex = 117;
+            this.txtTankeName.UseCustomBackColor = true;
+            this.txtTankeName.UseSelectable = true;
+            this.txtTankeName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtTankeName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // 
             // LabReport
             // 
             this.AcceptButton = this.btnSave;
@@ -1710,7 +1745,6 @@ namespace WeightBridgeMandya.clientui
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximizeBox = false;
             this.Name = "LabReport";
             this.Padding = new System.Windows.Forms.Padding(15, 60, 15, 16);
             this.Text = "Main Lab";
@@ -1816,5 +1850,6 @@ namespace WeightBridgeMandya.clientui
         public MetroFramework.Controls.MetroComboBox cmbFlavour;
         public MetroFramework.Controls.MetroComboBox cmbBauduinTest;
         public MetroFramework.Controls.MetroComboBox cmbStatus;
+        public MetroFramework.Controls.MetroTextBox txtTankeName;
     }
 }

@@ -79,7 +79,7 @@ namespace WeightBridgeMandya
                             {
                                 this.Hide();
                                 Form1 frmMainForm = new Form1();
-                                frmMainForm.ShowDialog();
+                                frmMainForm.Show();
                                 
                             }
                             else
